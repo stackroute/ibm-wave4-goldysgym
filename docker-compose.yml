@@ -1,0 +1,88 @@
+version: '2.1'
+
+services:
+  mongo:
+    image: mongo:3.4-jessie
+    ports:
+      - 27017:27017
+    expose:
+        - 27017
+    container_name: mongo
+    network_mode: host
+
+  eureka-server:
+    build: eurekaServer/
+    depends_on:
+      config-service:
+        condition: service_healthy
+    restart: always
+    network_mode: "host"
+    image: demo-eureka-service
+    hostname: localhost
+    ports:
+      - 9090:9090
+    healthcheck:
+      test: "exit 0"
+
+  config-service:
+    build: configServer/
+    restart: always
+    network_mode: "host"
+    image: demo-config-service
+    hostname: localhost
+    ports:
+      - 8891:8891
+    healthcheck:
+      test: "exit 0"
+
+  api-gateway:
+    build: zuulGatewayMapper/
+    depends_on:
+      config-service:
+        condition: service_healthy
+      eureka-server:
+        condition: service_healthy
+      player-service:
+        condition: service_healthy
+      user-service:
+        condition: service_healthy
+    restart: always
+    network_mode: "host"
+    image: demo-zuul-service2
+    hostname: localhost
+    ports:
+      - 8000:8000
+    healthcheck:
+      test: "exit 0"
+
+  player-service:
+    build: playerService/
+    image: demo-restaurant-service
+    restart: always
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - 7788:7788
+    depends_on:
+      config-service:
+        condition: service_healthy
+      eureka-server:
+        condition: service_healthy
+    healthcheck:
+      test: "exit 0"
+
+  user-service:
+    build: user-Service/
+    image: demo-user-service
+    restart: always
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - 7789:7789
+    depends_on:
+      config-service:
+        condition: service_healthy
+      eureka-server:
+        condition: service_healthy
+    healthcheck:
+      test: "exit 0"

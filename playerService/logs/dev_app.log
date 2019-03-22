@@ -1,0 +1,88 @@
+"2019-03-22 14:52:28,637 INFO  [main] org.springframework.cloud.config.client.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8891
+""2019-03-22 14:52:28,947 INFO  [main] org.springframework.cloud.config.client.ConfigServicePropertySourceLocator : Connect Timeout Exception on Url - http://localhost:8891. Will be trying the next url if available
+""2019-03-22 14:52:28,948 WARN  [main] org.springframework.cloud.config.client.ConfigServicePropertySourceLocator : Could not locate PropertySource: I/O error on GET request for "http://localhost:8891/player-app/development": Connection refused (Connection refused); nested exception is java.net.ConnectException: Connection refused (Connection refused)
+""2019-03-22 14:52:29,000 INFO  [main] com.stackroute.playerservice.repository.PlayerRepositoryTest : The following profiles are active: development
+""2019-03-22 14:52:29,698 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+""2019-03-22 14:52:29,875 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 159ms. Found 1 repository interfaces.
+""2019-03-22 14:52:30,492 INFO  [main] org.mongodb.driver.cluster : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+""2019-03-22 14:52:30,600 INFO  [cluster-ClusterId{value='5c94a956c0d2b81e8dcb663d', description='null'}-localhost:27017] org.mongodb.driver.cluster : Exception in monitor thread while connecting to server localhost:27017
+"com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:67) ~[mongodb-driver-core-3.8.2.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:126) ~[mongodb-driver-core-3.8.2.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:117) ~[mongodb-driver-core-3.8.2.jar:na]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.base/java.net.PlainSocketImpl.socketConnect(Native Method) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224) ~[na:na]
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:403) ~[na:na]
+	at java.base/java.net.Socket.connect(Socket.java:591) ~[na:na]
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:64) ~[mongodb-driver-core-3.8.2.jar:na]
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:62) ~[mongodb-driver-core-3.8.2.jar:na]
+	... 3 common frames omitted
+"2019-03-22 14:52:31,465 INFO  [main] com.stackroute.playerservice.repository.PlayerRepositoryTest : Started PlayerRepositoryTest in 5.834 seconds (JVM running for 7.438)
+""2019-03-22 14:52:32,134 INFO  [main] org.mongodb.driver.cluster : Cluster description not yet available. Waiting for 30000 ms before timing out
+""2019-03-22 14:53:02,145 INFO  [main] org.mongodb.driver.cluster : Cluster description not yet available. Waiting for 30000 ms before timing out
+""2019-03-22 14:53:32,167 INFO  [main] org.mongodb.driver.cluster : Cluster description not yet available. Waiting for 30000 ms before timing out
+""2019-03-22 14:54:02,169 INFO  [main] org.mongodb.driver.cluster : Cluster description not yet available. Waiting for 30000 ms before timing out
+""2019-03-22 14:54:32,185 INFO  [main] org.mongodb.driver.cluster : Cluster description not yet available. Waiting for 30000 ms before timing out
+""2019-03-22 14:55:02,187 INFO  [main] org.mongodb.driver.cluster : Cluster description not yet available. Waiting for 30000 ms before timing out
+""2019-03-22 14:55:32,200 INFO  [main] org.mongodb.driver.cluster : Cluster description not yet available. Waiting for 30000 ms before timing out
+""2019-03-22 14:55:35,734 INFO  [cluster-ClusterId{value='5c94a956c0d2b81e8dcb663d', description='null'}-localhost:27017] org.mongodb.driver.cluster : Exception in monitor thread while connecting to server localhost:27017
+"com.mongodb.MongoSocketReadException: Prematurely reached end of stream
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:92) ~[mongodb-driver-core-3.8.2.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:554) ~[mongodb-driver-core-3.8.2.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessage(InternalStreamConnection.java:425) ~[mongodb-driver-core-3.8.2.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:289) ~[mongodb-driver-core-3.8.2.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.sendAndReceive(InternalStreamConnection.java:255) ~[mongodb-driver-core-3.8.2.jar:na]
+	at com.mongodb.internal.connection.CommandHelper.sendAndReceive(CommandHelper.java:83) ~[mongodb-driver-core-3.8.2.jar:na]
+	at com.mongodb.internal.connection.CommandHelper.executeCommand(CommandHelper.java:33) ~[mongodb-driver-core-3.8.2.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.initializeConnectionDescription(InternalStreamConnectionInitializer.java:106) ~[mongodb-driver-core-3.8.2.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.initialize(InternalStreamConnectionInitializer.java:63) ~[mongodb-driver-core-3.8.2.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:127) ~[mongodb-driver-core-3.8.2.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:117) ~[mongodb-driver-core-3.8.2.jar:na]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+"2019-03-22 14:55:36,264 INFO  [cluster-ClusterId{value='5c94a956c0d2b81e8dcb663d', description='null'}-localhost:27017] org.mongodb.driver.connection : Opened connection [connectionId{localValue:370, serverValue:1}] to localhost:27017
+""2019-03-22 14:55:36,269 INFO  [cluster-ClusterId{value='5c94a956c0d2b81e8dcb663d', description='null'}-localhost:27017] org.mongodb.driver.cluster : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 4, 19]}, minWireVersion=0, maxWireVersion=5, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=null, roundTripTimeNanos=1737006}
+""2019-03-22 14:55:36,298 INFO  [main] org.mongodb.driver.connection : Opened connection [connectionId{localValue:371, serverValue:2}] to localhost:27017
+""2019-03-22 14:55:36,497 INFO  [Thread-3] org.mongodb.driver.connection : Closed connection [connectionId{localValue:371, serverValue:2}] to localhost:27017 because the pool has been closed.
+""2019-03-22 14:56:16,739 INFO  [main] org.springframework.cloud.config.client.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8891
+""2019-03-22 14:56:16,895 INFO  [main] org.springframework.cloud.config.client.ConfigServicePropertySourceLocator : Connect Timeout Exception on Url - http://localhost:8891. Will be trying the next url if available
+""2019-03-22 14:56:16,896 WARN  [main] org.springframework.cloud.config.client.ConfigServicePropertySourceLocator : Could not locate PropertySource: I/O error on GET request for "http://localhost:8891/player-app/development": Connection refused (Connection refused); nested exception is java.net.ConnectException: Connection refused (Connection refused)
+""2019-03-22 14:56:16,927 INFO  [main] com.stackroute.playerservice.repository.PlayerRepositoryTest : The following profiles are active: development
+""2019-03-22 14:56:17,234 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+""2019-03-22 14:56:17,339 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 99ms. Found 1 repository interfaces.
+""2019-03-22 14:56:17,726 INFO  [main] org.mongodb.driver.cluster : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+""2019-03-22 14:56:17,831 INFO  [cluster-ClusterId{value='5c94aa399d9d8e2292acf463', description='null'}-localhost:27017] org.mongodb.driver.connection : Opened connection [connectionId{localValue:1, serverValue:3}] to localhost:27017
+""2019-03-22 14:56:17,839 INFO  [cluster-ClusterId{value='5c94aa399d9d8e2292acf463', description='null'}-localhost:27017] org.mongodb.driver.cluster : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 4, 19]}, minWireVersion=0, maxWireVersion=5, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=null, roundTripTimeNanos=3613296}
+""2019-03-22 14:56:18,383 INFO  [main] com.stackroute.playerservice.repository.PlayerRepositoryTest : Started PlayerRepositoryTest in 3.615 seconds (JVM running for 4.863)
+""2019-03-22 14:56:18,871 INFO  [main] org.mongodb.driver.connection : Opened connection [connectionId{localValue:2, serverValue:4}] to localhost:27017
+""2019-03-22 14:56:19,319 INFO  [main] org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.stackroute.playerservice.controller.playerControllerTest], using SpringBootContextLoader
+""2019-03-22 14:56:19,320 INFO  [main] org.springframework.test.context.support.AbstractContextLoader : Could not detect default resource locations for test class [com.stackroute.playerservice.controller.playerControllerTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+""2019-03-22 14:56:19,321 INFO  [main] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.stackroute.playerservice.controller.playerControllerTest]: playerControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+""2019-03-22 14:56:19,353 INFO  [main] org.springframework.boot.test.context.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.stackroute.playerservice.PlayerServiceApplication for test class com.stackroute.playerservice.controller.playerControllerTest
+""2019-03-22 14:56:19,355 INFO  [main] org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+""2019-03-22 14:56:19,356 INFO  [main] org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@7523d5a1, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@2bfc2f8b, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@61853c7e, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@32e5af53, org.springframework.test.context.support.DirtiesContextTestExecutionListener@5980fa73, org.springframework.test.context.transaction.TransactionalTestExecutionListener@13ca16bf, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@5be4be74, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@44641d6c, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@1ae924f1, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@59d5a6fd, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@27bcb4ad, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@4357524b]
+""2019-03-22 14:56:19,920 INFO  [main] org.springframework.cloud.config.client.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8891
+""2019-03-22 14:56:19,929 INFO  [main] org.springframework.cloud.config.client.ConfigServicePropertySourceLocator : Connect Timeout Exception on Url - http://localhost:8891. Will be trying the next url if available
+""2019-03-22 14:56:19,929 WARN  [main] org.springframework.cloud.config.client.ConfigServicePropertySourceLocator : Could not locate PropertySource: I/O error on GET request for "http://localhost:8891/player-app/development": Connection refused (Connection refused); nested exception is java.net.ConnectException: Connection refused (Connection refused)
+""2019-03-22 14:56:19,932 INFO  [main] com.stackroute.playerservice.controller.playerControllerTest : The following profiles are active: development
+""2019-03-22 14:56:21,210 INFO  [main] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor : Initializing ExecutorService 'applicationTaskExecutor'
+""2019-03-22 14:56:21,631 INFO  [main] org.springframework.boot.test.mock.web.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+""2019-03-22 14:56:21,632 INFO  [main] org.springframework.test.web.servlet.TestDispatcherServlet : Initializing Servlet ''
+""2019-03-22 14:56:21,652 INFO  [main] org.springframework.test.web.servlet.TestDispatcherServlet : Completed initialization in 20 ms
+""2019-03-22 14:56:21,693 INFO  [main] com.stackroute.playerservice.controller.playerControllerTest : Started playerControllerTest in 2.326 seconds (JVM running for 8.173)
+""2019-03-22 14:56:21,745 INFO  [main] org.springframework.mock.web.MockServletContext : Initializing Spring TestDispatcherServlet ''
+""2019-03-22 14:56:21,746 INFO  [main] org.springframework.test.web.servlet.TestDispatcherServlet : Initializing Servlet ''
+""2019-03-22 14:56:21,746 INFO  [main] org.springframework.test.web.servlet.TestDispatcherServlet : Completed initialization in 0 ms
+""2019-03-22 14:56:21,906 INFO  [main] org.springframework.mock.web.MockServletContext : Initializing Spring TestDispatcherServlet ''
+""2019-03-22 14:56:21,907 INFO  [main] org.springframework.test.web.servlet.TestDispatcherServlet : Initializing Servlet ''
+""2019-03-22 14:56:21,908 INFO  [main] org.springframework.test.web.servlet.TestDispatcherServlet : Completed initialization in 1 ms
+""2019-03-22 14:56:21,964 INFO  [main] org.springframework.mock.web.MockServletContext : Initializing Spring TestDispatcherServlet ''
+""2019-03-22 14:56:21,965 INFO  [main] org.springframework.test.web.servlet.TestDispatcherServlet : Initializing Servlet ''
+""2019-03-22 14:56:21,965 INFO  [main] org.springframework.test.web.servlet.TestDispatcherServlet : Completed initialization in 0 ms
+""2019-03-22 14:56:21,968 INFO  [main] com.stackroute.playerservice.controller.PlayerController : this is in info logger
+""2019-03-22 14:56:22,009 INFO  [Thread-3] org.mongodb.driver.connection : Closed connection [connectionId{localValue:2, serverValue:4}] to localhost:27017 because the pool has been closed.
+""2019-03-22 14:56:22,012 INFO  [Thread-7] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor : Shutting down ExecutorService 'applicationTaskExecutor'
+"
