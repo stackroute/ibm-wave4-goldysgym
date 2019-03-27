@@ -15,8 +15,8 @@ nav {
 
 a:hover {
     background-color: rgb(7, 87, 128);
-    -webkit-transition-delay: 1s; /* Safari */
-    transition-delay: 1s;
+    /* -webkit-transition-delay: 1s; Safari */
+    /* transition-delay: 1s; */
 }
 
 .navbar-dark 

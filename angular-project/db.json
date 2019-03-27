@@ -13,6 +13,32 @@
       "postId": 1
     }
   ],
+  "programs": [
+    {
+      "id": 1,
+      "name": "HRX",
+      "desc": "this is HRX",
+      "img": "../../assets/images/5b97f9b88a88a54a03fe0c17.webp"
+    },
+    {
+      "id": 2,
+      "name": "S&C",
+      "desc": "this is S&C",
+      "img": "../../assets/images/5b9808f1ddda534faee8f438.webp"
+    },
+    {
+      "id": 3,
+      "name": "Boxing",
+      "desc": "this is Boxing",
+      "img": "../../assets/images/Boxing@1x.webp"
+    },
+    {
+      "id": 4,
+      "name": "Yoga",
+      "desc": "this is Yoga",
+      "img": "../../assets/images/yoga@1x.webp"
+    }
+  ],
   "profile": {
     "name": "typicode"
   }

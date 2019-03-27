@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProgramService } from '../program.service';
 
 @Component({
   selector: 'app-left-nav',
@@ -7,16 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LeftNavComponent implements OnInit {
 
-  constructor() { }
+  constructor(private programService: ProgramService) { }
 
   ngOnInit() {
   }
 
-  tf:any[] = [true,false,false,false,false];
+  tf:any[] = this.programService.tf;
 
   tfToggle(a){
-    this.tf= [false,false,false,false,false];
-    this.tf[a] = true;
+    this.programService.tfToggle(a);
   }
 
   // getState(a){

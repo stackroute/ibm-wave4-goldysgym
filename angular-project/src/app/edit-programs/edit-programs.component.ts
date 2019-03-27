@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ProgramService } from '../program.service';
+import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment.prod';
 
 @Component({
   selector: 'app-edit-programs',
@@ -7,9 +10,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditProgramsComponent implements OnInit {
 
-  constructor() { }
+  programs : any;
+
+  constructor(private programService: ProgramService, private http:HttpClient) { }
 
   ngOnInit() {
+    this.getPrograms();
+  }
+
+  getPrograms() {
+    this.programService.getPrograms().subscribe((x) => {
+      this.programs= x
+      console.log(this.programs)
+    });
+  }
+
+  remove(id)
+  {
+    console.log(id);
+    // return this.http.delete('http://localhost:3000/programs/'+id).subscribe(console.log),
+    // this.programs=this.programs.filter(x=>id!=x.id);
+
+    return this.programService.deleteProgram(id).subscribe(console.log),
+    this.programs=this.programs.filter(x=>id!=x.id);
   }
 
 }

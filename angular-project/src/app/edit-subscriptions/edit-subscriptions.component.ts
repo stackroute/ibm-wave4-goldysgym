@@ -8,8 +8,12 @@ import { Component, OnInit } from '@angular/core';
 export class EditSubscriptionsComponent implements OnInit {
 
   constructor() { }
-
+data : any;
   ngOnInit() {
+  }
+
+  clicked(){
+    this.data = "clicked";
   }
 
 }

@@ -2,19 +2,20 @@
   <thead class="thead-dark">
     <tr>
       <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">Name</th>
+      <th scope="col">Desctiption</th>
+      <th scope="col">controls</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+    <tr *ngFor="let a of programs">
+      <th scope="row">{{a.id}}</th>
+      <td>{{a.name}}</td>
+      <td>{{a.desc}}</td>
+      <td><button type="button" class="btn btn-primary">Edit</button>&nbsp;
+        <button type="button" (click)="remove(a.id)" class="btn btn-danger">Remove</button></td>
     </tr>
-    <tr>
+    <!-- <tr>
       <th scope="row">2</th>
       <td>Jacob</td>
       <td>Thornton</td>
@@ -25,6 +26,6 @@
       <td>Larry</td>
       <td>the Bird</td>
       <td>@twitter</td>
-    </tr>
+    </tr> -->
   </tbody>
 </table>

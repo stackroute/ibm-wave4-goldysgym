@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProgramService } from '../program.service';
 
 @Component({
   selector: 'app-summary-page',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SummaryPageComponent implements OnInit {
 
-  constructor() { }
+  programs: any;
+
+  constructor(private programService: ProgramService) { }
 
   ngOnInit() {
+    this.getPrograms();
   }
+
+  getPrograms() {
+    this.programService.getPrograms().subscribe((x) => {
+      this.programs = x
+      console.log(this.programs)
+    });
+  }
+
 
 }
