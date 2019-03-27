@@ -1,0 +1,12 @@
+<div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+  <a [ngClass]="{ 'nav-link': true, 'active': tf[0] }" id="v-pills-home-tab" data-toggle="pill" routerLink="/admin/summary"
+    role="tab" aria-controls="v-pills-home" aria-selected="false" (click)="tfToggle(0)">Summary</a>
+  <a [ngClass]="{ 'nav-link': true, 'active': tf[1] }" id="v-pills-home-tab" data-toggle="pill" routerLink="/admin/add-prog"
+    role="tab" aria-controls="v-pills-home" aria-selected="false" (click)="tfToggle(1)">Add program</a>
+  <a [ngClass]="{ 'nav-link': true, 'active': tf[2] }" id="v-pills-profile-tab" data-toggle="pill" routerLink="/admin/edit-prog"
+    role="tab" aria-controls="v-pills-profile" aria-selected="false" (click)="tfToggle(2)">Edit programs</a>
+  <a [ngClass]="{ 'nav-link': true, 'active': tf[3] }" id="v-pills-messages-tab" data-toggle="pill" routerLink="/admin/add-subs"
+    role="tab" aria-controls="v-pills-messages" aria-selected="false" (click)="tfToggle(3)">Add subscriptions</a>
+  <a [ngClass]="{ 'nav-link': true, 'active': tf[4] }" id="v-pills-settings-tab" data-toggle="pill" routerLink="/admin/edit-subs"
+    role="tab" aria-controls="v-pills-settings" aria-selected="false" (click)="tfToggle(4)">Edit subscriptions</a>
+</div>
