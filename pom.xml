@@ -6,7 +6,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.stackroute</groupId>
-	<artifactId>oracle</artifactId>
+	<artifactId>goldy-gym</artifactId>
 	<version>1.0.0</version>
 	<packaging>pom</packaging>
 
@@ -31,6 +31,7 @@
 		<module>config-server</module>
 		<module>eureka-server</module>
 		<module>zuul-api</module>
+		<module>enrollment</module>
 	</modules>
 
 	<dependencies>

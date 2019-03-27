@@ -1,6 +1,15 @@
 version: '2'
 
 services:
+  mongo:
+    image: mongo:3.4-jessie
+    ports:
+      - 27017:27017
+    expose:
+      - 27017
+    container_name: mongo1
+    network_mode: host
+
   eureka-server:
     build: eureka-server/
     restart: always
@@ -30,3 +39,11 @@ services:
     hostname: localhost
     ports:
       - 8080:8080
+
+ enrollment:
+  build: enrollment/
+  restart: always
+  network_mode: "host"
+  hostname: localhost
+  ports:
+    - 8091:8091

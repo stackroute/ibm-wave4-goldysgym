@@ -1,4 +1,4 @@
-package com.stackroute.zuulapi.pre;
+package com.stackroute.enrollment.zuulapi.pre;
 
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
