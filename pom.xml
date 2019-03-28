@@ -32,6 +32,7 @@
 		<module>eureka-server</module>
 		<module>zuul-api</module>
 		<module>enrollment</module>
+		<module>admin-service</module>
 	</modules>
 
 	<dependencies>
