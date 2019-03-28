@@ -45,3 +45,11 @@ services:
     hostname: localhost
     ports:
       - 8091:8091
+
+  admin-service:
+    build: admin-service/
+    restart: always
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - 9001:9001
