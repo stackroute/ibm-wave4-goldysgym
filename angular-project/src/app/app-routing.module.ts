@@ -6,9 +6,14 @@ import { AddProgramsComponent } from './add-programs/add-programs.component';
 import { EditProgramsComponent } from './edit-programs/edit-programs.component';
 import { SummaryPageComponent } from './summary-page/summary-page.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { SignupComponent } from './signup/signup.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
 
+
+  {path: "signup", component:SignupComponent},
+  {path: "login", component:LoginComponent},
   {
     // admin page routes 
     path: 'admin', component: AdminDashboardComponent, children: [

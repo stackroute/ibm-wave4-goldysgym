@@ -11,6 +11,21 @@ services:
     container_name: mongo2
     network_mode: host
 
+  db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'jwtdb'
+      # So you don't have to use root, but you can if you like
+      MYSQL_USER: 'root'
+      # You can use whatever password you like
+      MYSQL_PASSWORD: '@Saubi1616#'
+      # Password for root access
+      MYSQL_ROOT_PASSWORD: 'Root@123'
+    ports:
+      # <Port exposed> : < MySQL Port running inside container>
+      - 3306:3306
+
   eureka-server:
     build: eureka-server/
     restart: always
@@ -53,3 +68,12 @@ services:
     hostname: localhost
     ports:
       - 9001:9001
+
+
+  jwtfirst:
+    build: jwtfirst/
+    restart: always
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - 9002:9002
