@@ -2,10 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from  '@angular/common/http'; 
 import { FormsModule } from '@angular/forms';
-<<<<<<< HEAD
-=======
-
->>>>>>> d82c8b2792fbc32176a2162129d8fdc1bc0ed1eb
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -39,10 +35,6 @@ import { LoginComponent } from './login/login.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-<<<<<<< HEAD
-   
-=======
->>>>>>> d82c8b2792fbc32176a2162129d8fdc1bc0ed1eb
   ],
   providers: [],
   bootstrap: [AppComponent]
