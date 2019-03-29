@@ -21,7 +21,6 @@ public class PreLoginController {
     @PostMapping(value = "/registration")
     public ResponseEntity<Response> registration(@RequestBody User user) {
        user.setRole("USER");
-//        System.out.println(user.getRole());
         User dbUser = userService.save(user);
 
         if (dbUser != null) {
