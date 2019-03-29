@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   // dbUrlOut: "http://localhost:3000/programs/"
-  dbUrlOut: "http://172.23.239.157:8080/admin/api/v1/programs"
+  dbUrlOut: "http://localhost:8080/admin/api/v1/programs"
 };
 
 /*
