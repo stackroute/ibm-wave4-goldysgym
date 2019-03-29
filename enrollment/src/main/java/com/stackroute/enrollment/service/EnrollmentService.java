@@ -30,5 +30,7 @@ private EnrollmentRepository enrollmentRepository;
     public List<Enrollment> getALLRest(){
         return (List<Enrollment>)enrollmentRepository.findAll();
     }
-
+    public Enrollment findbyId(String id) {
+        return enrollmentRepository.findById(id).get();
+    }
 }
