@@ -22,7 +22,7 @@ export class ProgramService {
     return this.http.get(environment.dbUrlOut);
   }
   getProgramDetails(){
-    return this.http.get(" http://localhost:3000/programs");
+    return this.http.get(" http://localhost:9001/api/v1/programs");
   }
   getSubscriptionDetails(){
     return this.http.get("http://localhost:3000/subscriptions");

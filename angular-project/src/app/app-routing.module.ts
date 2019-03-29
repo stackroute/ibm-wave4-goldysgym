@@ -6,12 +6,9 @@ import { AddProgramsComponent } from './add-programs/add-programs.component';
 import { EditProgramsComponent } from './edit-programs/edit-programs.component';
 import { SummaryPageComponent } from './summary-page/summary-page.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
-<<<<<<< HEAD
 import { HomecomponentComponent } from './homecomponent/homecomponent.component';
-=======
 import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
->>>>>>> d81f70582e5571647136b469344c254adc9743e2
 
 const routes: Routes = [
 

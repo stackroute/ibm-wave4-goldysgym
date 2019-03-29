@@ -12,17 +12,14 @@ import { EditProgramsComponent } from './edit-programs/edit-programs.component';
 import { EditSubscriptionsComponent } from './edit-subscriptions/edit-subscriptions.component';
 import { SummaryPageComponent } from './summary-page/summary-page.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
-<<<<<<< HEAD
 import { HomecomponentComponent } from './homecomponent/homecomponent.component';
 import { HerobannerComponent } from './herobanner/herobanner.component';
 import { ProgramsComponent } from './programs/programs.component';
 import { SubscriptionComponent } from './subscription/subscription.component';
 import { ProgramService } from './program.service';
 import { FooterComponent } from './footer/footer.component';
-=======
 import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
->>>>>>> d81f70582e5571647136b469344c254adc9743e2
 
 @NgModule({
   declarations: [
@@ -35,23 +32,20 @@ import { LoginComponent } from './login/login.component';
     EditSubscriptionsComponent,
     SummaryPageComponent,
     AdminDashboardComponent,
-<<<<<<< HEAD
     HomecomponentComponent,
     HerobannerComponent,
     ProgramsComponent,
     SubscriptionComponent,
-    FooterComponent
-=======
+    FooterComponent,
     SignupComponent,
-    LoginComponent,
+    LoginComponent
     
->>>>>>> d81f70582e5571647136b469344c254adc9743e2
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule,
+    FormsModule
   ],
   providers: [ProgramService],
   bootstrap: [AppComponent]
