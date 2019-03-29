@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginAuthService } from '../login-auth.service';
+import { Router } from '@angular/router'; 
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  public currentstatus: any;
+
+  constructor(private authService: LoginAuthService,private router:Router) {
+    this.currentstatus = this.authService.getStatus().subscribe(currentstatus =>{
+      this.currentstatus  = currentstatus;
+    })
+   }
+   logout(){
+     localStorage.removeItem('currentUser');
+     this.router.navigate(['login']);
+
+   }
 
   ngOnInit() {
   }
+
 
 }

@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from  '@angular/common/http'; 
 import { FormsModule } from '@angular/forms';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -13,12 +12,17 @@ import { EditProgramsComponent } from './edit-programs/edit-programs.component';
 import { EditSubscriptionsComponent } from './edit-subscriptions/edit-subscriptions.component';
 import { SummaryPageComponent } from './summary-page/summary-page.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+<<<<<<< HEAD
 import { HomecomponentComponent } from './homecomponent/homecomponent.component';
 import { HerobannerComponent } from './herobanner/herobanner.component';
 import { ProgramsComponent } from './programs/programs.component';
 import { SubscriptionComponent } from './subscription/subscription.component';
 import { ProgramService } from './program.service';
 import { FooterComponent } from './footer/footer.component';
+=======
+import { SignupComponent } from './signup/signup.component';
+import { LoginComponent } from './login/login.component';
+>>>>>>> d81f70582e5571647136b469344c254adc9743e2
 
 @NgModule({
   declarations: [
@@ -31,11 +35,17 @@ import { FooterComponent } from './footer/footer.component';
     EditSubscriptionsComponent,
     SummaryPageComponent,
     AdminDashboardComponent,
+<<<<<<< HEAD
     HomecomponentComponent,
     HerobannerComponent,
     ProgramsComponent,
     SubscriptionComponent,
     FooterComponent
+=======
+    SignupComponent,
+    LoginComponent,
+    
+>>>>>>> d81f70582e5571647136b469344c254adc9743e2
   ],
   imports: [
     BrowserModule,
