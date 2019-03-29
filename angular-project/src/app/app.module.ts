@@ -13,6 +13,12 @@ import { EditProgramsComponent } from './edit-programs/edit-programs.component';
 import { EditSubscriptionsComponent } from './edit-subscriptions/edit-subscriptions.component';
 import { SummaryPageComponent } from './summary-page/summary-page.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { HomecomponentComponent } from './homecomponent/homecomponent.component';
+import { HerobannerComponent } from './herobanner/herobanner.component';
+import { ProgramsComponent } from './programs/programs.component';
+import { SubscriptionComponent } from './subscription/subscription.component';
+import { ProgramService } from './program.service';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +30,12 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
     EditProgramsComponent,
     EditSubscriptionsComponent,
     SummaryPageComponent,
-    AdminDashboardComponent
+    AdminDashboardComponent,
+    HomecomponentComponent,
+    HerobannerComponent,
+    ProgramsComponent,
+    SubscriptionComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +43,7 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
     HttpClientModule,
     FormsModule,
   ],
-  providers: [],
+  providers: [ProgramService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

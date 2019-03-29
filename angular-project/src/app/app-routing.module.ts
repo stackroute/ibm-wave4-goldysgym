@@ -6,6 +6,7 @@ import { AddProgramsComponent } from './add-programs/add-programs.component';
 import { EditProgramsComponent } from './edit-programs/edit-programs.component';
 import { SummaryPageComponent } from './summary-page/summary-page.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { HomecomponentComponent } from './homecomponent/homecomponent.component';
 
 const routes: Routes = [
 
@@ -20,10 +21,11 @@ const routes: Routes = [
       { path: '', redirectTo: '/admin/summary', pathMatch: 'full' }
     ]
   },
-  
-  // default route
-  { path: '*', redirectTo: '/', pathMatch: 'full' }
-  
+   // default route
+   { path: '**', redirectTo: '/home', pathMatch: 'full' },
+
+   { path: 'home', component: HomecomponentComponent},
+   
 ];
 
 @NgModule({
