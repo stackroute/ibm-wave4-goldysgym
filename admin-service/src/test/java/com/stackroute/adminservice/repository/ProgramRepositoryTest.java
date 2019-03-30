@@ -42,34 +42,34 @@ public class ProgramRepositoryTest {
         programRepository.deleteAll();
     }
 
-
-    @Test
-    public void testSaveProgram() {
-        programRepository.save(program);
-        Program fetchProgram = programRepository.findById(program.getProgramId()).get();
-        Assert.assertEquals("1", fetchProgram.getProgramId());
-
-    }
-
-    @Test
-    public void testSaveProgramFailure() {
-        Program testProgram = new Program("2", "Zumba", "Saturday", "Evening", "fhfh", "hjhh", "Rohan", "fdfd", 20);
-        programRepository.save(program);
-        Program fetchProgram = programRepository.findById(program.getProgramId()).get();
-        Assert.assertNotSame(testProgram, program);
-    }
-
-    @Test
-    public void testGetAllProgram() {
-        Program testProgram = new Program("2", "Zumba", "Saturday", "Evening", "fhfh", "hjhh", "Rohan", "fdfd", 20);
-        Program testProgram1 = new Program("3", "Zumba", "Sunday", "Evening", "fhfh", "hjhh", "Rohit", "fdfd", 25);
-        programRepository.save(testProgram);
-        programRepository.save(testProgram1);
-
-        List<Program> list = programRepository.findAll();
-        Assert.assertEquals("Zumba", list.get(0).getProgramName());
-
-
-    }
+//
+//    @Test
+//    public void testSaveProgram() {
+//        programRepository.save(program);
+//        Program fetchProgram = programRepository.findById(program.getProgramId()).get();
+//        Assert.assertEquals("1", fetchProgram.getProgramId());
+//
+//    }
+//
+//    @Test
+//    public void testSaveProgramFailure() {
+//        Program testProgram = new Program("2", "Zumba", "Saturday", "Evening", "fhfh", "hjhh", "Rohan", "fdfd", 20);
+//        programRepository.save(program);
+//        Program fetchProgram = programRepository.findById(program.getProgramId()).get();
+//        Assert.assertNotSame(testProgram, program);
+//    }
+//
+//    @Test
+//    public void testGetAllProgram() {
+//        Program testProgram = new Program("2", "Zumba", "Saturday", "Evening", "fhfh", "hjhh", "Rohan", "fdfd", 20);
+//        Program testProgram1 = new Program("3", "Zumba", "Sunday", "Evening", "fhfh", "hjhh", "Rohit", "fdfd", 25);
+//        programRepository.save(testProgram);
+//        programRepository.save(testProgram1);
+//
+//        List<Program> list = programRepository.findAll();
+//        Assert.assertEquals("Zumba", list.get(0).getProgramName());
+//
+//
+//    }
 
 }
