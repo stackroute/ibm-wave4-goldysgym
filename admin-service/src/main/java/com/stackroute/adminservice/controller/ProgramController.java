@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
+import javax.naming.ldap.PagedResultsControl;
 import java.util.List;
 
 @RestController
@@ -32,6 +33,13 @@ public class ProgramController {
         List<Program> allPrograms = programService.getAllPrograms();
         return new ResponseEntity<List<Program>>(allPrograms, HttpStatus.OK);
     }
+
+    @GetMapping("/programs/{programId}")
+    public ResponseEntity<Program> getProgramsById(@PathVariable String programId){
+        Program programById=programService.getProgramById(programId);
+        return new ResponseEntity<Program>(programById,HttpStatus.FOUND);
+    }
+
 
     @PutMapping("/programs/")
     public ResponseEntity<Program> updateProgram(@RequestBody Program program) {
