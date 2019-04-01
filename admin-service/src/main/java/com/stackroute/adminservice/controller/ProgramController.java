@@ -37,7 +37,7 @@ public class ProgramController {
     @GetMapping("/programs/{programId}")
     public ResponseEntity<Program> getProgramsById(@PathVariable String programId){
         Program programById=programService.getProgramById(programId);
-        return new ResponseEntity<Program>(programById,HttpStatus.FOUND);
+        return new ResponseEntity<Program>(programById,HttpStatus.OK);
     }
 
 

@@ -20,6 +20,7 @@ import { ProgramService } from './program.service';
 import { FooterComponent } from './footer/footer.component';
 import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
+import { ProgramDetailsComponent } from './program-details/program-details.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { LoginComponent } from './login/login.component';
     SubscriptionComponent,
     FooterComponent,
     SignupComponent,
-    LoginComponent
+    LoginComponent,
+    ProgramDetailsComponent
     
   ],
   imports: [

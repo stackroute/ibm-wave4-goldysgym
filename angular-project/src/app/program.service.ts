@@ -21,9 +21,14 @@ export class ProgramService {
   getPrograms() {
     return this.http.get(environment.dbUrlOut);
   }
-  getProgramDetails(){
+  getProgramDetails1(){
     return this.http.get(" http://localhost:9001/api/v1/programs");
   }
+  getProgramDetails(id){
+    
+    return this.http.get(`http://localhost:9001/api/v1/programs/${id}`);
+  }
+
   getSubscriptionDetails(){
     return this.http.get("http://localhost:3000/subscriptions");
   }
