@@ -18,7 +18,7 @@ public class ProgramServiceImpl implements ProgramService {
 
     @Override
     public Program saveProgram(Program program) {
-        return(programRepository.save(program));
+        return (programRepository.save(program));
     }
 
     @Override
@@ -27,8 +27,13 @@ public class ProgramServiceImpl implements ProgramService {
     }
 
     @Override
+    public Program getProgramById(String programId) {
+        return programRepository.findById(programId).get();
+    }
+
+    @Override
     public Program updateProgram(Program program) {
-        return(programRepository.save(program));
+        return (programRepository.save(program));
     }
 
     @Override

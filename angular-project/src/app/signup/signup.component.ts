@@ -11,8 +11,6 @@ import { NgForm } from '@angular/forms';
 export class SignupComponent implements OnInit {
 
   public user: any = {};  
-  isValidFormSubmitted = false;
-
   constructor(private userService: UserService,private authService: LoginAuthService) {
      this.authService.isLoggedIn();
    }
@@ -20,6 +18,7 @@ export class SignupComponent implements OnInit {
   ngOnInit() {  
   }
   showMsg: boolean = false;
+  errorMsg: boolean = false;
   saveUser(user:any,userForm:any){
     
     user.enabled = true;
@@ -29,6 +28,7 @@ export class SignupComponent implements OnInit {
           userForm.reset();
           this.showMsg= true;
         }
+      
     })
   }
 

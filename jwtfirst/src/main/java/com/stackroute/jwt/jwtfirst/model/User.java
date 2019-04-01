@@ -5,11 +5,11 @@ import java.io.Serializable;
 import java.util.Date;
 
 @Entity
-@Table(name = "user")
+@Table(name = "User")
 public class User implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private long id;
     @Column(name = "firstName")
@@ -17,19 +17,35 @@ public class User implements Serializable {
     @Column(name = "lastName")
     private String lastName;
     @Column(name = "email")
-    private  String email;
+    private String email;
     @Column(name = "password")
     private String password;
     @Column(name = "confirmPassword")
     private String cnfpassword;
-    @Column(name = "enable")
-    private  boolean enabled;
+    @Column(name = "active")
+    private boolean enabled;
     @Column(name = "role")
     private String role;
-    @Column(name = "phoneNumber")
-    private String phonenumber;
-    @Column(name = "date")
-    private Date date;
+   // @Column(name = "phoneNumber")
+    //private String phonenumber;
+    @Column(name = "regdate")
+    private Date regdate;
+
+    public User(long id, String firstName, String lastName, String email, String password, String cnfpassword, boolean enabled, String role,  Date regdate) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.password = password;
+        this.cnfpassword = cnfpassword;
+        this.enabled = enabled;
+        this.role = role;
+       // this.phonenumber = phonenumber;
+        this.regdate = regdate;
+    }
+
+    public User() {
+    }
 
     public long getId() {
         return id;
@@ -71,17 +87,20 @@ public class User implements Serializable {
         this.password = password;
     }
 
-    public String getCnfpassword() { return cnfpassword; }
+    public String getCnfpassword() {
+        return cnfpassword;
+    }
 
-    public void setCnfpassword(String cnfpassword) { this.cnfpassword = cnfpassword; }
-
+    public void setCnfpassword(String cnfpassword) {
+        this.cnfpassword = cnfpassword;
+    }
 
     public boolean isEnabled() {
         return enabled;
     }
 
-    public void setEnabled(boolean enabled) {
-        this.enabled = enabled;
+    public void setActive(boolean active) {
+        this.enabled = active;
     }
 
     public String getRole() {
@@ -91,36 +110,23 @@ public class User implements Serializable {
     public void setRole(String role) {
         this.role = role;
     }
+//    public String getPhonenumber() {
+//        return phonenumber;
+//    }
+//
+//    public void setPhonenumber(String phonenumber) {
+//        this.phonenumber = phonenumber;
+//    }
 
-    public String getPhonenumber() {
-        return phonenumber;
+    public Date getRegdate() {
+        return regdate;
     }
 
-    public void setPhonenumber(String phonenumber) {
-        this.phonenumber = phonenumber;
+    public void setRegdate(Date regdate) {
+        this.regdate = regdate;
     }
 
-    public Date getDate() {
-        return date;
-    }
 
-    public void setDate(Date date) {
-        this.date = date;
-    }
-
-    public User(long id, String firstName, String lastName, String email, String password, String cnfpassword,boolean enabled, String role, String phonenumber, Date date) {
-        this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.password = password;
-        this.cnfpassword = cnfpassword;
-        this.enabled = enabled;
-        this.role = role;
-        this.phonenumber = phonenumber;
-        this.date = date;
-    }
-
-    public User() {
-    }
 }
+
+

@@ -24,7 +24,7 @@ public class UserServiceImpl implements UserService{
 
         String password = PasswordUtil.getPasswordHash(user.getPassword());
         user.setPassword(password);
-        user.setDate(new Date());
+        user.setRegdate(new Date());
         return userRepository.save(user);
     }
 

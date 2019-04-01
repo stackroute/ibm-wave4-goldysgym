@@ -13,30 +13,56 @@
       "postId": 1
     }
   ],
+  "subscriptions":[
+    {
+      "id":1,
+      "name":"Gold",
+      "subscriptionDescription":"This is subscription",
+      "img":"../../assets/images/pack-1.jpg"
+    },
+    {
+      "id":2,
+      "name":"Silver",
+      "subscriptionDescription":"This is subscription",
+      "img":"../../assets/images/pack-2.jpg"
+    },
+    {
+      "id":1,
+      "name":"Bronze",
+      "subscriptionDescription":"This is subscription",
+      "img":"../../assets/images/pack-3.jpg"
+    },
+    {
+      "id":1,
+      "name":"Basic",
+      "subscriptionDescription":"This is subscription",
+      "img":"../../assets/images/pack-1.jpg"
+    }
+  ],
   "programs": [
     {
       "id": 1,
       "name": "HRX",
       "programDescription": "this is HRX",
-      "img": "../../assets/images/5b97f9b88a88a54a03fe0c17.webp"
+      "img": "../../assets/images/a3.jpg"
     },
     {
       "id": 2,
       "name": "S&C",
       "programDescription": "this is S&C",
-      "img": "../../assets/images/5b9808f1ddda534faee8f438.webp"
+      "img": "../../assets/images/a6.jpg"
     },
     {
       "id": 3,
       "name": "Boxing",
       "programDescription": "this is Boxing",
-      "img": "../../assets/images/Boxing@1x.webp"
+      "img": "../../assets/images/a7.jpg"
     },
     {
       "id": 4,
       "name": "Yoga",
       "programDescription": "this is Yoga",
-      "img": "../../assets/images/yoga@1x.webp"
+      "img": "../../assets/images/a9.jpg"
     }
   ],
   "profile": {
