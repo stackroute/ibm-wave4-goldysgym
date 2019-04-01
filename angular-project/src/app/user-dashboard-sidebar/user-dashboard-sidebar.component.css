@@ -1,0 +1,8 @@
+.nav-pills .nav-link.active{
+    background-color: #222222;
+}
+
+div {
+    border-right : 1px solid rgb(168, 168, 180);
+    height: 100%;
+}

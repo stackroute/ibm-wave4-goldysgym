@@ -29,7 +29,12 @@ export class SignupComponent implements OnInit {
           this.showMsg= true;
         }
       
-    })
+    }
+    ,
+  (error:any)=>{
+    console.warn(error);
+    this.errorMsg = true;
+  })
   }
 
 }

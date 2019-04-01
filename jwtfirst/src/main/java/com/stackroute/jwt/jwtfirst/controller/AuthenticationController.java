@@ -35,7 +35,7 @@ public class AuthenticationController {
 
 
     @PostMapping(value = "/login")
-    public ResponseEntity<UserDTO> login(@RequestBody User user, HttpServletRequest request, HttpServletResponse response) {
+    public ResponseEntity<?> login(@RequestBody User user, HttpServletRequest request, HttpServletResponse response) {
         try {
             Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(user.getEmail(), user.getPassword()));
             final JwtUser userDetails = (JwtUser) authentication.getPrincipal();
@@ -47,7 +47,7 @@ public class AuthenticationController {
 
         } catch (Exception e) {
 
-            throw new UnauthorizedException(e.getMessage());
+            return new ResponseEntity<String>("email id or password is worng ", HttpStatus.CONFLICT);
         }
 
     }
