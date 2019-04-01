@@ -32,4 +32,7 @@ export class UserService {
     return this.http.get("http://localhost:9002/getuser ",{headers:headers});
 
   }
+  getUserDetails() {
+    return this.http.get("http://localhost:8091/enrollments");
+  }
 }
