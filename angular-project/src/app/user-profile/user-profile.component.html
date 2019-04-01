@@ -1,0 +1,30 @@
+
+
+<div class="container" *ngFor="let userlogin of arrayUser" >  
+  <h1>Details</h1>        
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>{{userlogin.firstName}} {{userlogin.lastName}}</th>
+    </tr>
+    <tr>
+      <th>Email Id</th>
+      <th>{{userlogin.email}}</th>
+    </tr>
+    <tr>
+      <th>Age</th>
+      <th>{{userlogin.age}} years</th>
+    </tr>
+    <tr>
+        <th>Weight</th>
+        <th>{{userlogin.weight}} kgs</th>
+      </tr>
+      <tr>
+          <th>Height</th>
+          <th>{{userlogin.height}} cm</th>
+      </tr>
+  </thead>  
+</table>
+<button type="button" class="btn btn-primary">Edit Details</button>
+</div>
