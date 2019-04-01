@@ -1,28 +1,28 @@
 
 
-<div class="container" >  
+<div class="container" *ngFor="let userlogin of arrayUser" >  
   <h1>Details</h1>        
 <table class="table table-hover">
   <thead>
     <tr>
       <th>Name</th>
-      <th>{{arrayUser.Name}}</th>
+      <th>{{userlogin.firstName}} {{userlogin.lastName}}</th>
     </tr>
     <tr>
       <th>Email Id</th>
-      <th>{{arrayUser.Email}}</th>
+      <th>{{userlogin.email}}</th>
     </tr>
     <tr>
       <th>Age</th>
-      <th>{{arrayUser.Age}}</th>
+      <th>{{userlogin.age}} years</th>
     </tr>
     <tr>
         <th>Weight</th>
-        <th>{{arrayUser.Weight}}</th>
+        <th>{{userlogin.weight}} kgs</th>
       </tr>
       <tr>
           <th>Height</th>
-          <th>{{arrayUser.Height}}</th>
+          <th>{{userlogin.height}} cm</th>
       </tr>
   </thead>  
 </table>

@@ -1,1 +1,33 @@
-<h2>My Subscriptions</h2>
+
+<div class="container" *ngFor="let subscription of arraySubscriptions" >  
+    <h1>My Subscriptions</h1>        
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>{{subscription.firstName}} {{subscription.lastName}}</th>
+      </tr>
+      <tr>
+        <th>Subscription Name</th>
+        <th>{{subscription.enrollmentName}}</th>
+      </tr>
+      <tr>
+        <th>Pricing</th>
+        <th>{{subscription.price}}</th>
+      </tr>
+      <tr>
+        <th>Start Date</th>
+        <th>{{subscription.startDate}}</th>
+      </tr>
+      <tr>
+          <th>End Date</th>
+          <th>{{subscription.endDate}}</th>
+        </tr>
+        <tr>
+            <th>Duration</th>
+            <th>{{subscription.duration}}</th>
+        </tr>
+    </thead>  
+  </table>
+  </div>
+  

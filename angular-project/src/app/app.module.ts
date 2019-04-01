@@ -26,6 +26,7 @@ import { FollowGymatesComponent } from './follow-gymates/follow-gymates.componen
 import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserSubscriptionsComponent } from './user-subscriptions/user-subscriptions.component';
+import { ProgramDetailsComponent } from './program-details/program-details.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { UserSubscriptionsComponent } from './user-subscriptions/user-subscripti
     FollowGymatesComponent,
     LeaderboardComponent,
     UserProfileComponent,
-    UserSubscriptionsComponent
+    UserSubscriptionsComponent,
+    ProgramDetailsComponent
     
   ],
   imports: [

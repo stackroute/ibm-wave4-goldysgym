@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AddSubscriptionsComponent } from './add-subscriptions/add-subscriptions.component';
 import { EditSubscriptionsComponent } from './edit-subscriptions/edit-subscriptions.component';
@@ -15,10 +15,11 @@ import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { ProgramsComponent } from './programs/programs.component';
 import { UserSubscriptionsComponent } from './user-subscriptions/user-subscriptions.component';
+import { ProgramDetailsComponent } from './program-details/program-details.component';
 
 const routes: Routes = [
 
-
+  {path:'prog-details/:id',component: ProgramDetailsComponent},
   {path: "signup", component:SignupComponent},
   {path: "login", component:LoginComponent},
   {
@@ -43,7 +44,6 @@ const routes: Routes = [
   ]},
    // default route
    { path: '**', redirectTo: '/home', pathMatch: 'full' },
-
    { path: 'home', component: HomecomponentComponent},
    
 ];
