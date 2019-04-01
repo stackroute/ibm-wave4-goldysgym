@@ -6,4 +6,6 @@ cache:
 after_success:
   - bash <(curl -s https://codecov.io/bash)
 script:
-  - echo "skipping tests"
+  - mvn clean package -DskipTests=true
+
+
