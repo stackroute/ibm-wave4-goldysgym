@@ -33,4 +33,8 @@ private EnrollmentRepository enrollmentRepository;
     public Enrollment findbyId(String id) {
         return enrollmentRepository.findById(id).get();
     }
+    public void delete(String id)
+    {
+        enrollmentRepository.deleteById(id);
+    }
 }

@@ -15,6 +15,7 @@ public class Enrollment
     String firstName;
     String lastName;
     String email;
+    String password;
     int age;
     String gender;
     Double Height;
@@ -26,6 +27,14 @@ public class Enrollment
     LocalDate endDate;
 
     public Enrollment() {
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getUserId() {
