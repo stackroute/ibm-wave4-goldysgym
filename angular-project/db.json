@@ -1,0 +1,79 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "users":
+    { 
+      "Name":"Yash Chaddha",
+      "Age":"50",
+      "Email":"yash.chaddha1997@gmail.com",
+      "Weight":"60",
+      "Height":"160"
+    },
+  "subscriptions":[
+    {
+      "id":1,
+      "name":"Gold",
+      "subscriptionDescription":"This is subscription",
+      "img":"../../assets/images/pack-1.jpg"
+    },
+    {
+      "id":2,
+      "name":"Silver",
+      "subscriptionDescription":"This is subscription",
+      "img":"../../assets/images/pack-2.jpg"
+    },
+    {
+      "id":1,
+      "name":"Bronze",
+      "subscriptionDescription":"This is subscription",
+      "img":"../../assets/images/pack-3.jpg"
+    },
+    {
+      "id":1,
+      "name":"Basic",
+      "subscriptionDescription":"This is subscription",
+      "img":"../../assets/images/pack-1.jpg"
+    }
+  ],
+  "programs": [
+    {
+      "id": 1,
+      "name": "HRX",
+      "programDescription": "this is HRX",
+      "img": "../../assets/images/a3.jpg"
+    },
+    {
+      "id": 2,
+      "name": "S&C",
+      "programDescription": "this is S&C",
+      "img": "../../assets/images/a6.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Boxing",
+      "programDescription": "this is Boxing",
+      "img": "../../assets/images/a7.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Yoga",
+      "programDescription": "this is Yoga",
+      "img": "../../assets/images/a9.jpg"
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

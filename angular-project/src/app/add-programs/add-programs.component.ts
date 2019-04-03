@@ -1,0 +1,34 @@
+import { Component, OnInit } from '@angular/core';
+import { ProgramService } from '../program.service';
+
+@Component({
+  selector: 'app-add-programs',
+  templateUrl: './add-programs.component.html',
+  styleUrls: ['./add-programs.component.css']
+})
+export class AddProgramsComponent implements OnInit {
+
+  constructor(private programService: ProgramService) { }
+// data: any;
+  ngOnInit() {
+    // this.putProgram(this.data);
+  }
+
+  putProgram(data) {
+    let newData = {
+      "programName": data.pname,
+      "day": data.inputday,
+      "timing": data.checkbox1,
+      "imageUrl": data.imageUrl,
+      "programDescription": data.description,
+      "trainerName": data.tname,
+      "trainerDescription": data.tdescription,
+      "totalSeats": data.seats
+    }
+    this.programService.putProgram(newData).subscribe((x) => {
+      // this.data = x
+      console.log(data)
+    });
+  }
+
+}

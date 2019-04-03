@@ -1,6 +1,33 @@
 version: '2'
 
 services:
+
+  mongo:
+    image: mongo:3.4-jessie
+    ports:
+      - 27017:27017
+    expose:
+      - 27017
+    container_name: mongo2
+    network_mode: host
+
+  db:
+    image: mysql:5.7
+    restart: always
+    container_name: mysql
+    network_mode: "host"
+    hostname: localhost
+    volumes:
+      - '/mysql-volume:/var/lib/mysql'
+    environment:
+      MYSQL_DATABASE: jwtdb
+      # So you don't have to use root, but you can if you like
+      # Password for root access
+      MYSQL_ROOT_PASSWORD: Root@123
+    ports:
+      # <Port exposed> : < MySQL Port running inside container>
+      - 3306:3306
+
   eureka-server:
     build: eureka-server/
     restart: always
@@ -13,7 +40,6 @@ services:
     build: config-server/
     restart: always
     network_mode: "host"
-    image: demo-config-service
     hostname: localhost
     ports:
       - 8888:8888
@@ -23,10 +49,47 @@ services:
     depends_on:
       - config-service
       - eureka-server
-      - music-service
-      - user-service
     restart: always
     network_mode: "host"
     hostname: localhost
     ports:
       - 8080:8080
+
+  enrollment:
+    build: enrollment/
+    restart: always
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - 8091:8091
+
+  admin-service:
+    build: admin-service/
+    restart: always
+    network_mode: "host"
+    hostname: localhost
+    depends_on:
+      - config-service
+      - eureka-server
+      - db
+    ports:
+      - 9001:9001
+
+
+  jwtfirst:
+    build: jwtfirst/
+    restart: always
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - 9002:9002
+
+
+  rabbitmq:
+    image: "rabbitmq:3-management"
+    hostname: "rabbit"
+    ports:
+       - "15672:15672"
+       - "5672:5672"
+    labels:
+       NAME: "rabbitmq"

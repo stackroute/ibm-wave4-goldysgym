@@ -1,0 +1,104 @@
+<div>
+        <div class="row d-flex justify-content-center" *ngIf="showMsg">
+                <div class="col-lg-6">
+                        <p class="alert alert-success text-center">
+                                <strong>Registration Success!</strong>
+                        </p>
+                </div>
+        </div>
+
+        <div class="row d-flex justify-content-center" *ngIf="errorMsg">
+                <div class="col-lg-6">
+                        <p class="alert alert-info text-center">
+                                <strong>Email already exists</strong>
+                        </p>
+                </div>
+        </div>
+
+        <form name="signup" #userForm="ngForm" class="mt-2" novalidate (ngSubmit)="saveUser(user, userForm)">
+                <div class="container col-lg-3 border border-info rounded bg-light box">
+                        <div class="text-center header">
+                                <h1>Signup Here</h1>
+                                <hr />
+                        </div>
+                        <div class="form-group">
+                                <label for="firstName"><i class="icon-user"> Firstname</i></label>
+                                <input type="text" #fname="ngModel" pattern="^[A-Za-z_-]{3,15}$"
+                                        [class.is-invalid]="fname.invalid && fname.touched" class="form-control"
+                                        id="firstName" [(ngModel)]="user.firstName" name="firstName"
+                                        placeholder="firstname" required />
+                                <div *ngIf="fname.errors?.pattern" class="alert alert-danger">
+                                        Firstname must be atleast 3 character .
+                                </div>
+                        </div>
+
+                        <div class="form-group">
+                                <label for="lastName"><i class="icon-user"> Lastname</i></label>
+                                <input type="text" #lname="ngModel" [class.is-invalid]="lname.invalid && lname.touched"
+                                        class="form-control" id="lastName" [(ngModel)]="user.lastName" name="lastName"
+                                        placeholder="lastname" required />
+                        </div>
+
+                        <div class="form-group">
+                                <label for="email"><i class="icon-envelope"> Email</i></label>
+                                <input type="email" #emailref="ngModel"
+                                        pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[A-Za-z]{2,3}$" class="form-control"
+                                        id="email" [(ngModel)]="user.email" name="email" placeholder="email" required />
+                                <div *ngIf="emailref.errors && (emailref.touched || emailref.dirty)"
+                                        class="alert alert-danger">
+                                        <div *ngIf="emailref.errors.required">
+                                                Email required.
+                                        </div>
+                                        <div [hidden]="!emailref.errors?.pattern">
+                                                Invalid pattern, must conatin _@_._
+                                        </div>
+                                </div>
+                        </div>
+
+                        <div class="form-group">
+                                <label for="password"><i class="icon-shield"> Password</i></label>
+                                <input type="password" #pwd="ngModel"
+                                        pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).{6,12}$" class="form-control"
+                                        id="password" [(ngModel)]="user.password" name="password" placeholder="password"
+                                        required />
+                                <div *ngIf="pwd.errors && (pwd.touched || pwd.dirty)" class="alert alert-danger">
+                                        <div *ngIf="pwd.errors.required">
+                                                Password required.
+                                        </div>
+                                        <div *ngIf="pwd.errors.pattern">
+                                                <small>
+                                                        Password should be alphanumeric with capital and small letters
+                                                        and
+                                                        atleast 6 character.</small>
+                                        </div>
+                                </div>
+                        </div>
+                        <div class="form-group">
+                                <label for="confirmpassword"><i class="icon-shield"> Confirm Password</i></label>
+                                <input type="password" #confirmpassword="ngModel" pattern="{{ pwd.value }}"
+                                        class="form-control" id="confirmpassword" [(ngModel)]="user.cnfpassword"
+                                        name="confirmpassword" placeholder="confirm password" required />
+                                <div *ngIf="
+            confirmpassword.invalid &&
+            (confirmpassword.dirty || confirmpassword.touched)
+          " class="alert alert-danger">
+                                        <div *ngIf="confirmpassword.errors.required">
+                                                Confirm password is required.
+                                        </div>
+                                        <div *ngIf="confirmpassword.errors.pattern">
+                                                Password & Confirm Password does not match.
+                                        </div>
+                                </div>
+                        </div>
+
+                        <div class="form-group">
+                                <button type="button" class="btn btn-primary" [disabled]="userForm.invalid"
+                                        (click)="saveUser(user, userForm)">
+                                        SignUp
+                                </button>
+
+
+                        </div>
+                </div>
+        </form>
+</div>
