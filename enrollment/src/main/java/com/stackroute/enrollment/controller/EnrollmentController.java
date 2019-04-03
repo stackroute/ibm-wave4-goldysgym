@@ -36,9 +36,9 @@ public class EnrollmentController
         user.setFirstName(enrollment1.getFirstName());
         user.setLastName(enrollment1.getLastName());
         user.setEmail(enrollment1.getEmail());
-        user.setPassword("12345");
-        user.setCnfpassword("12345");
-        user.setRegdate(LocalDate.now());
+        user.setPassword(enrollment1.getPassword());
+        user.setCnfpassword(enrollment1.getPassword());
+        user.setRegdate(enrollment1.getStartDate());
         rabbitProducer.produce(user);
         return new ResponseEntity<String>("succefullly created", HttpStatus.CREATED);
     }
