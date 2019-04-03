@@ -7,7 +7,14 @@
                 </div>
         </div>
 
-        
+        <div class="row d-flex justify-content-center" *ngIf="errorMsg">
+                <div class="col-lg-6">
+                        <p class="alert alert-info text-center">
+                                <strong>Email already exists</strong>
+                        </p>
+                </div>
+        </div>
+
         <form name="signup" #userForm="ngForm" class="mt-2" novalidate (ngSubmit)="saveUser(user, userForm)">
                 <div class="container col-lg-3 border border-info rounded bg-light box">
                         <div class="text-center header">
@@ -89,6 +96,8 @@
                                         (click)="saveUser(user, userForm)">
                                         SignUp
                                 </button>
+
+
                         </div>
                 </div>
         </form>

@@ -18,15 +18,17 @@ public class PreLoginController {
     private UserService userService;
 
 
-    @PostMapping(value = "/registration")
-    public ResponseEntity<Response> registration(@RequestBody User user) {
-       user.setRole("ADMIN");
-        User dbUser = userService.save(user);
 
-        if (dbUser != null) {
-            return new ResponseEntity<Response>(new Response("User is saved successfully"), HttpStatus.OK);
+    @PostMapping(value = "/registration")
+    public ResponseEntity<?> registration(@RequestBody User user) {
+       user.setRole("USER");
+       if (userService.getUserByEmail(user.getEmail())==null) {
+            User dbUser = userService.save(user);
+            return new ResponseEntity<String>("User is saved successfully", HttpStatus.OK);
+        }else {
+            return new ResponseEntity<String>("User is already exists", HttpStatus.CONFLICT);
+
         }
-        return null;
     }
 
     @PostMapping(value = "/registrationOwner")
