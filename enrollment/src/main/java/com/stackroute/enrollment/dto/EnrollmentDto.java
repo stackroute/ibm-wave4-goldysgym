@@ -10,6 +10,7 @@ import java.time.LocalDate;
 public class EnrollmentDto {
     @Id
     String userId;
+    String password;
     String programId;
     String firstName;
     String lastName;
@@ -24,15 +25,14 @@ public class EnrollmentDto {
     LocalDate startDate;
     LocalDate endDate;
 
-    public Enrollment getEnrollment() {
-        return enrollment;
+
+    public String getPassword() {
+        return password;
     }
 
-    public void setEnrollment(Enrollment enrollment) {
-        this.enrollment = enrollment;
+    public void setPassword(String password) {
+        this.password = password;
     }
-
-    Enrollment enrollment;
 
     public String getUserId() {
         return userId;
