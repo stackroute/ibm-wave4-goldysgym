@@ -1,6 +1,7 @@
 package com.stackroute.enrollment.component;
 
 import com.stackroute.enrollment.config.RabbitConfig;
+import com.stackroute.enrollment.domain.Enrollment;
 import com.stackroute.enrollment.domain.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,7 +20,7 @@ public class RabbitProducer {
     }
 
 
-    public void produce(User user) {
+    public void produce(Enrollment enrollment) {
         logger.info("Inserting message to queue");
         rabbitTemplate.convertAndSend(RabbitConfig.EXCHANGE_NAME, RabbitConfig.ROUTING_KEY, user);
         logger.info("Message successfully sent");

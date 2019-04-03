@@ -31,15 +31,7 @@ public class EnrollmentController
     @PostMapping("/enrollment")
     public ResponseEntity<?> saveEnrollment(@RequestBody Enrollment enrollment) {
       Enrollment  enrollment1= enrollmentService.saveEnrollment(enrollment);
-        User user= new User();
-        user.setId(enrollment1.getUserId());
-        user.setFirstName(enrollment1.getFirstName());
-        user.setLastName(enrollment1.getLastName());
-        user.setEmail(enrollment1.getEmail());
-        user.setPassword(enrollment1.getPassword());
-        user.setCnfpassword(enrollment1.getPassword());
-        user.setRegdate(enrollment1.getStartDate());
-        rabbitProducer.produce(user);
+        rabbitProducer.produce(enrollment1);
         return new ResponseEntity<String>("succefullly created", HttpStatus.CREATED);
     }
 
