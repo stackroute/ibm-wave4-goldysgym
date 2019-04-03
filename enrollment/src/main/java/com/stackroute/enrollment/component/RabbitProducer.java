@@ -22,7 +22,7 @@ public class RabbitProducer {
 
     public void produce(Enrollment enrollment) {
         logger.info("Inserting message to queue");
-        rabbitTemplate.convertAndSend(RabbitConfig.EXCHANGE_NAME, RabbitConfig.ROUTING_KEY, user);
+        rabbitTemplate.convertAndSend(RabbitConfig.EXCHANGE_NAME, RabbitConfig.ROUTING_KEY, enrollment);
         logger.info("Message successfully sent");
         logger.info("Is listener returned ::: " + rabbitTemplate.isReturnListener());
     }
