@@ -1,5 +1,6 @@
 package com.stackroute.enrollment.dto;
 
+import com.stackroute.enrollment.domain.Enrollment;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -8,7 +9,7 @@ import java.time.LocalDate;
 @Document
 public class EnrollmentDto {
     @Id
-    String id;
+    String userId;
     String programId;
     String firstName;
     String lastName;
@@ -23,12 +24,22 @@ public class EnrollmentDto {
     LocalDate startDate;
     LocalDate endDate;
 
-    public String getId() {
-        return id;
+    public Enrollment getEnrollment() {
+        return enrollment;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setEnrollment(Enrollment enrollment) {
+        this.enrollment = enrollment;
+    }
+
+    Enrollment enrollment;
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
     public String getProgramId() {
