@@ -34,6 +34,7 @@
         <module>enrollment</module>
         <module>admin-service</module>
         <module>jwtfirst</module>
+        <module>subscription-service</module>
     </modules>
 
     <dependencies>

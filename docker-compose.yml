@@ -49,17 +49,32 @@ services:
     depends_on:
       - config-service
       - eureka-server
+      - jwtfirst
     restart: always
     network_mode: "host"
     hostname: localhost
     ports:
       - 8080:8080
 
+  subscription-service:
+    build: subscription-service/
+    depends_on:
+    restart: always
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - 9003:9003
+
+
   enrollment:
     build: enrollment/
     restart: always
     network_mode: "host"
     hostname: localhost
+    depends_on:
+      - config-service
+      - eureka-server
+      - mongo
     ports:
       - 8091:8091
 
@@ -71,7 +86,7 @@ services:
     depends_on:
       - config-service
       - eureka-server
-      - db
+      - mongo
     ports:
       - 9001:9001
 
@@ -81,6 +96,10 @@ services:
     restart: always
     network_mode: "host"
     hostname: localhost
+    depends_on:
+      - config-service
+      - eureka-server
+      - db
     ports:
       - 9002:9002
 
