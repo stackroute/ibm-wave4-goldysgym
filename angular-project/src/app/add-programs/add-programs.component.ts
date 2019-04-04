@@ -18,7 +18,7 @@ export class AddProgramsComponent implements OnInit {
     let newData = {
       "programName": data.pname,
       "day": data.inputday,
-      "timing": data.checkbox1,
+      "timing": data.exampleRadios,
       "imageUrl": data.imageUrl,
       "programDescription": data.description,
       "trainerName": data.tname,

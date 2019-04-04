@@ -27,6 +27,7 @@ public class PreLoginController {
             return new ResponseEntity<String>("User is saved successfully", HttpStatus.OK);
         }else {
             return new ResponseEntity<String>("User is already exists", HttpStatus.CONFLICT);
+
         }
     }
 
