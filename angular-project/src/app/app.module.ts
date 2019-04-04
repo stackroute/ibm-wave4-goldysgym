@@ -27,6 +27,7 @@ import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserSubscriptionsComponent } from './user-subscriptions/user-subscriptions.component';
 import { ProgramDetailsComponent } from './program-details/program-details.component';
+import { SubscriptionviewComponent } from './subscriptionview/subscriptionview.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,8 @@ import { ProgramDetailsComponent } from './program-details/program-details.compo
     FooterComponent,
     SignupComponent,
     LoginComponent,
+    ProgramDetailsComponent,
+    SubscriptionviewComponent,
     UserDashboardComponent,
     UserDashboardSidebarComponent,
     FollowGymatesComponent,

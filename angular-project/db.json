@@ -1,10 +1,24 @@
+[
+  {
+    "name": "3 months unlimited package",
+    "amount": "₹ 9891",
+    "duration": "3 months",
+    "about": "Deserunt enim non velit non nisi incididunt nulla ea. Adipisicing sint officia anim ut amet proident fugiat exercitation Lorem amet."
+  },
+  {
+    "name": "6 months unlimited package",
+    "amount": "₹ 14391",
+    "duration": "6 months",
+    "about": "Deserunt enim non velit non nisi incididunt nulla ea. Adipisicing sint officia anim ut amet proident fugiat exercitation Lorem amet."
+  },
 {
   "posts": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
+      "name": "12 months unlimited package",
+      "amount": "₹ 22491",
+      "duration": "12 months",
+      "about": "Deserunt enim non velit non nisi incididunt nulla ea. Adipisicing sint officia anim ut amet proident fugiat exercitation Lorem amet."
+      }
   ],
   "comments": [
     {
@@ -77,3 +91,4 @@
     "name": "typicode"
   }
 }
+]

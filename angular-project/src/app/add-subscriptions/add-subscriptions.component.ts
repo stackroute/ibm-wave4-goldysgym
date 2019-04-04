@@ -8,19 +8,38 @@ import { ProgramService } from '../program.service';
 })
 export class AddSubscriptionsComponent implements OnInit {
 
-  programs : any;
+  // programs : any;
+  
 
   constructor(private programService: ProgramService) { }
 
   ngOnInit() {
-    this.getPrograms();
+    // this.getPrograms();
   }
 
-  getPrograms() {
-    this.programService.getPrograms().subscribe((x) => {
-      this.programs= x
-      console.log(this.programs)
-    });
+  // getPrograms() {
+  //   this.programService.getPrograms().subscribe((x) => {
+  //     this.programs= x
+  //     console.log(this.programs)
+  //   });
+
+    // putSubscription(data) {
+    //   let newData = {
+    //     // "programName": data.pname,
+    //     // "day": data.inputday,
+    //     // "timing": data.checkbox1,
+    //     // "imageUrl": data.imageUrl,
+    //     // "programDescription": data.description,
+    //     // "trainerName": data.tname,
+    //     // "trainerDescription": data.tdescription,
+    //     // "totalSeats": data.seats
+    //   }
+    //   this.programService. putSubscription(newData).subscribe((x) => {
+    //     // this.data = x
+    //     console.log(data)
+    //   });
+    // }
+  
   }
 
-}
+

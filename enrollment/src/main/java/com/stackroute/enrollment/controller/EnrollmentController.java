@@ -2,16 +2,12 @@ package com.stackroute.enrollment.controller;
 
 import com.stackroute.enrollment.component.RabbitProducer;
 import com.stackroute.enrollment.domain.Enrollment;
-import com.stackroute.enrollment.domain.User;
 import com.stackroute.enrollment.service.EnrollmentService;
-import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDate;
-import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -51,6 +47,6 @@ public class EnrollmentController
     public  ResponseEntity<?> deleteEnrollment(@PathVariable String id)
     {
         enrollmentService.delete(id);
-        return new ResponseEntity<String>("succefullly deleted", HttpStatus.CREATED);
+        return new ResponseEntity<String>("succefullly deleted", HttpStatus.OK);
     }
 }

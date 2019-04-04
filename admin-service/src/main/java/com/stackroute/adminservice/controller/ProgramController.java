@@ -35,13 +35,13 @@ public class ProgramController {
     }
 
     @GetMapping("/programs/{programId}")
-    public ResponseEntity<Program> getProgramsById(@PathVariable String programId){
-        Program programById=programService.getProgramById(programId);
-        return new ResponseEntity<Program>(programById,HttpStatus.OK);
+    public ResponseEntity<Program> getProgramsById(@PathVariable String programId) {
+        Program programById = programService.getProgramById(programId);
+        return new ResponseEntity<Program>(programById, HttpStatus.OK);
     }
 
 
-    @PutMapping("/programs/")
+    @PutMapping("/programs")
     public ResponseEntity<Program> updateProgram(@RequestBody Program program) {
         Program updatedProgram = programService.updateProgram(program);
         return new ResponseEntity<Program>(updatedProgram, HttpStatus.OK);
