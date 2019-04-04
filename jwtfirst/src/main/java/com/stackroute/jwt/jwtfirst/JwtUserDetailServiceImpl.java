@@ -1,6 +1,6 @@
 package com.stackroute.jwt.jwtfirst;
 
-import com.stackroute.jwt.jwtfirst.model.User;
+import com.stackroute.jwt.jwtfirst.domain.User;
 import com.stackroute.jwt.jwtfirst.repo.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;

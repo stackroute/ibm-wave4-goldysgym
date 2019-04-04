@@ -1,30 +1,29 @@
 package com.stackroute.jwt.jwtfirst.service;
 
 
-import com.stackroute.jwt.jwtfirst.model.User;
+import com.stackroute.jwt.jwtfirst.domain.User;
 import com.stackroute.jwt.jwtfirst.repo.UserRepository;
 import com.stackroute.jwt.jwtfirst.util.PasswordUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
 
 @Service
-@Transactional
 public class UserServiceImpl implements UserService{
 
     @Autowired
-    UserRepository userRepository;
+   private UserRepository userRepository;
 
     @Override
     public User save(User user) {
-
         String password = PasswordUtil.getPasswordHash(user.getPassword());
         user.setPassword(password);
-        user.setRegdate(new Date());
+        user.setRegdate( LocalDate.now());
         return userRepository.save(user);
     }
 

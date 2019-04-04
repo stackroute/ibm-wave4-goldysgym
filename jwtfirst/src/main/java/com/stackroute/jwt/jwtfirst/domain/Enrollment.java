@@ -1,20 +1,19 @@
-package com.stackroute.enrollment.dto;
+package com.stackroute.jwt.jwtfirst.domain;
 
-import com.stackroute.enrollment.domain.Enrollment;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
+
 
 import java.time.LocalDate;
 
-@Document
-public class EnrollmentDto {
+public class Enrollment
+{
     @Id
     String userId;
-    String password;
     String programId;
     String firstName;
     String lastName;
     String email;
+    String password;
     int age;
     String gender;
     Double Height;
@@ -25,6 +24,8 @@ public class EnrollmentDto {
 //    LocalDate startDate;
 //    LocalDate endDate;
 
+    public Enrollment() {
+    }
 
     public String getPassword() {
         return password;
@@ -122,14 +123,6 @@ public class EnrollmentDto {
         EnrollmentName = enrollmentName;
     }
 
-    public int getDuration() {
-        return Duration;
-    }
-
-    public void setDuration(int duration) {
-        Duration = duration;
-    }
-
 //    public LocalDate getStartDate() {
 //        return startDate;
 //    }
@@ -145,4 +138,11 @@ public class EnrollmentDto {
 //    public void setEndDate(LocalDate endDate) {
 //        this.endDate = endDate;
 //    }
+    public int getDuration() {
+        return Duration;
+    }
+
+    public void setDuration(int duration) {
+        Duration = duration;
+    }
 }

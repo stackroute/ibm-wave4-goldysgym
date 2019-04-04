@@ -1,7 +1,7 @@
 package com.stackroute.jwt.jwtfirst.security;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.stackroute.jwt.jwtfirst.model.User;
+import com.stackroute.jwt.jwtfirst.domain.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -10,14 +10,14 @@ import java.util.Collection;
 public class JwtUser implements UserDetails {
 
 
-    private final long id;
+    private final String id;
     private  final String username;
     private  final  String password;
     private  final User user;
     private final Collection<? extends GrantedAuthority> authorities;
     private final boolean enabled;
 
-    public JwtUser(long id, String username, String password, User user, Collection<? extends GrantedAuthority> authorities, boolean enabled) {
+    public JwtUser(String id, String username, String password, User user, Collection<? extends GrantedAuthority> authorities, boolean enabled) {
         this.id = id;
         this.username = username;
         this.password = password;
@@ -27,7 +27,7 @@ public class JwtUser implements UserDetails {
     }
 
     @JsonIgnore
-    public long getId() {
+    public String getId() {
         return id;
     }
 

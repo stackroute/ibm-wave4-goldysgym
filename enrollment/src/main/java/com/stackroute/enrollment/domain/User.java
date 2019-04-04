@@ -14,7 +14,7 @@ public class User {
     private String cnfpassword;
     private boolean enabled;
     private String role;
-    private LocalDate regdate;
+//    private LocalDate regdate;
 
     public User(String id, String firstName, String lastName, String email, String password, String cnfpassword, boolean enabled, String role,  LocalDate regdate) {
         this.id = id;
@@ -26,7 +26,7 @@ public class User {
         this.enabled = enabled;
         this.role = role;
        // this.phonenumber = phonenumber;
-        this.regdate = regdate;
+//        this.regdate = regdate;
     }
 
     public User() {
@@ -97,13 +97,13 @@ public class User {
     }
 
 
-    public LocalDate getRegdate() {
-        return regdate;
-    }
-
-    public void setRegdate(LocalDate regdate) {
-        this.regdate = regdate;
-    }
-
+//    public LocalDate getRegdate() {
+//        return regdate;
+//    }
+//
+//    public void setRegdate(LocalDate regdate) {
+//        this.regdate = regdate;
+//    }
+//
 
 }
