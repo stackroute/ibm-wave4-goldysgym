@@ -22,8 +22,8 @@ private EnrollmentRepository enrollmentRepository;
     {
         int duration= enrollment.getDuration();
         LocalDate futureDate =LocalDate.now().plusMonths(duration);
-        enrollment.setEndDate(futureDate);
-        enrollment.setStartDate(LocalDate.now());
+//        enrollment.setEndDate(futureDate);
+//        enrollment.setStartDate(LocalDate.now());
         Enrollment enrollment1=enrollmentRepository.save(enrollment);
         return  enrollment1;
     }

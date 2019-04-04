@@ -4,7 +4,6 @@ package com.stackroute.enrollment.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.stackroute.enrollment.domain.Enrollment;
-import com.stackroute.enrollment.dto.EnrollmentDto;
 import com.stackroute.enrollment.service.EnrollmentService;
 import org.junit.Before;
 import org.junit.Test;

@@ -1,8 +1,7 @@
 package com.stackroute.jwt.jwtfirst.controller;
 
-import com.stackroute.jwt.jwtfirst.UnauthorizedException;
-import com.stackroute.jwt.jwtfirst.domain.UserDTO;
-import com.stackroute.jwt.jwtfirst.model.User;
+import com.stackroute.jwt.jwtfirst.dto.UserDTO;
+import com.stackroute.jwt.jwtfirst.domain.User;
 import com.stackroute.jwt.jwtfirst.security.JwtTokenUtil;
 import com.stackroute.jwt.jwtfirst.security.JwtUser;
 import org.springframework.beans.factory.annotation.Autowired;
