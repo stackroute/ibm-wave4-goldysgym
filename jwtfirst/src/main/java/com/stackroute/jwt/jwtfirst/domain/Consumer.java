@@ -13,10 +13,14 @@ public class Consumer {
 
     Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    @Autowired
     public UserService userService;
 
-    public User user=new User();
+    @Autowired
+    public Consumer(UserService userService) {
+        this.userService = userService;
+    }
+
+    private User user=new User();
 
     @RabbitListener(queues = RabbitConfig.QUEUE_NAME)
     public void consume(Enrollment enrollment) {

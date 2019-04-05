@@ -14,8 +14,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class PreLoginController {
 
-    @Autowired
     private UserService userService;
+    @Autowired
+    public PreLoginController(UserService userService) {
+        this.userService = userService;
+    }
 
     @PostMapping(value = "/registration")
     public ResponseEntity<?> registration(@RequestBody User user) {
