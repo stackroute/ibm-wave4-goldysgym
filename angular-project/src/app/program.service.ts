@@ -30,16 +30,16 @@ export class ProgramService {
   }
 
   getSubscriptionDetails(){
-    return this.http.get("http://localhost:3000/subscriptions");
+    return this.http.get("http://localhost:9003/api/v2/subscriptions");
   }
   putProgram(data)
   {
   return this.http.post(environment.dbUrlOut1,data);
  } 
-//  putSubscription(data)
-//  {
-//  return this.http.post(environment.dbUrlOut1,data);
-// }
+ putSubscription(data)
+ {
+ return this.http.post(environment.dbUrlOut3,data);
+}
 
   deleteProgram(id) {
     return this.http.delete(environment.dbUrlOut2+id);

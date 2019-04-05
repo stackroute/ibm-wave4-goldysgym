@@ -1,7 +1,8 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule,} from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from  '@angular/common/http'; 
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -30,6 +31,14 @@ import { ProgramDetailsComponent } from './program-details/program-details.compo
 import { EditProgramformComponent } from './edit-programform/edit-programform.component';
 import { AdminProgramdetailsComponent } from './admin-programdetails/admin-programdetails.component';
 import { SubscriptionviewComponent } from './subscriptionview/subscriptionview.component';
+import { EnrolltestComponent } from './enrolltest/enrolltest.component';
+import { MatStepperModule, MatInputModule, MatButtonModule, MatAutocompleteModule } from '@angular/material';
+import { MatRadioModule} from '@angular/material';
+import { MatDatepickerModule,MatNativeDateModule,MatFormFieldModule,} from '@angular/material';
+import {MatCardModule} from '@angular/material/card';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+
+
 
 @NgModule({
   declarations: [
@@ -59,14 +68,28 @@ import { SubscriptionviewComponent } from './subscriptionview/subscriptionview.c
     LeaderboardComponent,
     UserProfileComponent,
     UserSubscriptionsComponent,
-    ProgramDetailsComponent
+    ProgramDetailsComponent,
+    EnrolltestComponent,
+
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    MatStepperModule,
+    MatInputModule,
+    MatButtonModule,
+    MatAutocompleteModule,
+    BrowserAnimationsModule,
+    MatRadioModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatFormFieldModule,
+    MatCardModule,
+    MatCheckboxModule
   ],
   providers: [ProgramService],
   bootstrap: [AppComponent]

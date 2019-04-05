@@ -18,6 +18,7 @@ import { UserSubscriptionsComponent } from './user-subscriptions/user-subscripti
 import { ProgramDetailsComponent } from './program-details/program-details.component';
 import{EditProgramformComponent} from './edit-programform/edit-programform.component';
 import{AdminProgramdetailsComponent } from './admin-programdetails/admin-programdetails.component';
+import { EnrolltestComponent } from './enrolltest/enrolltest.component';
 
 const routes: Routes = [
 
@@ -25,6 +26,7 @@ const routes: Routes = [
   {path: 'admin-prog-details/:id', component: AdminProgramdetailsComponent},
   {path: "signup", component:SignupComponent},
   {path: "login", component:LoginComponent},
+  {path: "enroll", component:EnrolltestComponent},
   {
     // admin page routes 
     path: 'admin', component: AdminDashboardComponent, children: [

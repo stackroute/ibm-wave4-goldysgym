@@ -39,6 +39,18 @@ export class EditProgramformComponent implements OnInit {
     //   console.log(data)
     //newData["programId"] = id;
 
+
+  //   {
+  //     "programId": "5ca5e3ee91ee34000158cfcc",
+  //     "programName": "HRX",
+  //     "day": "Tuesday",
+  //     "timing": "Morning",
+  //     "imageUrl": "../../assets/images/Boxing@1x.webp",
+  //     "programDescription": "Best HRX program in town ",
+  //     "trainerName": "Abhi",
+  //     "trainerDescription": "Best Trainer",
+  //     "totalSeats": 20
+  // }
     console.log(this.id)
     this.programService.editProgram(newData).subscribe(data =>{
     this.pdetails = newData

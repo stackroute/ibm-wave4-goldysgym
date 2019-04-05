@@ -7,7 +7,8 @@ export const environment = {
   // dbUrlOut: "http://localhost:3000/programs/"
   dbUrlOut: "http://localhost:8080/admin/api/v1/programs",
   dbUrlOut1: "http://localhost:8080/admin/api/v1/program",
-  dbUrlOut2:  "http://localhost:9001/api/v1/programs/"
+  dbUrlOut2:  "http://localhost:9001/api/v1/programs/",
+  dbUrlOut3:"http://localhost:9003/api/v2/subscription"
 };
 
 /*
