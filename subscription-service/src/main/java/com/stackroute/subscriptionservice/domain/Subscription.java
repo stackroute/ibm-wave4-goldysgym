@@ -22,8 +22,8 @@ public class Subscription {
     @NotNull
     private String imageUrl;
     @NotNull
-    private String duration;
+    private int duration;
     @NotNull
-    private String amount;
+    private double amount;
     private User user[];
 }
