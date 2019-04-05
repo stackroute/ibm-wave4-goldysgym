@@ -28,6 +28,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserSubscriptionsComponent } from './user-subscriptions/user-subscriptions.component';
 import { ProgramDetailsComponent } from './program-details/program-details.component';
 import { SubscriptionviewComponent } from './subscriptionview/subscriptionview.component';
+import { EnrolltestComponent } from './enrolltest/enrolltest.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { SubscriptionviewComponent } from './subscriptionview/subscriptionview.c
     LeaderboardComponent,
     UserProfileComponent,
     UserSubscriptionsComponent,
-    ProgramDetailsComponent
+    ProgramDetailsComponent,
+    EnrolltestComponent
     
   ],
   imports: [
