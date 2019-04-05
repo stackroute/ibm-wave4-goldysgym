@@ -21,6 +21,8 @@ import { FooterComponent } from './footer/footer.component';
 import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
 import { ProgramDetailsComponent } from './program-details/program-details.component';
+import { EditProgramformComponent } from './edit-programform/edit-programform.component';
+import { AdminProgramdetailsComponent } from './admin-programdetails/admin-programdetails.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,9 @@ import { ProgramDetailsComponent } from './program-details/program-details.compo
     FooterComponent,
     SignupComponent,
     LoginComponent,
-    ProgramDetailsComponent
+    ProgramDetailsComponent,
+    EditProgramformComponent,
+    AdminProgramdetailsComponent
     
   ],
   imports: [
