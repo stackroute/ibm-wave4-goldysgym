@@ -23,17 +23,16 @@ export class SignupComponent implements OnInit {
     
     user.enabled = true;
     this.userService.saveUser(user).subscribe((response)=>{
-        if(response){
           console.log(response);
           userForm.reset();
+          this.errorMsg=false;
           this.showMsg= true;
         }
-      
-    }
     ,
   (error:any)=>{
-    console.warn(error);
     this.errorMsg = true;
+    this.showMsg=false;
+    console.warn(error);
   })
   }
 

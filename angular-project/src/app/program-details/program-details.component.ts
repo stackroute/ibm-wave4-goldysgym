@@ -22,9 +22,4 @@ export class ProgramDetailsComponent implements OnInit {
     console.log(data)
   });
 }
-
-
-
-
-
 }

@@ -4,7 +4,6 @@ package com.stackroute.enrollment.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.stackroute.enrollment.domain.Enrollment;
-import com.stackroute.enrollment.dto.EnrollmentDto;
 import com.stackroute.enrollment.service.EnrollmentService;
 import org.junit.Before;
 import org.junit.Test;
@@ -49,7 +48,6 @@ public class EnrollmentControllerTest {
         MockitoAnnotations.initMocks(this);
         mockMvc = MockMvcBuilders.standaloneSetup(enrollmentController).build();
         enrollment = new Enrollment();
-        enrollment.setAge(26);
         enrollment.setFirstName("Jonny");
         enrollment.setUserId("101");
         enrollment.setLastName("Jenny");

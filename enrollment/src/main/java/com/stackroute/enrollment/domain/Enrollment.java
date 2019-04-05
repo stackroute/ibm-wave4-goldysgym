@@ -4,38 +4,28 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 @Document
 public class Enrollment
 {
     @Id
     String userId;
-    String programId;
     String firstName;
     String lastName;
     String email;
     String password;
-    int age;
+    LocalDate DateOfBirth;
     String gender;
     Double Height;
     Double Weight;
+    int interest[]= new int[3];
+    LocalDate StartDate;
+    LocalDate EndDate;
+    Subscription subscription;
     Double price;
     String EnrollmentName;
-    int Duration;
-    LocalDate startDate;
-    LocalDate endDate;
-
-    public Enrollment() {
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
+    int Duration;LocalDate startDate;
+ LocalDate endDate;
 
     public String getUserId() {
         return userId;
@@ -43,14 +33,6 @@ public class Enrollment
 
     public void setUserId(String userId) {
         this.userId = userId;
-    }
-
-    public String getProgramId() {
-        return programId;
-    }
-
-    public void setProgramId(String programId) {
-        this.programId = programId;
     }
 
     public String getFirstName() {
@@ -77,12 +59,20 @@ public class Enrollment
         this.email = email;
     }
 
-    public int getAge() {
-        return age;
+    public String getPassword() {
+        return password;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public LocalDate getDateOfBirth() {
+        return DateOfBirth;
+    }
+
+    public void setDateOfBirth(LocalDate dateOfBirth) {
+        DateOfBirth = dateOfBirth;
     }
 
     public String getGender() {
@@ -109,6 +99,38 @@ public class Enrollment
         Weight = weight;
     }
 
+    public int[] getInterest() {
+        return interest;
+    }
+
+    public void setInterest(int[] interest) {
+        this.interest = interest;
+    }
+
+    public LocalDate getStartDate() {
+        return StartDate;
+    }
+
+    public void setStartDate(LocalDate startDate) {
+        StartDate = startDate;
+    }
+
+    public LocalDate getEndDate() {
+        return EndDate;
+    }
+
+    public void setEndDate(LocalDate endDate) {
+        EndDate = endDate;
+    }
+
+    public Subscription getSubscription() {
+        return subscription;
+    }
+
+    public void setSubscription(Subscription subscription) {
+        this.subscription = subscription;
+    }
+
     public Double getPrice() {
         return price;
     }
@@ -125,21 +147,6 @@ public class Enrollment
         EnrollmentName = enrollmentName;
     }
 
-    public LocalDate getStartDate() {
-        return startDate;
-    }
-
-    public void setStartDate(LocalDate startDate) {
-        this.startDate = startDate;
-    }
-
-    public LocalDate getEndDate() {
-        return endDate;
-    }
-
-    public void setEndDate(LocalDate endDate) {
-        this.endDate = endDate;
-    }
     public int getDuration() {
         return Duration;
     }

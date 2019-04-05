@@ -35,7 +35,6 @@ public class EnrollmentServiceTest {
         enrollment.setLastName("John");
         enrollment.setUserId("101");
         enrollment.setFirstName("Jenny");
-        enrollment.setAge(10);
         list = new ArrayList<>();
         list.add(enrollment);
 

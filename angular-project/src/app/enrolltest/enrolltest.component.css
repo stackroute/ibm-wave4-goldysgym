@@ -1,0 +1,16 @@
+.box{
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: rgba(0, 0, 0, 0.2) 20px 20px 20px;
+    margin-top: 40px;
+}
+ mat-horizontal-stepper{
+    background: rgba(255, 255, 255, 0.8);
+ }
+ example-card {
+    max-width: 400px;
+  }
+  
+  .example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  }

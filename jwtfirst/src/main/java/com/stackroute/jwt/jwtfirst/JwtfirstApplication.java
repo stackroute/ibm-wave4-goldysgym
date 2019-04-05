@@ -1,5 +1,8 @@
 package com.stackroute.jwt.jwtfirst;
 
+import com.stackroute.jwt.jwtfirst.repo.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -8,11 +11,14 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
 
 @SpringBootApplication
-public class JwtfirstApplication {
+public class JwtfirstApplication  {
 
 	public static void main(String[] args) {
 		SpringApplication.run(JwtfirstApplication.class, args);
 	}
+
+	@Autowired
+	private UserRepository repository;
 
 	@Bean
 	public CorsFilter corsFilter()
@@ -31,4 +37,5 @@ public class JwtfirstApplication {
 		return new CorsFilter(source);
 
 	}
+
 }

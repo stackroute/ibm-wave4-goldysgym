@@ -16,12 +16,14 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { ProgramsComponent } from './programs/programs.component';
 import { UserSubscriptionsComponent } from './user-subscriptions/user-subscriptions.component';
 import { ProgramDetailsComponent } from './program-details/program-details.component';
+import { EnrolltestComponent } from './enrolltest/enrolltest.component';
 
 const routes: Routes = [
 
   {path:'prog-details/:id',component: ProgramDetailsComponent},
   {path: "signup", component:SignupComponent},
   {path: "login", component:LoginComponent},
+  {path: "enroll", component:EnrolltestComponent},
   {
     // admin page routes 
     path: 'admin', component: AdminDashboardComponent, children: [
