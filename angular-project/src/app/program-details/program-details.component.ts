@@ -23,9 +23,8 @@ export class ProgramDetailsComponent implements OnInit {
   });
 }
 
-goBack()
-{
-  this.router.navigate(['/home'])
-}
+
+
+
 
 }
