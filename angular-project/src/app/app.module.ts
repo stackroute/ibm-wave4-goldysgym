@@ -69,9 +69,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     UserProfileComponent,
     UserSubscriptionsComponent,
     ProgramDetailsComponent,
-    EnrolltestComponent,
-
-    
+    EnrolltestComponent
   ],
   imports: [
     BrowserModule,
