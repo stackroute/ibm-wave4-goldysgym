@@ -48,7 +48,6 @@ public class EnrollmentControllerTest {
         MockitoAnnotations.initMocks(this);
         mockMvc = MockMvcBuilders.standaloneSetup(enrollmentController).build();
         enrollment = new Enrollment();
-        enrollment.setAge(26);
         enrollment.setFirstName("Jonny");
         enrollment.setUserId("101");
         enrollment.setLastName("Jenny");

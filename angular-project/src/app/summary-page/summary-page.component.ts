@@ -9,6 +9,7 @@ import { ProgramService } from '../program.service';
 export class SummaryPageComponent implements OnInit {
 
   programs: any;
+  subscriptions:any;
 
   constructor(private programService: ProgramService) { }
 
@@ -21,6 +22,10 @@ export class SummaryPageComponent implements OnInit {
       this.programs = x
       console.log(this.programs)
     });
+    this.programService.getSubscriptionDetails().subscribe(data=>{
+      // console.log(data)
+      this.subscriptions=data
+    })
   }
 
 
