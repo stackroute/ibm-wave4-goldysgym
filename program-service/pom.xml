@@ -9,10 +9,10 @@
 		<relativePath> ../pom.xml</relativePath><!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.stackroute</groupId>
-	<artifactId>admin-service</artifactId>
+	<artifactId>program-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>admin-service</name>
-	<description>Admin service</description>
+	<name>program-service</name>
+	<description>Program service</description>
 
 	<properties>
 		<java.version>11</java.version>

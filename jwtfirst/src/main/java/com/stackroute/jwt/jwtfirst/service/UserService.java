@@ -1,6 +1,6 @@
 package com.stackroute.jwt.jwtfirst.service;
 
-import com.stackroute.jwt.jwtfirst.model.User;
+import com.stackroute.jwt.jwtfirst.domain.User;
 
 import java.util.List;
 

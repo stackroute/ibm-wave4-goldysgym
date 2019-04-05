@@ -55,16 +55,41 @@ services:
     ports:
       - 8080:8080
 
+  subscription-service:
+    build: subscription-service/
+    restart: always
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - 9003:9003
+
+
   enrollment:
     build: enrollment/
     restart: always
     network_mode: "host"
     hostname: localhost
+    depends_on:
+      - config-service
+      - eureka-server
+      - mongo
     ports:
       - 8091:8091
 
-  admin-service:
-    build: admin-service/
+  program-service:
+    build: program-service/
+    restart: always
+    network_mode: "host"
+    hostname: localhost
+    depends_on:
+      - config-service
+      - eureka-server
+      - mongo
+    ports:
+      - 9001:9001
+
+  jwtfirst:
+    build: jwtfirst/
     restart: always
     network_mode: "host"
     hostname: localhost
@@ -73,16 +98,8 @@ services:
       - eureka-server
       - db
     ports:
-      - 9001:9001
-
-
-  jwtfirst:
-    build: jwtfirst/
-    restart: always
-    network_mode: "host"
-    hostname: localhost
-    ports:
       - 9002:9002
+
 
 
   rabbitmq:

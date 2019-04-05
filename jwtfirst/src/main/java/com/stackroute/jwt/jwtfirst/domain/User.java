@@ -1,17 +1,17 @@
-package com.stackroute.jwt.jwtfirst.model;
+package com.stackroute.jwt.jwtfirst.domain;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.Date;
+import java.util.UUID;
 
 @Entity
-@Table(name = "User")
 public class User implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private long id;
+    private String id;
     @Column(name = "firstName")
     private String firstName;
     @Column(name = "lastName")
@@ -20,19 +20,17 @@ public class User implements Serializable {
     private String email;
     @Column(name = "password")
     private String password;
-    @Column(name = "confirmPassword")
+    @Column(name = "cnfpassword")
     private String cnfpassword;
     @Column(name = "active")
     private boolean enabled;
     @Column(name = "role")
     private String role;
-   // @Column(name = "phoneNumber")
-    //private String phonenumber;
     @Column(name = "regdate")
-    private Date regdate;
+    private LocalDate regdate;
 
-    public User(long id, String firstName, String lastName, String email, String password, String cnfpassword, boolean enabled, String role,  Date regdate) {
-        this.id = id;
+    public User(String firstName, String lastName, String email, String password, String cnfpassword, boolean enabled, String role, LocalDate regdate) {
+        this();
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -40,18 +38,31 @@ public class User implements Serializable {
         this.cnfpassword = cnfpassword;
         this.enabled = enabled;
         this.role = role;
-       // this.phonenumber = phonenumber;
         this.regdate = regdate;
     }
 
-    public User() {
+    public User(String id, String firstName, String lastName, String email, String password, String cnfpassword, boolean enabled, String role, LocalDate regdate) {
+        this.id = UUID.randomUUID().toString();
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.password = password;
+        this.cnfpassword = cnfpassword;
+        this.enabled = enabled;
+        this.role = role;
+        this.regdate = regdate;
     }
 
-    public long getId() {
+
+    public User() {
+        this.id=UUID.randomUUID().toString();
+    }
+
+    public String getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -110,23 +121,29 @@ public class User implements Serializable {
     public void setRole(String role) {
         this.role = role;
     }
-//    public String getPhonenumber() {
-//        return phonenumber;
-//    }
-//
-//    public void setPhonenumber(String phonenumber) {
-//        this.phonenumber = phonenumber;
-//    }
 
-    public Date getRegdate() {
+    public LocalDate getRegdate() {
         return regdate;
     }
 
-    public void setRegdate(Date regdate) {
+    public void setRegdate(LocalDate regdate) {
         this.regdate = regdate;
     }
 
-
+    @Override
+    public String toString() {
+        return "User{" +
+                "id='" + id + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", cnfpassword='" + cnfpassword + '\'' +
+                ", enabled=" + enabled +
+                ", role='" + role + '\'' +
+                ", regdate=" + regdate +
+                '}';
+    }
 }
 
 

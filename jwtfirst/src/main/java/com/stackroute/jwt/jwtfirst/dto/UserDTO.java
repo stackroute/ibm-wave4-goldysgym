@@ -1,6 +1,6 @@
-package com.stackroute.jwt.jwtfirst.domain;
+package com.stackroute.jwt.jwtfirst.dto;
 
-import com.stackroute.jwt.jwtfirst.model.User;
+import com.stackroute.jwt.jwtfirst.domain.User;
 
 import java.io.Serializable;
 

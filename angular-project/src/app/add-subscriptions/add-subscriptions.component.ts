@@ -23,22 +23,28 @@ export class AddSubscriptionsComponent implements OnInit {
   //     console.log(this.programs)
   //   });
 
-    // putSubscription(data) {
-    //   let newData = {
-    //     // "programName": data.pname,
-    //     // "day": data.inputday,
-    //     // "timing": data.checkbox1,
-    //     // "imageUrl": data.imageUrl,
-    //     // "programDescription": data.description,
-    //     // "trainerName": data.tname,
-    //     // "trainerDescription": data.tdescription,
-    //     // "totalSeats": data.seats
-    //   }
-    //   this.programService. putSubscription(newData).subscribe((x) => {
-    //     // this.data = x
-    //     console.log(data)
-    //   });
-    // }
+    putSubscription(data) {
+      let newData = {
+        
+          
+          "subscriptionName": data.sname,
+          "description": data.sdes,
+          "imageUrl": data.imageUrl,
+          "duration": data.Duration,
+          "amount": data.amount,
+          // "user": [
+          //     {
+          //         "userId": "1",
+          //         "startDate": "today"
+          //     }
+          // ]
+      }
+      
+      this.programService.putSubscription(newData).subscribe((x) => {
+        // this.data = x
+        console.log(data)
+      });
+    }
   
   }
 

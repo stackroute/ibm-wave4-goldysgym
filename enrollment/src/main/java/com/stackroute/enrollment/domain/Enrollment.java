@@ -4,7 +4,6 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 @Document
 public class Enrollment
@@ -23,42 +22,10 @@ public class Enrollment
     LocalDate StartDate;
     LocalDate EndDate;
     Subscription subscription;
-
-
-    public Enrollment() {
-    }
-
-    public LocalDate getStartDate() {
-        return StartDate;
-    }
-
-    public void setStartDate(LocalDate startDate) {
-        StartDate = startDate;
-    }
-
-    public LocalDate getEndDate() {
-        return EndDate;
-    }
-
-    public void setEndDate(LocalDate endDate) {
-        EndDate = endDate;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public LocalDate getDateOfBirth() {
-        return DateOfBirth;
-    }
-
-    public void setDateOfBirth(LocalDate dateOfBirth) {
-        DateOfBirth = dateOfBirth;
-    }
+    Double price;
+    String EnrollmentName;
+    int Duration;LocalDate startDate;
+ LocalDate endDate;
 
     public String getUserId() {
         return userId;
@@ -92,6 +59,21 @@ public class Enrollment
         this.email = email;
     }
 
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public LocalDate getDateOfBirth() {
+        return DateOfBirth;
+    }
+
+    public void setDateOfBirth(LocalDate dateOfBirth) {
+        DateOfBirth = dateOfBirth;
+    }
 
     public String getGender() {
         return gender;
@@ -125,11 +107,51 @@ public class Enrollment
         this.interest = interest;
     }
 
+    public LocalDate getStartDate() {
+        return StartDate;
+    }
+
+    public void setStartDate(LocalDate startDate) {
+        StartDate = startDate;
+    }
+
+    public LocalDate getEndDate() {
+        return EndDate;
+    }
+
+    public void setEndDate(LocalDate endDate) {
+        EndDate = endDate;
+    }
+
     public Subscription getSubscription() {
         return subscription;
     }
 
     public void setSubscription(Subscription subscription) {
         this.subscription = subscription;
+    }
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+
+    public String getEnrollmentName() {
+        return EnrollmentName;
+    }
+
+    public void setEnrollmentName(String enrollmentName) {
+        EnrollmentName = enrollmentName;
+    }
+
+    public int getDuration() {
+        return Duration;
+    }
+
+    public void setDuration(int duration) {
+        Duration = duration;
     }
 }

@@ -1,8 +1,8 @@
 package com.stackroute.jwt.jwtfirst.controller;
 
-import com.stackroute.jwt.jwtfirst.UnauthorizedException;
-import com.stackroute.jwt.jwtfirst.domain.UserDTO;
-import com.stackroute.jwt.jwtfirst.model.User;
+import com.stackroute.jwt.jwtfirst.SecurityConfiguration;
+import com.stackroute.jwt.jwtfirst.dto.UserDTO;
+import com.stackroute.jwt.jwtfirst.domain.User;
 import com.stackroute.jwt.jwtfirst.security.JwtTokenUtil;
 import com.stackroute.jwt.jwtfirst.security.JwtUser;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +11,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -28,11 +29,16 @@ public class AuthenticationController {
     @Value("${jwt.header}")
     private String tokenHeader;
 
-    @Autowired
-    private AuthenticationManager authenticationManager;
-    @Autowired
+//    private AuthenticationManager authenticationManager;
     private JwtTokenUtil jwtTokenUtil;
 
+    private AuthenticationManager authenticationManager;
+
+    @Autowired
+    public AuthenticationController(JwtTokenUtil jwtTokenUtil, AuthenticationManager authenticationManager) {
+        this.jwtTokenUtil = jwtTokenUtil;
+        this.authenticationManager = authenticationManager;
+    }
 
     @PostMapping(value = "/login")
     public ResponseEntity<?> login(@RequestBody User user, HttpServletRequest request, HttpServletResponse response) {
