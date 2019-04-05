@@ -1,4 +1,5 @@
-[
+{
+  "details":[
   {
     "name": "3 months unlimited package",
     "amount": "₹ 9891",
@@ -11,14 +12,20 @@
     "duration": "6 months",
     "about": "Deserunt enim non velit non nisi incididunt nulla ea. Adipisicing sint officia anim ut amet proident fugiat exercitation Lorem amet."
   },
-{
-  "posts": [
-    {
+  {
       "name": "12 months unlimited package",
       "amount": "₹ 22491",
       "duration": "12 months",
       "about": "Deserunt enim non velit non nisi incididunt nulla ea. Adipisicing sint officia anim ut amet proident fugiat exercitation Lorem amet."
-      }
+  }
+  ],
+
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
   ],
   "comments": [
     {
@@ -27,14 +34,15 @@
       "postId": 1
     }
   ],
-  "users":
+  "users":[
     { 
       "Name":"Yash Chaddha",
       "Age":"50",
       "Email":"yash.chaddha1997@gmail.com",
       "Weight":"60",
       "Height":"160"
-    },
+    }
+  ],
   "subscriptions":[
     {
       "id":1,
@@ -87,8 +95,10 @@
       "img": "../../assets/images/a9.jpg"
     }
   ],
-  "profile": {
+  "profile":[ {
     "name": "typicode"
   }
-}
 ]
+}
+
+
