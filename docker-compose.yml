@@ -75,14 +75,14 @@ services:
     ports:
       - 9001:9001
 
-
-  jwtfirst:
-    build: jwtfirst/
-    restart: always
-    network_mode: "host"
-    hostname: localhost
-    ports:
-      - 9002:9002
+#
+#  jwtfirst:
+#    build: jwtfirst/
+#    restart: always
+#    network_mode: "host"
+#    hostname: localhost
+#    ports:
+#      - 9002:9002
 
 
   rabbitmq:

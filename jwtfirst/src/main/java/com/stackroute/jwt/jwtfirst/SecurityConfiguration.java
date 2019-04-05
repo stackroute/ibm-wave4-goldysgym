@@ -29,6 +29,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     private UserDetailsService userDetailsService;
     @Autowired
     private AuthenticationEntryPoint authenticationEntryPoint;
+    @Autowired
+    private AuthenticationTokenFilter filter;
+
+
 
     @Override
     public void configure(AuthenticationManagerBuilder authenticationManagerBuilder)throws Exception
@@ -42,18 +46,14 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         return new BCryptPasswordEncoder();
     }
 
-    @Bean
     @Override
+    @Bean
     public AuthenticationManager authenticationManagerBean() throws Exception
     {
         return super.authenticationManagerBean();
     }
 
-    @Bean
-    public AuthenticationTokenFilter authenticationTokenFilterBean()
-    {
-        return new AuthenticationTokenFilter();
-    }
+
 
 
     @Override
@@ -69,7 +69,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                 .anyRequest().authenticated();
 
-        httpSecurity.addFilterBefore(authenticationTokenFilterBean(), UsernamePasswordAuthenticationFilter.class)
+        httpSecurity.addFilterBefore(filter, UsernamePasswordAuthenticationFilter.class)
                 .addFilterAfter(new CsrfHeaderFilter(), CsrfFilter.class);
 
         httpSecurity.headers().cacheControl();
