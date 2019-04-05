@@ -11,22 +11,37 @@ public class Enrollment
 {
     @Id
     String userId;
-    String programId;
     String firstName;
     String lastName;
     String email;
     String password;
-    int age;
+    LocalDate DateOfBirth;
     String gender;
     Double Height;
     Double Weight;
-    Double price;
-    String EnrollmentName;
-    int Duration;
-    LocalDate startDate;
-    LocalDate endDate;
+    int interest[]= new int[3];
+    LocalDate StartDate;
+    LocalDate EndDate;
+    Subscription subscription;
+
 
     public Enrollment() {
+    }
+
+    public LocalDate getStartDate() {
+        return StartDate;
+    }
+
+    public void setStartDate(LocalDate startDate) {
+        StartDate = startDate;
+    }
+
+    public LocalDate getEndDate() {
+        return EndDate;
+    }
+
+    public void setEndDate(LocalDate endDate) {
+        EndDate = endDate;
     }
 
     public String getPassword() {
@@ -37,20 +52,20 @@ public class Enrollment
         this.password = password;
     }
 
+    public LocalDate getDateOfBirth() {
+        return DateOfBirth;
+    }
+
+    public void setDateOfBirth(LocalDate dateOfBirth) {
+        DateOfBirth = dateOfBirth;
+    }
+
     public String getUserId() {
         return userId;
     }
 
     public void setUserId(String userId) {
         this.userId = userId;
-    }
-
-    public String getProgramId() {
-        return programId;
-    }
-
-    public void setProgramId(String programId) {
-        this.programId = programId;
     }
 
     public String getFirstName() {
@@ -77,13 +92,6 @@ public class Enrollment
         this.email = email;
     }
 
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
 
     public String getGender() {
         return gender;
@@ -109,42 +117,19 @@ public class Enrollment
         Weight = weight;
     }
 
-    public Double getPrice() {
-        return price;
+    public int[] getInterest() {
+        return interest;
     }
 
-    public void setPrice(Double price) {
-        this.price = price;
+    public void setInterest(int[] interest) {
+        this.interest = interest;
     }
 
-    public String getEnrollmentName() {
-        return EnrollmentName;
+    public Subscription getSubscription() {
+        return subscription;
     }
 
-    public void setEnrollmentName(String enrollmentName) {
-        EnrollmentName = enrollmentName;
-    }
-
-    public LocalDate getStartDate() {
-        return startDate;
-    }
-
-    public void setStartDate(LocalDate startDate) {
-        this.startDate = startDate;
-    }
-
-    public LocalDate getEndDate() {
-        return endDate;
-    }
-
-    public void setEndDate(LocalDate endDate) {
-        this.endDate = endDate;
-    }
-    public int getDuration() {
-        return Duration;
-    }
-
-    public void setDuration(int duration) {
-        Duration = duration;
+    public void setSubscription(Subscription subscription) {
+        this.subscription = subscription;
     }
 }

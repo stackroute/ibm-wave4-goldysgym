@@ -49,4 +49,5 @@ public class EnrollmentController
         enrollmentService.delete(id);
         return new ResponseEntity<String>("succefullly deleted", HttpStatus.OK);
     }
+
 }

@@ -1,6 +1,7 @@
 package com.stackroute.enrollment.service;
 
 import com.stackroute.enrollment.domain.Enrollment;
+import com.stackroute.enrollment.domain.Subscription;
 import com.stackroute.enrollment.repository.EnrollmentRepository;
 import org.springframework.stereotype.Service;
 
@@ -20,7 +21,8 @@ private EnrollmentRepository enrollmentRepository;
 
     public Enrollment saveEnrollment(Enrollment enrollment)
     {
-        int duration= enrollment.getDuration();
+       Subscription subscription = enrollment.getSubscription();
+       int duration=subscription.getDuration();
         LocalDate futureDate =LocalDate.now().plusMonths(duration);
         enrollment.setEndDate(futureDate);
         enrollment.setStartDate(LocalDate.now());
