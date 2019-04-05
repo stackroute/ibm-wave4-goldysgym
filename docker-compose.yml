@@ -76,6 +76,19 @@ services:
     ports:
       - 8091:8091
 
+  program-schedular:
+    build: program-schedular/
+    restart: always
+    network_mode: "host"
+    hostname: localhost
+    depends_on:
+      - config-service
+      - eureka-server
+      - mongo
+    ports:
+      - 8092:8092
+
+
   program-service:
     build: program-service/
     restart: always
