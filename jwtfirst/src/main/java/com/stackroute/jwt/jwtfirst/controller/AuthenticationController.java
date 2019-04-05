@@ -1,8 +1,7 @@
 package com.stackroute.jwt.jwtfirst.controller;
 
-import com.stackroute.jwt.jwtfirst.UnauthorizedException;
-import com.stackroute.jwt.jwtfirst.domain.UserDTO;
-import com.stackroute.jwt.jwtfirst.model.User;
+import com.stackroute.jwt.jwtfirst.dto.UserDTO;
+import com.stackroute.jwt.jwtfirst.domain.User;
 import com.stackroute.jwt.jwtfirst.security.JwtTokenUtil;
 import com.stackroute.jwt.jwtfirst.security.JwtUser;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,7 +34,7 @@ public class AuthenticationController {
 
 
     @PostMapping(value = "/login")
-    public ResponseEntity<UserDTO> login(@RequestBody User user, HttpServletRequest request, HttpServletResponse response) {
+    public ResponseEntity<?> login(@RequestBody User user, HttpServletRequest request, HttpServletResponse response) {
         try {
             Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(user.getEmail(), user.getPassword()));
             final JwtUser userDetails = (JwtUser) authentication.getPrincipal();
@@ -47,7 +46,7 @@ public class AuthenticationController {
 
         } catch (Exception e) {
 
-            throw new UnauthorizedException(e.getMessage());
+            return new ResponseEntity<String>("email id or password is worng ", HttpStatus.CONFLICT);
         }
 
     }

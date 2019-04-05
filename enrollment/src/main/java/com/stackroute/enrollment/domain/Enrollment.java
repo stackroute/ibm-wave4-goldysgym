@@ -15,6 +15,7 @@ public class Enrollment
     String firstName;
     String lastName;
     String email;
+    String password;
     int age;
     String gender;
     Double Height;
@@ -22,10 +23,18 @@ public class Enrollment
     Double price;
     String EnrollmentName;
     int Duration;
-    LocalDate startDate;
-    LocalDate endDate;
+//    LocalDate startDate;
+//    LocalDate endDate;
 
     public Enrollment() {
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getUserId() {
@@ -116,21 +125,21 @@ public class Enrollment
         EnrollmentName = enrollmentName;
     }
 
-    public LocalDate getStartDate() {
-        return startDate;
-    }
-
-    public void setStartDate(LocalDate startDate) {
-        this.startDate = startDate;
-    }
-
-    public LocalDate getEndDate() {
-        return endDate;
-    }
-
-    public void setEndDate(LocalDate endDate) {
-        this.endDate = endDate;
-    }
+//    public LocalDate getStartDate() {
+//        return startDate;
+//    }
+//
+//    public void setStartDate(LocalDate startDate) {
+//        this.startDate = startDate;
+//    }
+//
+//    public LocalDate getEndDate() {
+//        return endDate;
+//    }
+//
+//    public void setEndDate(LocalDate endDate) {
+//        this.endDate = endDate;
+//    }
     public int getDuration() {
         return Duration;
     }

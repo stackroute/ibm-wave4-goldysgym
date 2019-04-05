@@ -33,9 +33,13 @@ export class ProgramService {
     return this.http.get("http://localhost:3000/subscriptions");
   }
   putProgram(data)
-{
+  {
   return this.http.post(environment.dbUrlOut1,data);
-}
+ } 
+//  putSubscription(data)
+//  {
+//  return this.http.post(environment.dbUrlOut1,data);
+// }
 
   deleteProgram(id) {
     return this.http.delete(environment.dbUrlOut2+id);
@@ -46,4 +50,6 @@ export class ProgramService {
     return this.http.put(environment.dbUrlOut2,data);
     //return this.http.get(`http://localhost:9001/api/v1/programs/${id}`);
   }
+
+
 }

@@ -13,7 +13,7 @@ export class UserService {
 
   saveUser(user: any): Observable<any>{
     const headers = new HttpHeaders({'Access-Control-Allow-Orgin': "*"});
-    return this.http.post("http://localhost:9002/registration",user,{headers:headers});
+    return this.http.post("http://localhost:9002/registration",user,{headers:headers, responseType:"text"});
 
   }
 
@@ -31,5 +31,8 @@ export class UserService {
     const headers = new HttpHeaders({'Authorization': "Bearer "+ token});
     return this.http.get("http://localhost:9002/getuser ",{headers:headers});
 
+  }
+  getUserDetails() {
+    return this.http.get("http://localhost:8091/enrollments");
   }
 }

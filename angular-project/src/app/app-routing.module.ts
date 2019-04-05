@@ -9,6 +9,12 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { HomecomponentComponent } from './homecomponent/homecomponent.component';
 import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
+import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
+import { FollowGymatesComponent } from './follow-gymates/follow-gymates.component';
+import { LeaderboardComponent } from './leaderboard/leaderboard.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+import { ProgramsComponent } from './programs/programs.component';
+import { UserSubscriptionsComponent } from './user-subscriptions/user-subscriptions.component';
 import { ProgramDetailsComponent } from './program-details/program-details.component';
 import{EditProgramformComponent} from './edit-programform/edit-programform.component';
 import{AdminProgramdetailsComponent } from './admin-programdetails/admin-programdetails.component';
@@ -32,6 +38,15 @@ const routes: Routes = [
       
     ]
   },
+  //User page routes
+  {path :'user', component:UserDashboardComponent,children:[
+    { path: 'follow', component: FollowGymatesComponent },
+    { path: 'leaderboard', component: LeaderboardComponent },
+    { path: 'profile', component: UserProfileComponent },
+    {path:'programs', component:ProgramsComponent},
+    {path:'mysubs', component:UserSubscriptionsComponent},
+    { path: '', redirectTo: '/user/profile', pathMatch: 'full' }
+  ]},
    // default route
    { path: '**', redirectTo: '/home', pathMatch: 'full' },
    { path: 'home', component: HomecomponentComponent},

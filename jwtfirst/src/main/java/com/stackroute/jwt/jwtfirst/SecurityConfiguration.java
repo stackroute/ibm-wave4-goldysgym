@@ -1,10 +1,9 @@
 package com.stackroute.jwt.jwtfirst;
 
-import com.stackroute.jwt.jwtfirst.interceptor.AuthrenticationTokenFilter;
+import com.stackroute.jwt.jwtfirst.interceptor.AuthenticationTokenFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.core.annotation.Order;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -20,8 +19,6 @@ import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.security.web.csrf.CsrfFilter;
 
-import javax.servlet.Filter;
-
 
 @Configuration
 @EnableWebSecurity
@@ -33,8 +30,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Autowired
     private AuthenticationEntryPoint authenticationEntryPoint;
 
-    @Autowired
-    public void configureAthentication(AuthenticationManagerBuilder authenticationManagerBuilder)throws Exception
+    @Override
+    public void configure(AuthenticationManagerBuilder authenticationManagerBuilder)throws Exception
     {
         authenticationManagerBuilder.userDetailsService(this.userDetailsService).passwordEncoder(PasswordEncoder());
     }
@@ -53,9 +50,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     }
 
     @Bean
-    public AuthrenticationTokenFilter authenticationTokenFilterBean()
+    public AuthenticationTokenFilter authenticationTokenFilterBean()
     {
-        return new AuthrenticationTokenFilter();
+        return new AuthenticationTokenFilter();
     }
 
 
@@ -81,3 +78,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 
 }
+
+
+
