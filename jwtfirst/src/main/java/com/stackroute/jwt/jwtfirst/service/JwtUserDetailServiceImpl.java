@@ -1,5 +1,6 @@
-package com.stackroute.jwt.jwtfirst;
+package com.stackroute.jwt.jwtfirst.service;
 
+import com.stackroute.jwt.jwtfirst.JwtUserFactory;
 import com.stackroute.jwt.jwtfirst.domain.User;
 import com.stackroute.jwt.jwtfirst.repo.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;

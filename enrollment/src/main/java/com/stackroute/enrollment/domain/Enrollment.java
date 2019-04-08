@@ -1,31 +1,33 @@
 package com.stackroute.enrollment.domain;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDate;
+import java.util.Date;
 
 @Document
-public class Enrollment
-{
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class Enrollment {
     @Id
     String userId;
     String firstName;
     String lastName;
     String email;
     String password;
-    LocalDate DateOfBirth;
+    Date dateOfBirth;
     String gender;
-    Double Height;
-    Double Weight;
-    int interest[]= new int[3];
-    LocalDate StartDate;
-    LocalDate EndDate;
+    Double height;
+    Double weight;
+    int interest[] = new int[3];
+    Date startDate;
+    Date endDate;
     Subscription subscription;
-    Double price;
-    String EnrollmentName;
-    int Duration;LocalDate startDate;
- LocalDate endDate;
 
     public String getUserId() {
         return userId;
@@ -67,12 +69,12 @@ public class Enrollment
         this.password = password;
     }
 
-    public LocalDate getDateOfBirth() {
-        return DateOfBirth;
+    public Date getDateOfBirth() {
+        return dateOfBirth;
     }
 
-    public void setDateOfBirth(LocalDate dateOfBirth) {
-        DateOfBirth = dateOfBirth;
+    public void setDateOfBirth(Date dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
     }
 
     public String getGender() {
@@ -84,19 +86,19 @@ public class Enrollment
     }
 
     public Double getHeight() {
-        return Height;
+        return height;
     }
 
     public void setHeight(Double height) {
-        Height = height;
+        this.height = height;
     }
 
     public Double getWeight() {
-        return Weight;
+        return weight;
     }
 
     public void setWeight(Double weight) {
-        Weight = weight;
+        this.weight = weight;
     }
 
     public int[] getInterest() {
@@ -107,20 +109,20 @@ public class Enrollment
         this.interest = interest;
     }
 
-    public LocalDate getStartDate() {
-        return StartDate;
+    public Date getStartDate() {
+        return startDate;
     }
 
-    public void setStartDate(LocalDate startDate) {
-        StartDate = startDate;
+    public void setStartDate(Date startDate) {
+        this.startDate = startDate;
     }
 
-    public LocalDate getEndDate() {
-        return EndDate;
+    public Date getEndDate() {
+        return endDate;
     }
 
-    public void setEndDate(LocalDate endDate) {
-        EndDate = endDate;
+    public void setEndDate(Date endDate) {
+        this.endDate = endDate;
     }
 
     public Subscription getSubscription() {
@@ -129,29 +131,5 @@ public class Enrollment
 
     public void setSubscription(Subscription subscription) {
         this.subscription = subscription;
-    }
-
-    public Double getPrice() {
-        return price;
-    }
-
-    public void setPrice(Double price) {
-        this.price = price;
-    }
-
-    public String getEnrollmentName() {
-        return EnrollmentName;
-    }
-
-    public void setEnrollmentName(String enrollmentName) {
-        EnrollmentName = enrollmentName;
-    }
-
-    public int getDuration() {
-        return Duration;
-    }
-
-    public void setDuration(int duration) {
-        Duration = duration;
     }
 }

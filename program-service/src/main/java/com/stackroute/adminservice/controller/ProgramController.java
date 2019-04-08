@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 import javax.naming.ldap.PagedResultsControl;
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -23,7 +24,7 @@ public class   ProgramController {
     }
 
     @PostMapping("/program")
-    public ResponseEntity<Program> saveProgram(@RequestBody Program program) {
+    public ResponseEntity<Program> saveProgram(@RequestBody @Valid Program program) {
         Program programAdded = programService.saveProgram(program);
         return new ResponseEntity<Program>(programAdded, HttpStatus.CREATED);
     }
@@ -35,8 +36,10 @@ public class   ProgramController {
     }
 
     @GetMapping("/programs/{programId}")
-    public ResponseEntity<Program> getProgramsById(@PathVariable String programId) {
+    public ResponseEntity<Program> getProgramsById(@PathVariable String programId) throws Exception {
         Program programById = programService.getProgramById(programId);
+        if(programById==null)
+            throw new Exception();
         return new ResponseEntity<Program>(programById, HttpStatus.OK);
     }
 
@@ -48,7 +51,9 @@ public class   ProgramController {
     }
 
     @DeleteMapping("/programs/{programId}")
-    public ResponseEntity<List<Program>> deleteProgram(@PathVariable String programId) {
+    public ResponseEntity<List<Program>> deleteProgram(@PathVariable String programId) throws Exception {
+        if(programService.getProgramById(programId)==null)
+            throw new Exception();
         programService.deleteProgram(programId);
         List<Program> allPrograms = programService.getAllPrograms();
         return new ResponseEntity<List<Program>>(allPrograms, HttpStatus.OK);

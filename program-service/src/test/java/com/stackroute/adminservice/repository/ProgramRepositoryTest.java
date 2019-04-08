@@ -27,13 +27,11 @@ public class ProgramRepositoryTest {
         program.setProgramName("Yoga");
         program.setDay("Monday");
         program.setTiming("Morning");
-        program.setImageUrl("xyz");
-        program.setProgramDescription("hjh");
+        program.setImageUrl("image");
+        program.setProgramDescription("Demo desc");
         program.setTrainerName("Rohan");
-        program.setTrainerDescription("asdd");
+        program.setTrainerDescription("Demo Trainer Desc");
         program.setTotalSeats(20);
-
-
     }
 
     @After
@@ -53,7 +51,7 @@ public class ProgramRepositoryTest {
 
     @Test
     public void testSaveProgramFailure() {
-        Program testProgram = new Program("2", "Zumba", "Saturday", "Evening", "fhfh", "hjhh", "Rohan", "fdfd", 20);
+        Program testProgram = new Program("2", "Zumba", "Saturday", "Evening", "image", "desc", "Rohan", "tdesc", 20);
         programRepository.save(program);
         Program fetchProgram = programRepository.findById(program.getProgramId()).get();
         Assert.assertNotSame(testProgram, program);
@@ -69,6 +67,14 @@ public class ProgramRepositoryTest {
         List<Program> list = programRepository.findAll();
         Assert.assertEquals("Zumba", list.get(0).getProgramName());
 
+
+    }
+    @Test
+    public void testGetProgramById() {
+        Program testProgram = new Program("1", "Zumba", "Saturday", "Evening", "fhfh", "hjhh", "Rohan", "fdfd", 20);
+        programRepository.save(testProgram);
+        Program programById = programRepository.findById("1").get();
+        Assert.assertEquals("Zumba", programById.getProgramName());
 
     }
 

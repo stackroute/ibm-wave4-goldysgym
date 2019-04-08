@@ -1,4 +1,4 @@
-package com.stackroute.jwt.jwtfirst;
+package com.stackroute.jwt.jwtfirst.config;
 
 import org.springframework.amqp.core.Binding;
 import org.springframework.amqp.core.BindingBuilder;
@@ -10,10 +10,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 
-
 @Configuration
-public class RabbitConfig {
-
+public class RabbitConfig
+{
     public static final String QUEUE_NAME="goldy.gym";
     public static final String EXCHANGE_NAME="goldy.gym.exchange";
     public static final String ROUTING_KEY="goldy.gym.key";
