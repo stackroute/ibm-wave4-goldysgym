@@ -3,14 +3,14 @@
     <span style="border-bottom:5px solid #00334d;padding-bottom: 10px;">Subscriptions</span></h2>
     <div class="container-fluid">
       <div class="row">
-        <div class="col-md-3"  *ngFor="let user of arraySubscriptions">
+        <div class="col-md-3"  *ngFor="let user of subscriptions">
           <div class="card">
-            <img class="card-img-top" src="{{user.img}}" alt="Card image cap">
+            <img class="card-img-top" src="{{user.imageUrl}}" alt="Card image cap">
             <div class="card-body">
                 <div >
-              <h5 class="card-title"  >{{user.name}}</h5>
+              <h5 class="card-title"  >{{user.subscriptionName}}</h5>
                 </div>
-              <p class="card-text">{{user.subscriptionDescription}}</p>
+              <p class="card-text">{{user.description}}</p>
             </div>
             <div class="card-footer">
               <button type="button" class="btn btn-outline-primary">Subscription</button>&nbsp;

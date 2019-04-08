@@ -9,6 +9,24 @@
                     <p class="card-text">{{a.programDescription}}</p>
                 </div>
                 <div class="card-footer">
+                    <button type="button" routerLink="/admin-prog-details/{{a.programId}}" class="btn btn-primary">View</button>&nbsp;
+                    <!-- <button type="button" class="btn btn-danger">Remove</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<h1>Subscriptions</h1>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-4" *ngFor="let b of subscriptions">
+            <div class="card">
+                <img class="card-img-top" src={{b.imageUrl}} alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">{{b.subscriptionName}}</h5>
+                    <p class="card-text">{{b.description}}</p>
+                </div>
+                <div class="card-footer">
                     <button type="button" class="btn btn-primary">View</button>&nbsp;
                     <!-- <button type="button" class="btn btn-danger">Remove</button> -->
                 </div>

@@ -1,10 +1,9 @@
 package com.stackroute.jwt.jwtfirst;
 
-import com.stackroute.jwt.jwtfirst.model.User;
+import com.stackroute.jwt.jwtfirst.domain.User;
 import com.stackroute.jwt.jwtfirst.security.JwtUser;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.ArrayList;
 import java.util.Arrays;

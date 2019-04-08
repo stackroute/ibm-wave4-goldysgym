@@ -10,11 +10,11 @@ import { HttpClient } from '@angular/common/http';
 export class SubscriptionComponent implements OnInit {
 
   constructor(private program:ProgramService, private http:HttpClient) { }
-  arraySubscriptions:any=[];
+  subscriptions:any=[];
   ngOnInit() {
     this.program.getSubscriptionDetails().subscribe(data=>{
       console.log(data)
-      this.arraySubscriptions=data
+      this.subscriptions=data
     })
   }
 

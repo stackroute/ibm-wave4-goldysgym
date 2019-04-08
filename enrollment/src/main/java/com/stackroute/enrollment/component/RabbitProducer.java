@@ -2,7 +2,6 @@ package com.stackroute.enrollment.component;
 
 import com.stackroute.enrollment.config.RabbitConfig;
 import com.stackroute.enrollment.domain.Enrollment;
-import com.stackroute.enrollment.domain.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;

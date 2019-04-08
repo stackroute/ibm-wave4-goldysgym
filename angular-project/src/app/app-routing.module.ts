@@ -16,12 +16,17 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { ProgramsComponent } from './programs/programs.component';
 import { UserSubscriptionsComponent } from './user-subscriptions/user-subscriptions.component';
 import { ProgramDetailsComponent } from './program-details/program-details.component';
+import{EditProgramformComponent} from './edit-programform/edit-programform.component';
+import{AdminProgramdetailsComponent } from './admin-programdetails/admin-programdetails.component';
+import { EnrolltestComponent } from './enrolltest/enrolltest.component';
 
 const routes: Routes = [
 
   {path:'prog-details/:id',component: ProgramDetailsComponent},
+  {path: 'admin-prog-details/:id', component: AdminProgramdetailsComponent},
   {path: "signup", component:SignupComponent},
   {path: "login", component:LoginComponent},
+  {path: "enroll", component:EnrolltestComponent},
   {
     // admin page routes 
     path: 'admin', component: AdminDashboardComponent, children: [
@@ -30,7 +35,9 @@ const routes: Routes = [
       { path: 'add-prog', component: AddProgramsComponent },
       { path: 'edit-prog', component: EditProgramsComponent },
       { path: 'summary', component: SummaryPageComponent },
+      { path: 'edit/:id', component: EditProgramformComponent },
       { path: '', redirectTo: '/admin/summary', pathMatch: 'full' }
+      
     ]
   },
   //User page routes

@@ -1,4 +1,25 @@
 {
+  "3months":
+{
+    "name": "3",
+    "amount": "<ReferenceError: amount is not defined>",
+    "duration": "<ReferenceError: duration is not defined>",
+    "about": "In officia sint eu deserunt magna dolore eu dolor culpa dolore do ipsum et. Aliqua exercitation cupidatat deserunt Lorem excepteur sit ullamco aliqua sint."
+  },
+  "6months":{
+    "name": "6",
+    "amount": "<ReferenceError: amount is not defined>",
+    "duration": "<ReferenceError: duration is not defined>",
+    "about": "Aliquip sunt tempor qui nisi ea elit excepteur consectetur minim laboris aliquip. Velit ea ipsum quis cupidatat et pariatur reprehenderit deserunt proident culpa."
+  },
+  "12months":{
+    "name": "12",
+    "amount": "<ReferenceError: amount is not defined>",
+    "duration": "<ReferenceError: duration is not defined>",
+    "about": "Anim esse ad commodo velit proident laboris labore do est cupidatat. Non aute elit reprehenderit excepteur labore cupidatat adipisicing."
+  },
+
+
   "posts": [
     {
       "id": 1,
@@ -13,14 +34,6 @@
       "postId": 1
     }
   ],
-  "users":
-    { 
-      "Name":"Yash Chaddha",
-      "Age":"50",
-      "Email":"yash.chaddha1997@gmail.com",
-      "Weight":"60",
-      "Height":"160"
-    },
   "subscriptions":[
     {
       "id":1,

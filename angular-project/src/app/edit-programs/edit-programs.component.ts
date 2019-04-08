@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProgramService } from '../program.service';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment.prod';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-edit-programs',
@@ -12,7 +13,7 @@ export class EditProgramsComponent implements OnInit {
 
   programs : any;
 
-  constructor(private programService: ProgramService, private http:HttpClient) { }
+  constructor(private programService: ProgramService, private http:HttpClient,private router:Router) { }
 
   ngOnInit() {
     this.getPrograms();
@@ -30,9 +31,8 @@ export class EditProgramsComponent implements OnInit {
     console.log(id);
     // return this.http.delete('http://localhost:3000/programs/'+id).subscribe(console.log),
     // this.programs=this.programs.filter(x=>id!=x.id);
-
-    return this.programService.deleteProgram(id).subscribe(console.log),
-    this.programs=this.programs.filter(x=>id!=x.id);
-  }
+    
+    return this.programService.deleteProgram(id).subscribe(()=>{this.getPrograms})
+   }
 
 }

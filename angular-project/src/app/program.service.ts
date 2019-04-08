@@ -30,14 +30,26 @@ export class ProgramService {
   }
 
   getSubscriptionDetails(){
-    return this.http.get("http://localhost:3000/subscriptions");
+    return this.http.get("http://localhost:9003/api/v2/subscriptions");
   }
   putProgram(data)
-{
+  {
   return this.http.post(environment.dbUrlOut1,data);
+ } 
+ putSubscription(data)
+ {
+ return this.http.post(environment.dbUrlOut3,data);
 }
 
   deleteProgram(id) {
-    return this.http.delete(environment.dbUrlOut+id);
+    return this.http.delete(environment.dbUrlOut2+id);
   }
+  editProgram(data)
+  {
+    // console.log(id, "this is data given to backend ");
+    return this.http.put(environment.dbUrlOut2,data);
+    //return this.http.get(`http://localhost:9001/api/v1/programs/${id}`);
+  }
+
+
 }
