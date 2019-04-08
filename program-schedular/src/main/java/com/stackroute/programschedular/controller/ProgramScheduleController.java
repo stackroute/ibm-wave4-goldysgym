@@ -5,12 +5,12 @@ import com.stackroute.programschedular.service.ProgramScheduleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@CrossOrigin
 public class ProgramScheduleController {
 
     private ProgramScheduleService programScheduleService;
@@ -21,7 +21,7 @@ public class ProgramScheduleController {
     }
 
     @RequestMapping("/program")
-    public ResponseEntity<?> save(ProgramSchedule programSchedule)
+    public ResponseEntity<?> save(@RequestBody ProgramSchedule programSchedule)
     {
         ProgramSchedule programSchedule1=programScheduleService.save(programSchedule);
         return new ResponseEntity<String>("succefullly created", HttpStatus.CREATED);
@@ -32,5 +32,6 @@ public class ProgramScheduleController {
         List<ProgramSchedule> list = programScheduleService.getALl();
         return new ResponseEntity<List<ProgramSchedule>>(list,HttpStatus.OK);
     }
+
 
 }

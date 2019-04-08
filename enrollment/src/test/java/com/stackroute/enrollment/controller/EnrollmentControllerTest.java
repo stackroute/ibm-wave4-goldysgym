@@ -4,7 +4,7 @@ package com.stackroute.enrollment.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.stackroute.enrollment.domain.Enrollment;
-import com.stackroute.enrollment.service.EnrollmentService;
+import com.stackroute.enrollment.service.EnrollmentServiceImpl;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -36,7 +36,7 @@ public class EnrollmentControllerTest {
     private MockMvc mockMvc;
     private Enrollment enrollment;
     @MockBean
-    private EnrollmentService enrollmentService;
+    private EnrollmentServiceImpl enrollmentServiceImpl;
     @InjectMocks
     private EnrollmentController enrollmentController;
 
@@ -58,7 +58,7 @@ public class EnrollmentControllerTest {
 
     @Test
     public void saveUser() throws Exception {
-        when(enrollmentService.saveEnrollment(any())).thenReturn(enrollment);
+        when(enrollmentServiceImpl.saveEnrollment(any())).thenReturn(enrollment);
         mockMvc.perform(MockMvcRequestBuilders.post("/enrollment")
                 .contentType(MediaType.APPLICATION_JSON).content(asJsonString(enrollment)))
                 .andExpect(MockMvcResultMatchers.status().isCreated())
@@ -70,7 +70,7 @@ public class EnrollmentControllerTest {
 
     @Test
     public void getAllUser() throws Exception {
-        when(enrollmentService.getALLRest()).thenReturn(list);
+        when(enrollmentServiceImpl.getALLRest()).thenReturn(list);
         mockMvc.perform(MockMvcRequestBuilders.get("/enrollments")
                 .contentType(MediaType.APPLICATION_JSON).content(asJsonString(enrollment)))
                 .andExpect(MockMvcResultMatchers.status().isOk())

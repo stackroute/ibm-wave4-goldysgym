@@ -2,7 +2,7 @@ package com.stackroute.enrollment.controller;
 
 import com.stackroute.enrollment.component.RabbitProducer;
 import com.stackroute.enrollment.domain.Enrollment;
-import com.stackroute.enrollment.service.EnrollmentService;
+import com.stackroute.enrollment.service.EnrollmentServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,18 +15,18 @@ import java.util.List;
 public class EnrollmentController
 {
 
-    private EnrollmentService enrollmentService;
+    private EnrollmentServiceImpl enrollmentServiceImpl;
     private RabbitProducer rabbitProducer;
 
     @Autowired
-    public EnrollmentController(EnrollmentService enrollmentService, RabbitProducer rabbitProducer) {
-        this.enrollmentService = enrollmentService;
+    public EnrollmentController(EnrollmentServiceImpl enrollmentServiceImpl, RabbitProducer rabbitProducer) {
+        this.enrollmentServiceImpl = enrollmentServiceImpl;
         this.rabbitProducer=rabbitProducer;
     }
 
     @PostMapping("/enrollment")
     public ResponseEntity<?> saveEnrollment(@RequestBody Enrollment enrollment) {
-      Enrollment  enrollment1= enrollmentService.saveEnrollment(enrollment);
+      Enrollment  enrollment1= enrollmentServiceImpl.saveEnrollment(enrollment);
         rabbitProducer.produce(enrollment1);
         return new ResponseEntity<String>("succefullly created", HttpStatus.CREATED);
     }
@@ -34,19 +34,19 @@ public class EnrollmentController
     // this method will get all Enrollments
     @GetMapping("enrollments")
     public ResponseEntity<List<Enrollment>> getALlEnrollments() {
-        List<Enrollment> list = enrollmentService.getALLRest();
+        List<Enrollment> list = enrollmentServiceImpl.getALLRest();
         return new ResponseEntity<List<Enrollment>>(list,HttpStatus.OK);
     }
     // this method will get Enrollment by id
     @GetMapping("enrollment/{id}")
     public ResponseEntity<?> getEnrollmentById(@PathVariable String id) {
-        Enrollment enrollment= enrollmentService.findbyId(id);
+        Enrollment enrollment= enrollmentServiceImpl.findbyId(id);
         return new ResponseEntity<Enrollment>(enrollment,HttpStatus.OK);
     }
     @DeleteMapping("enrollment/{id}")
     public  ResponseEntity<?> deleteEnrollment(@PathVariable String id)
     {
-        enrollmentService.delete(id);
+        enrollmentServiceImpl.delete(id);
         return new ResponseEntity<String>("succefullly deleted", HttpStatus.OK);
     }
 
