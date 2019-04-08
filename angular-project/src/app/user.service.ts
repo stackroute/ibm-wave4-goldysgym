@@ -13,7 +13,8 @@ export class UserService {
 
   saveUser(user: any): Observable<any>{
     const headers = new HttpHeaders({'Access-Control-Allow-Orgin': "*"});
-    return this.http.post("http://localhost:9002/registration",user,{headers:headers, responseType:"text"});
+    console.log(user, "this is user object in user service")
+    return this.http.post("http://localhost:8091/enrollment",user,{headers:headers, responseType:"text"});
 
   }
 

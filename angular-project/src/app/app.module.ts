@@ -28,6 +28,8 @@ import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserSubscriptionsComponent } from './user-subscriptions/user-subscriptions.component';
 import { ProgramDetailsComponent } from './program-details/program-details.component';
+import { EditProgramformComponent } from './edit-programform/edit-programform.component';
+import { AdminProgramdetailsComponent } from './admin-programdetails/admin-programdetails.component';
 import { SubscriptionviewComponent } from './subscriptionview/subscriptionview.component';
 import { EnrolltestComponent } from './enrolltest/enrolltest.component';
 import { MatStepperModule, MatInputModule, MatButtonModule, MatAutocompleteModule } from '@angular/material';
@@ -35,6 +37,7 @@ import { MatRadioModule} from '@angular/material';
 import { MatDatepickerModule,MatNativeDateModule,MatFormFieldModule,} from '@angular/material';
 import {MatCardModule} from '@angular/material/card';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+
 
 
 @NgModule({
@@ -56,6 +59,8 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     SignupComponent,
     LoginComponent,
     ProgramDetailsComponent,
+    EditProgramformComponent,
+    AdminProgramdetailsComponent,
     SubscriptionviewComponent,
     UserDashboardComponent,
     UserDashboardSidebarComponent,
@@ -65,7 +70,6 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     UserSubscriptionsComponent,
     ProgramDetailsComponent,
     EnrolltestComponent
-    
   ],
   imports: [
     BrowserModule,

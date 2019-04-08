@@ -10,22 +10,11 @@
   <tbody>
     <tr *ngFor="let a of programs">
       <th scope="row">{{a.id}}</th>
-      <td>{{a.name}}</td>
-      <td>{{a.desc}}</td>
-      <td><button type="button" class="btn btn-primary">Edit</button>&nbsp;
-        <button type="button" (click)="remove(a.id)" class="btn btn-danger">Remove</button></td>
+      <td>{{a.programName}}</td>
+      <td>{{a.programDescription}}</td>
+      <td><button type="button" routerLink="/admin/edit/{{a.programId}}" class="btn btn-primary">Edit</button>&nbsp;
+        <button type="button" (click)="remove(a.programId)" class="btn btn-danger">Remove</button></td>
     </tr>
-    <!-- <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr> -->
+    
   </tbody>
 </table>

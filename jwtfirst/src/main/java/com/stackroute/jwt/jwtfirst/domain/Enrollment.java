@@ -1,39 +1,38 @@
 package com.stackroute.jwt.jwtfirst.domain;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.stackroute.jwt.jwtfirst.component.LocalDateDeserializer;
+import com.stackroute.jwt.jwtfirst.component.LocalDateSerializer;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 
 
 import java.time.LocalDate;
+import java.util.Date;
 
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Enrollment
 {
     @Id
     String userId;
-    String programId;
     String firstName;
     String lastName;
     String email;
     String password;
-    int age;
+
+    Date dateOfBirth;
     String gender;
-    Double Height;
-    Double Weight;
-    Double price;
-    String EnrollmentName;
-    int Duration;
-//    LocalDate startDate;
-//    LocalDate endDate;
-
-    public Enrollment() {
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
+    Double height;
+    Double weight;
+    int interest[]= new int[3];
+    Date startDate;
+    Date endDate;
+    Subscription subscription;
 
     public String getUserId() {
         return userId;
@@ -41,14 +40,6 @@ public class Enrollment
 
     public void setUserId(String userId) {
         this.userId = userId;
-    }
-
-    public String getProgramId() {
-        return programId;
-    }
-
-    public void setProgramId(String programId) {
-        this.programId = programId;
     }
 
     public String getFirstName() {
@@ -75,12 +66,20 @@ public class Enrollment
         this.email = email;
     }
 
-    public int getAge() {
-        return age;
+    public String getPassword() {
+        return password;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public Date getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public void setDateOfBirth(Date dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
     }
 
     public String getGender() {
@@ -92,57 +91,50 @@ public class Enrollment
     }
 
     public Double getHeight() {
-        return Height;
+        return height;
     }
 
     public void setHeight(Double height) {
-        Height = height;
+        this.height = height;
     }
 
     public Double getWeight() {
-        return Weight;
+        return weight;
     }
 
     public void setWeight(Double weight) {
-        Weight = weight;
+        this.weight = weight;
     }
 
-    public Double getPrice() {
-        return price;
+    public int[] getInterest() {
+        return interest;
     }
 
-    public void setPrice(Double price) {
-        this.price = price;
+    public void setInterest(int[] interest) {
+        this.interest = interest;
     }
 
-    public String getEnrollmentName() {
-        return EnrollmentName;
+    public Date getStartDate() {
+        return startDate;
     }
 
-    public void setEnrollmentName(String enrollmentName) {
-        EnrollmentName = enrollmentName;
+    public void setStartDate(Date startDate) {
+        this.startDate = startDate;
     }
 
-//    public LocalDate getStartDate() {
-//        return startDate;
-//    }
-//
-//    public void setStartDate(LocalDate startDate) {
-//        this.startDate = startDate;
-//    }
-//
-//    public LocalDate getEndDate() {
-//        return endDate;
-//    }
-//
-//    public void setEndDate(LocalDate endDate) {
-//        this.endDate = endDate;
-//    }
-    public int getDuration() {
-        return Duration;
+    public Date getEndDate() {
+        return endDate;
     }
 
-    public void setDuration(int duration) {
-        Duration = duration;
+    public void setEndDate(Date endDate) {
+        this.endDate = endDate;
+    }
+
+    public Subscription getSubscription() {
+        return subscription;
+    }
+
+    public void setSubscription(Subscription subscription) {
+        this.subscription = subscription;
     }
 }
