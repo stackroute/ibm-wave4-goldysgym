@@ -32,6 +32,11 @@ public class ProgramScheduleController {
         List<ProgramSchedule> list = programScheduleService.getALl();
         return new ResponseEntity<List<ProgramSchedule>>(list,HttpStatus.OK);
     }
-
+    @PutMapping("/programput/{id}")
+    public ResponseEntity<String> put(@RequestBody ProgramSchedule programSchedule,@PathVariable String id)
+    {
+        ProgramSchedule programSchedule1 = programScheduleService.put(programSchedule,id);
+        return new ResponseEntity<String>("put successfull",HttpStatus.OK);
+    }
 
 }

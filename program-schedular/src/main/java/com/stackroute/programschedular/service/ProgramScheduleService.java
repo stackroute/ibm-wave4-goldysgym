@@ -24,5 +24,9 @@ public class ProgramScheduleService
     {
         return  (List<ProgramSchedule>)programScheduleRepository.findAll();
     }
-
+    public  ProgramSchedule put(ProgramSchedule programSchedule, String id)
+    {
+        programSchedule.setUserId(id);
+        return programScheduleRepository.save(programSchedule);
+    }
 }
