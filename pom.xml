@@ -35,6 +35,7 @@
         <module>program-service</module>
         <module>jwtfirst</module>
         <module>subscription-service</module>
+        <module>program-schedular</module>
     </modules>
 
     <dependencies>

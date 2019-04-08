@@ -42,7 +42,13 @@ export class ProgramService {
 }
 
   deleteProgram(id) {
-    return this.http.delete(environment.dbUrlOut+id);
+    return this.http.delete(environment.dbUrlOut2+id);
+  }
+  editProgram(data)
+  {
+    // console.log(id, "this is data given to backend ");
+    return this.http.put(environment.dbUrlOut2,data);
+    //return this.http.get(`http://localhost:9001/api/v1/programs/${id}`);
   }
 
 
