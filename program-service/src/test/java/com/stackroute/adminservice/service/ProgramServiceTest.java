@@ -76,7 +76,7 @@ public class ProgramServiceTest {
     }
 
     @Test
-    public void getAllUser() {
+    public void getAllPrograms() {
 
         programRepository.save(program);
         //stubbing the mock to return specific data

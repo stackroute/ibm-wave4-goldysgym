@@ -3,12 +3,10 @@ package com.stackroute.adminservice.controller;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.stackroute.adminservice.domain.Program;
 import com.stackroute.adminservice.service.ProgramService;
-import com.stackroute.adminservice.service.ProgramServiceImpl;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
-import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
@@ -33,6 +31,7 @@ public class ProgramControllerTest {
 
     @Autowired
     private MockMvc mockMvc;
+
     private Program program;
     @MockBean
     private ProgramService programService;
@@ -51,11 +50,11 @@ public class ProgramControllerTest {
         program.setProgramName("Yoga");
         program.setDay("Monday");
         program.setTiming("Morning");
-        program.setImageUrl("xyz");
-        program.setProgramDescription("hjh");
+        program.setImageUrl("image");
+        program.setProgramDescription("Demo desc");
         program.setTrainerName("Rohan");
-        program.setTrainerDescription("asdd");
-        program.setTotalSeats(20);
+        program.setTrainerDescription("Demo Trainer Desc");
+        program.setTotalSeats(25);
         list = new ArrayList();
         list.add(program);
     }
@@ -67,8 +66,6 @@ public class ProgramControllerTest {
                 .contentType(MediaType.APPLICATION_JSON).content(asJsonString(program)))
                 .andExpect(MockMvcResultMatchers.status().isCreated())
                 .andDo(MockMvcResultHandlers.print());
-
-
     }
 
 
@@ -76,6 +73,16 @@ public class ProgramControllerTest {
     public void getAllPrograms() throws Exception {
         when(programService.getAllPrograms()).thenReturn(list);
         mockMvc.perform(MockMvcRequestBuilders.get("/api/v1/programs")
+                .contentType(MediaType.APPLICATION_JSON).content(asJsonString(program)))
+                .andExpect(MockMvcResultMatchers.status().isOk())
+                .andDo(MockMvcResultHandlers.print());
+
+    }
+
+    @Test
+    public void getProgramsById() throws Exception {
+        when(programService.getProgramById("1")).thenReturn(program);
+        mockMvc.perform(MockMvcRequestBuilders.get("/api/v1/programs/1")
                 .contentType(MediaType.APPLICATION_JSON).content(asJsonString(program)))
                 .andExpect(MockMvcResultMatchers.status().isOk())
                 .andDo(MockMvcResultHandlers.print());
