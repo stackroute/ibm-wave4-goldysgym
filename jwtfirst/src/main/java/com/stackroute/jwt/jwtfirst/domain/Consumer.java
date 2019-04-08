@@ -1,6 +1,5 @@
 package com.stackroute.jwt.jwtfirst.domain;
 
-import com.stackroute.jwt.jwtfirst.RabbitConfig;
 import com.stackroute.jwt.jwtfirst.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -10,7 +9,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Consumer {
-
+    public static final String QUEUE_NAME="goldy.gym";
     Logger logger = LoggerFactory.getLogger(this.getClass());
 
     public UserService userService;
@@ -22,7 +21,7 @@ public class Consumer {
 
     private User user=new User();
 
-    @RabbitListener(queues = RabbitConfig.QUEUE_NAME)
+    @RabbitListener(queues = QUEUE_NAME)
     public void consume(Enrollment enrollment) {
         logger.info("Message has: " + enrollment.getFirstName());
         user.setId(enrollment.getUserId());
