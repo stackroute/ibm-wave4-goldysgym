@@ -4,8 +4,6 @@ import com.stackroute.enrollment.domain.Enrollment;
 import com.stackroute.enrollment.domain.Subscription;
 import com.stackroute.enrollment.repository.EnrollmentRepository;
 import org.springframework.stereotype.Service;
-
-import java.time.LocalDate;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
