@@ -10,8 +10,12 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
 
+
+
 @SpringBootApplication
 public class JwtfirstApplication  {
+
+
 
 	public static void main(String[] args) {
 		SpringApplication.run(JwtfirstApplication.class, args);
@@ -37,5 +41,6 @@ public class JwtfirstApplication  {
 		return new CorsFilter(source);
 
 	}
+
 
 }

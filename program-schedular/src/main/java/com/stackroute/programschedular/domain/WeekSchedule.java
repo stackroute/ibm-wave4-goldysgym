@@ -20,6 +20,9 @@ public class WeekSchedule
     Saturday saturday;
     Sunday sunday;
 
+    public WeekSchedule() {
+    }
+
     public String getId() {
         return id;
     }
