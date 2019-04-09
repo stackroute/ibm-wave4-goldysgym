@@ -8,13 +8,13 @@ services:
       - 27017:27017
     expose:
       - 27017
-    container_name: mongo2
+    container_name: mongonew
     network_mode: host
 
   db:
     image: mysql:5.7
     restart: always
-    container_name: mysql
+    container_name: mysqlnew
     network_mode: "host"
     hostname: localhost
     volumes:

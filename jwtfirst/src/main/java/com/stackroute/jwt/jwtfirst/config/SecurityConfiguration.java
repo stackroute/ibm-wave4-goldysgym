@@ -1,5 +1,6 @@
-package com.stackroute.jwt.jwtfirst;
+package com.stackroute.jwt.jwtfirst.config;
 
+import com.stackroute.jwt.jwtfirst.CsrfHeaderFilter;
 import com.stackroute.jwt.jwtfirst.interceptor.AuthenticationTokenFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
