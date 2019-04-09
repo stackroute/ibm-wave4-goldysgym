@@ -11,10 +11,10 @@ export class UserDashboardSidebarComponent implements OnInit {
 
   ngOnInit() {
   }
-  tf:any[] = [true,false,false,false,false];
+  tf:any[] = [true,false,false,false,false,false];
 
   tfToggle(a){
-    this.tf= [false,false,false,false,false];
+    this.tf= [false,false,false,false,false,false];
     this.tf[a] = true;
   }
 }

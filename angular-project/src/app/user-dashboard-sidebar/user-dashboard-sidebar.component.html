@@ -5,10 +5,12 @@
     role="tab" aria-controls="v-pills-home" aria-selected="false" (click)="tfToggle(0)" routerLink="/user/profile">User Profile</a>
   <a [ngClass]="{ 'nav-link': true, 'active': tf[1] }" id="v-pills-home-tab" data-toggle="pill" routerLink="/"
     role="tab" aria-controls="v-pills-home" aria-selected="false" (click)="tfToggle(1)" routerLink="/user/Programs">Book program</a>
-  <a [ngClass]="{ 'nav-link': true, 'active': tf[2] }" id="v-pills-profile-tab" data-toggle="pill" routerLink="/"
+    <a [ngClass]="{ 'nav-link': true, 'active': tf[2] }" id="v-pills-home-tab" data-toggle="pill" routerLink="/"
+    role="tab" aria-controls="v-pills-home" aria-selected="false" (click)="tfToggle(2)" routerLink="/user/mypros">My programs</a>
+  <a [ngClass]="{ 'nav-link': true, 'active': tf[3] }" id="v-pills-profile-tab" data-toggle="pill" routerLink="/"
     role="tab" aria-controls="v-pills-profile" aria-selected="false" (click)="tfToggle(3)" routerLink="/user/mysubs">My subscriptions</a>
-  <a [ngClass]="{ 'nav-link': true, 'active': tf[3] }" id="v-pills-messages-tab" data-toggle="pill" routerLink="/"
+  <a [ngClass]="{ 'nav-link': true, 'active': tf[4] }" id="v-pills-messages-tab" data-toggle="pill" routerLink="/"
     role="tab" aria-controls="v-pills-messages" aria-selected="false" (click)="tfToggle(4)" routerLink="/user/follow">Follow Users</a>
-  <a [ngClass]="{ 'nav-link': true, 'active': tf[4] }" id="v-pills-settings-tab" data-toggle="pill" routerLink="/"
+  <a [ngClass]="{ 'nav-link': true, 'active': tf[5] }" id="v-pills-settings-tab" data-toggle="pill" routerLink="/"
     role="tab" aria-controls="v-pills-settings" aria-selected="false" (click)="tfToggle(5)" routerLink="/user/leaderboard">Leaderboard</a>
   </div>
