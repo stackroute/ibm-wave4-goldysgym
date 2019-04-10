@@ -58,9 +58,9 @@
           </mat-form-field>
         </div> -->
         <button mat-button matStepperNext [disabled]="!firstFormGroup.valid">
-          Next
+          NEXT
         </button>
-        <button mat-button (click)="stepper.reset()">Reset</button>
+        <button mat-button (click)="stepper.reset()">RESET</button>
         <br /><br />
       </form>
     </div>
@@ -100,10 +100,10 @@
           </mat-form-field>
         </div>
         <br />
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button (click)="stepper1.reset()">Reset</button>
+        <button mat-button matStepperPrevious>BACK</button>
+        <button mat-button (click)="stepper1.reset()">RESET</button>
         <button mat-button matStepperNext [disabled]="!secondFormGroup.valid">
-          Next
+          NEXT
         </button>
         <br /><br />
       </form>
@@ -114,23 +114,24 @@
       <form [formGroup]="thirdFormGroup" #userFormThree="ngForm" >
     <ng-template matStepLabel>Interests</ng-template>
     <div class="d-flex justify-content-around">
-      <mat-card class="example-card col-lg-3"  *ngFor="let a of programs">
+      <mat-card class="example-card col-lg-3"  *ngFor="let ints of programs">
         <mat-card-header>
           <div mat-card-avatar></div>
         </mat-card-header>
-        <img mat-card-image src="{{ a.imageUrl }}" alt="Card image" />
+        <img mat-card-image src="{{ ints.imageUrl }}" alt="Card image" />
         <mat-card-content>
-          <mat-card-title>{{ a.programName }}</mat-card-title>
-          <mat-card-subtitle>{{ a.programDescription }}</mat-card-subtitle>
+          <mat-card-title>{{ ints.programName }}</mat-card-title>
+          <mat-card-subtitle>{{ ints.programDescription }}</mat-card-subtitle>
         </mat-card-content>
         <mat-card-footer>
-          <mat-checkbox  class="ml-2" >Check me!</mat-checkbox><br />
+          <mat-checkbox  class="ml-2" (click)="Interests(ints.programId)" >Check me!</mat-checkbox><br />
         </mat-card-footer>
       </mat-card>
     </div>
     <div>
       <br />
-      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button matStepperPrevious>BACK</button>
+      <button mat-button matStepperNext>NEXT</button>
     </div>
     </form>
   </mat-step>
@@ -146,7 +147,8 @@
           <img mat-card-image src="{{ sub.imageUrl }}" alt="Card image cap" />
           <mat-card-content>
             <mat-card-title>{{ sub.subscriptionName }}</mat-card-title>
-            <mat-card-subtitle>{{ sub.description }}</mat-card-subtitle>
+            <mat-card-subtitle>{{ sub.duration }}&nbsp;<span>Months</span></mat-card-subtitle>
+            <mat-card-subtitle><span>Rs</span>&nbsp;{{ sub.amount }}</mat-card-subtitle>
           </mat-card-content>
           <mat-card-footer>
             <div style="display: inline-block">
@@ -156,7 +158,7 @@
         </mat-card>
       </div>
       <hr />
-      <div class="d-flex">
+      <!-- <div class="d-flex">
         <div class="example-container">
           <mat-form-field>
             <input matInput  [matDatepicker]="picker1" class="form-control" formControlName="startdate"
@@ -176,11 +178,11 @@
           </mat-form-field>
         </div>
         <br />
-      </div>
-      <div>
-        <button mat-button matStepperPrevious>Back</button>
+      </div> -->
+      <div> 
+        <button mat-button matStepperPrevious>BACK</button>
         <button mat-button  (click)="saveUser(userFormOne.value,userFormTwo.value,userFormThree.value,userFormFour.value, userForm)" type="button">
-          submit
+          SUBMIT
         </button>
       </div>
     </form>
