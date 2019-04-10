@@ -1,69 +1,21 @@
-
 <h2 class="text-center mt-5 pb-5">
     <span style="border-bottom:5px solid #00334d;padding-bottom: 10px;">Subscriptions</span></h2>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-3"  *ngFor="let user of subscriptions">
-          <div class="card">
-            <img class="card-img-top" src="{{user.imageUrl}}" alt="Card image cap">
-            <div class="card-body">
-                <div >
-              <h5 class="card-title"  >{{user.subscriptionName}}</h5>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3" *ngFor="let user of subscriptions">
+            <div class="card">
+                <img class="card-img-top" src="{{user.imageUrl}}" alt="Card image cap">
+                <div class="card-body">
+                    <div>
+                        <h5 class="card-title">{{user.subscriptionName}}</h5>
+                    </div>
+                    <p class="card-text">{{user.description}}</p>
                 </div>
-              <p class="card-text">{{user.description}}</p>
-            </div>
-            <div class="card-footer">
-              <button type="button" class="btn btn-outline-primary">Subscription</button>&nbsp;
-             </div>
-          </div>
-        </div>
-        <!-- <div class="col-lg-3">
-          <div class="card">
-            <img class="card-img-top" src="assets/images/a6.jpg" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">S&C</h5>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-                content. This content is a little bit longer.</p>
-            </div>
-            <div class="card-footer">
-              <button type="button" class="btn btn-outline-primary">Details</button>&nbsp;
-            </div>
-          </div>
-          </div>
-        <div class="col-lg-3">
-          <div class="card">
-            <img class="card-img-top" src="assets/images/a9.jpg" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">Yoga</h5>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-                content. This content is a little bit longer.</p>
-            </div>
-            <div class="card-footer">
-              <button type="button" class="btn btn-outline-primary">Details</button>&nbsp;
-             </div>
+                <div class="card-footer">
+                    <button routerLink="/subdetails/{{user.subscriptionId}}" type="button" class="btn btn-outline-primary">Subscription</button>&nbsp;
+                </div>
             </div>
         </div>
-        <div class="col-lg-3">
-          <div class="card">
-            <img class="card-img-top" src="assets/images/a7.jpg" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">Boxing</h5>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-                content. This content is a little bit longer.</p>
-            </div>
-            <div class="card-footer">
-              <button type="button" class="btn btn-outline-primary">Details</button>&nbsp;
-            </div>
-          </div>
-        </div> -->
-      </div>
+
     </div>
-    
-    
-    
-    
-    
-
-
-
-
+</div>

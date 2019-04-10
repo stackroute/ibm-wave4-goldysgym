@@ -21,17 +21,25 @@ export class ProgramService {
   getPrograms() {
     return this.http.get(environment.dbUrlOut);
   }
+ 
   getProgramDetails1(){
-    return this.http.get(" http://localhost:9001/api/v1/programs");
+    return this.http.get(environment.dbUrlOut);
   }
+ 
   getProgramDetails(id){
     
-    return this.http.get(`http://localhost:9001/api/v1/programs/${id}`);
+    return this.http.get(environment.dbUrlOut2+id);
   }
 
+ 
   getSubscriptionDetails(){
-    return this.http.get("http://localhost:9003/api/v2/subscriptions");
+    return this.http.get(environment.dbUrlOut4);
   }
+  getSubscriptionDetailsById(id){
+    
+    return this.http.get(environment.dbUrlOut4+id);
+  }
+
   putProgram(data)
   {
   return this.http.post(environment.dbUrlOut1,data);
@@ -46,9 +54,9 @@ export class ProgramService {
   }
   editProgram(data)
   {
-    // console.log(id, "this is data given to backend ");
+   
     return this.http.put(environment.dbUrlOut2,data);
-    //return this.http.get(`http://localhost:9001/api/v1/programs/${id}`);
+   
   }
 
 
