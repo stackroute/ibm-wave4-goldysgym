@@ -1,4 +1,4 @@
-<table class="table table-bordered table-striped">
+<!-- <table class="table table-bordered table-striped">
   <tr height="100">
   <th>Monday </th>
   <th>Monday</th>
@@ -25,4 +25,113 @@
 
 </table>
 <button class="btn btn-outline-info">Next</button>
-<button class="btn btn-outline-warning">Previous</button>
+<button class="btn btn-outline-warning">Previous</button> -->
+<div class="container-fluid">
+		<div class="row">
+		  <div class="col-md-3 text-center"  *ngFor='let in of counter(31) ;let i = index'>
+			<div class="card">
+			  <!-- <img class="card-img-top" src="{{user.imageUrl}}" alt="Card image cap"> -->
+			  <div class="card-body ">
+				  <div >
+				<a class="card-title btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal">{{i+1}}-April-2019</a>
+				  </div>
+				<!-- <p class="card-text">{{user.programDescription}}</p> -->
+			  </div>
+			  <!-- <div class="card-footer ">
+				<button  type="button" class="btn btn-outline-primary">Manage</button>&nbsp;
+			   </div> -->
+			</div>
+		  </div>
+		  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<div class="modal-dialog" role="document">
+				  <div class="modal-content">
+					<div class="modal-header">
+					  <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+					  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					  </button>
+					</div>
+					<div class="modal-body">
+					
+					</div>
+					<div class="modal-footer">
+					  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					  <button type="button" class="btn btn-primary">Save changes</button>
+					</div>
+				  </div>
+				</div>
+			  </div>
+
+
+<!-- <div class="container"> -->
+	<!-- <h1>Bootstrap - Responsive Calendar Grid</h1> -->
+	<!-- <div class="grid-calendar"> -->
+			
+		<!-- <div class="row calendar-week-header">
+			<div class="col-xs-1 grid-cell"><div><div><span>S</span></div></div></div>
+			<div class="col-xs-1 grid-cell"><div><div><span>M</span></div></div></div>
+			<div class="col-xs-1 grid-cell"><div><div><span>T</span></div></div></div>
+			<div class="col-xs-1 grid-cell"><div><div><span>W</span></div></div></div>
+			<div class="col-xs-1 grid-cell"><div><div><span>T</span></div></div></div>
+			<div class="col-xs-1 grid-cell"><div><div><span>F</span></div></div></div>
+			<div class="col-xs-1 grid-cell"><div><div><span>S</span></div></div></div>
+		</div> -->
+
+		
+			
+			<!-- <div class="col-xs-1 grid-cell previous-month"><div><div><span>31</span></div></div></div> -->
+			<!-- <div class="col-xs-1 grid-cell"><div><div><span>{{in}}</span></div></div></div> -->
+			<!-- <div class="col-xs-1 grid-cell"><div><div><span>i+2</span></div></div></div>
+			<div class="col-xs-1 grid-cell"><div><div><span>3</span></div></div></div>
+			<div class="col-xs-1 grid-cell"><div><div><span>4</span></div></div></div>
+			<div class="col-xs-1 grid-cell"><div><div><span>5</span></div></div></div>
+			<div class="col-xs-1 grid-cell"><div><div><span>6</span></div></div></div> -->
+		<!-- </div> -->
+
+		<!-- <div class="row calendar-week">
+				
+			<div class="col-xs-1 grid-cell"><div><div><span>7</span></div></div></div>
+			<div class="col-xs-1 grid-cell"><div><div><span>8</span></div></div></div>
+			<div class="col-xs-1 grid-cell"><div><div><span>9</span></div></div></div>
+			<div class="col-xs-1 grid-cell"><div><div><span>10</span></div></div></div>
+			<div class="col-xs-1 grid-cell"><div><div><span>11</span></div></div></div>
+			<div class="col-xs-1 grid-cell"><div><div><span>12</span></div></div></div>
+			<div class="col-xs-1 grid-cell"><div><div><span>13</span></div></div></div>
+		</div>
+
+		<div class="row calendar-week">
+			<div class="col-xs-1 grid-cell"><div><div><span>14</span></div></div></div>
+			<div class="col-xs-1 grid-cell"><div><div><span>15</span></div></div></div>
+			<div class="col-xs-1 grid-cell"><div><div><span>16</span></div></div></div>
+			<div class="col-xs-1 grid-cell"><div><div><span>17</span></div></div></div>
+			<div class="col-xs-1 grid-cell"><div><div><span>18</span></div></div></div>
+			<div class="col-xs-1 grid-cell"><div><div><span>19</span></div></div></div>
+			<div class="col-xs-1 grid-cell"><div><div><span>20</span></div></div></div>
+		</div>
+
+		<div class="row calendar-week">
+			<div class="col-xs-1 grid-cell"><div><div><span>21</span></div></div></div>
+			<div class="col-xs-1 grid-cell"><div><div><span>22</span></div></div></div>
+			<div class="col-xs-1 grid-cell"><div><div><span>23</span></div></div></div>
+			<div class="col-xs-1 grid-cell"><div><div><span>24</span></div></div></div>
+			<div class="col-xs-1 grid-cell"><div><div><span>25</span></div></div></div>
+			<div class="col-xs-1 grid-cell"><div><div><span>26</span></div></div></div>
+			<div class="col-xs-1 grid-cell"><div><div><span>27</span></div></div></div>
+		</div>
+
+		<div class="row calendar-week">
+			<div class="col-xs-1 grid-cell"><div><div><span>28</span></div></div></div>
+			<div class="col-xs-1 grid-cell"><div><div><span>29</span></div></div></div>
+			<div class="col-xs-1 grid-cell"><div><div><span>30</span></div></div></div>
+			<div class="col-xs-1 grid-cell next-month"><div><div><span>31</span></div></div></div>
+			 <div class="col-xs-1 grid-cell next-month"><div><div><span>2</span></div></div></div>
+			<div class="col-xs-1 grid-cell next-month"><div><div><span>3</span></div></div></div>
+			<div class="col-xs-1 grid-cell next-month"><div><div><span>4</span></div></div></div> 
+		</div> -->
+	<!-- </div> -->
+</div>
+
+
+
+
+

@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-myprograms.component.css']
 })
 export class UserMyprogramsComponent implements OnInit {
+  
 
   constructor() { }
+  counter(i: number) {
+    return new Array(i);
+}
 
   ngOnInit() {
+    
   }
 
 }

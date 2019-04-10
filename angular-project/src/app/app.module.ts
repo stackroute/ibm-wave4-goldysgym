@@ -38,7 +38,7 @@ import { MatDatepickerModule,MatNativeDateModule,MatFormFieldModule,} from '@ang
 import {MatCardModule} from '@angular/material/card';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { UserMyprogramsComponent } from './user-myprograms/user-myprograms.component';
-
+import {MatTableModule} from '@angular/material/table';
 
 
 
@@ -91,7 +91,8 @@ import { UserMyprogramsComponent } from './user-myprograms/user-myprograms.compo
     MatNativeDateModule,
     MatFormFieldModule,
     MatCardModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatTableModule
   ],
   providers: [ProgramService],
   bootstrap: [AppComponent]
