@@ -23,7 +23,7 @@ public class EnrollmentController
         this.enrollmentServiceImpl = enrollmentServiceImpl;
         this.rabbitProducer=rabbitProducer;
     }
-
+     //it will add new enrollements
     @PostMapping("/enrollment")
     public ResponseEntity<?> saveEnrollment(@RequestBody Enrollment enrollment) {
       Enrollment  enrollment1= enrollmentServiceImpl.saveEnrollment(enrollment);
@@ -47,6 +47,7 @@ public class EnrollmentController
         }
         return new ResponseEntity<Enrollment>(enrollment,HttpStatus.OK);
     }
+    // this is delete by id
     @DeleteMapping("enrollment/{id}")
     public  ResponseEntity<?> deleteEnrollment(@PathVariable String id) throws Exception {
         if(id==null) {
