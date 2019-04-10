@@ -19,9 +19,6 @@ export class LeftNavComponent implements OnInit {
     this.programService.tfToggle(a);
   }
 
-  // getState(a){
-  //   console.log(a);
-  //   return false
-  // }
+  
 
 }
