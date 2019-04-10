@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {SubscriptionService} from '../subscription.service';
-import {ActivatedRoute} from "@angular/router";
+
+import { ProgramService } from '../program.service';
+
+import { switchMap } from 'rxjs/operators';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 
 @Component({
@@ -9,27 +13,18 @@ import {ActivatedRoute} from "@angular/router";
   styleUrls: ['./subscriptionview.component.css']
 })
 export class SubscriptionviewComponent implements OnInit {
-  private details:any
-    constructor(private subscriptionservices: SubscriptionService, private route: ActivatedRoute) {
-      this.route.params.subscribe( params => {
-        console.log(params)
-        this.getDetail(params.subscribename)
-      });
-     }
-  
-  
-    ngOnInit() {
-      console.log("detail");
-    }
-     getDetail(currentRouteParam){
-  
-       this.subscriptionservices.getSubscriptionviewFromBackend(currentRouteParam).subscribe(data =>{
-         console.log(data)
-         this.details=data;    
-       });
-       console.log(this.details);
-     }
-  
+ 
+  details:any
+  constructor(private programService :ProgramService,private route :ActivatedRoute,private service : ProgramService,private router : Router) {}
+
+  ngOnInit() {
+   let id = this.route.snapshot.paramMap.get('id');
+    console.log(id)
+    this.programService.getSubscriptionDetailsById(id).subscribe(data =>{
+    this.details = data
+    console.log(data)
+  });
+}
   
   }
   
