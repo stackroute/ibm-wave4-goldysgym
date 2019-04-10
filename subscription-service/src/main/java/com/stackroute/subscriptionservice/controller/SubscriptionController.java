@@ -1,12 +1,14 @@
 package com.stackroute.subscriptionservice.controller;
 
 import com.stackroute.subscriptionservice.domain.Subscription;
+import com.stackroute.subscriptionservice.exception.SubscriptionGlobalException;
 import com.stackroute.subscriptionservice.service.SubscriptionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @CrossOrigin
@@ -22,7 +24,7 @@ public class SubscriptionController {
     }
 
     @PostMapping("/subscription")
-    public ResponseEntity<Subscription> saveSubscription(@RequestBody Subscription subscription) {
+    public ResponseEntity<Subscription> saveSubscription(@RequestBody @Valid Subscription subscription) {
         Subscription subscriptionAdded = subscriptionService.saveSubscription(subscription);
         return new ResponseEntity<Subscription>(subscriptionAdded, HttpStatus.CREATED);
     }
@@ -34,8 +36,10 @@ public class SubscriptionController {
     }
 
     @GetMapping("/subscriptions/{subscriptionId}")
-    public ResponseEntity<Subscription> getSubscriptionById(@PathVariable String subscriptionId) {
+    public ResponseEntity<Subscription> getSubscriptionById(@PathVariable String subscriptionId) throws Exception {
         Subscription subscriptionById = subscriptionService.getSubscriptionById(subscriptionId);
+        if(subscriptionById==null)
+            throw new Exception();
         return new ResponseEntity<Subscription>(subscriptionById, HttpStatus.OK);
 
     }
@@ -47,7 +51,9 @@ public class SubscriptionController {
     }
 
     @DeleteMapping("/subscriptions/{subscriptionId}")
-    public ResponseEntity<List<Subscription>> deleteSubscription(@PathVariable String subscriptionId) {
+    public ResponseEntity<List<Subscription>> deleteSubscription(@PathVariable String subscriptionId) throws Exception {
+        if(subscriptionService.getSubscriptionById(subscriptionId)==null)
+            throw new Exception();
         subscriptionService.deleteSubscription(subscriptionId);
         List<Subscription> allSubscriptions = subscriptionService.getAllSubscription();
         return new ResponseEntity<List<Subscription>>(allSubscriptions, HttpStatus.OK);

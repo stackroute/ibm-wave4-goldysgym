@@ -12,9 +12,8 @@ import java.util.ArrayList;
 import java.util.List;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
-import static org.springframework.test.web.client.ExpectedCount.times;
 
-public class EnrollmentServiceTest {
+public class EnrollmentServiceImplTest {
     private Enrollment enrollment;
 
     //Create a mock for UserRepository
@@ -23,7 +22,7 @@ public class EnrollmentServiceTest {
 
     //Inject the mocks as dependencies into UserServiceImpl
     @InjectMocks
-    private EnrollmentService enrollmentService;
+    private EnrollmentServiceImpl enrollmentServiceImpl;
     List<Enrollment> list= null;
 
 
@@ -45,7 +44,7 @@ public class EnrollmentServiceTest {
     public void saveUserTestSuccess()  {
 
         when(enrollmentRepository.save((Enrollment)any())).thenReturn(enrollment);
-        Enrollment enrollment1 = enrollmentService.saveEnrollment(enrollment);
+        Enrollment enrollment1 = enrollmentServiceImpl.saveEnrollment(enrollment);
         Assert.assertEquals(enrollment,enrollment1);
 
         //verify here verifies that userRepository save method is only called once
@@ -60,7 +59,7 @@ public class EnrollmentServiceTest {
         enrollmentRepository.save(enrollment);
         //stubbing the mock to return specific data
         when(enrollmentRepository.findAll()).thenReturn(list);
-        List<Enrollment> userlist = enrollmentService.getALLRest();
+        List<Enrollment> userlist = enrollmentServiceImpl.getALLRest();
         Assert.assertEquals(list,userlist);
     }
 
