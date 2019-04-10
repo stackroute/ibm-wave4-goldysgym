@@ -1,0 +1,1 @@
+This micro service does basic CRUD operation using mongodb handling Subscription Details. 

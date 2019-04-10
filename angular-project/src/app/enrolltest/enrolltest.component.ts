@@ -40,7 +40,7 @@ export class EnrolltestComponent implements OnInit {
   programs: any;
   subscriptions: any = [];
 
-  // email = new FormControl('');
+
 
   saveUser(user: any, a, b, c, userForm: any) {
     user.enabled = true;
@@ -116,20 +116,11 @@ export class EnrolltestComponent implements OnInit {
   }
   passwordValidator(firstFormGroup: FormGroup) {
     console.log(firstFormGroup)
-    // const condition = firstFormGroup.get('pwd').value !== firstFormGroup.get('cnfpwd').value;
-
-    // return condition ? { passwordsDoNotMatch: true} : null;
+    
     return false;
   }
 
 
-
-  //   getErrorMessage() {
-  //     // return this.email.hasError('required') ? 'You must enter a value' :
-  //     //     this.email.hasError('email') ? 'Not a valid email' :
-  //     //         '';
-  //     return '';
-  // }
   getPrograms() {
     this.programService.getProgramDetails1().subscribe((x) => {
       this.programs = x
