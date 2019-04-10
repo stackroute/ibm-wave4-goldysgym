@@ -1,6 +1,6 @@
 package com.stackroute.programschedular.service;
 
-import com.stackroute.programschedular.domain.ProgramSchedule;
+import com.stackroute.programschedular.domain.Year;
 import com.stackroute.programschedular.repository.ProgramScheduleRepository;
 import org.springframework.stereotype.Service;
 
@@ -15,18 +15,14 @@ public class ProgramScheduleService
         this.programScheduleRepository = programScheduleRepository;
     }
 
-    public ProgramSchedule save(ProgramSchedule programSchedule)
+    public Year save(Year year)
     {
-        ProgramSchedule programSchedule1=programScheduleRepository.save(programSchedule);
-        return programSchedule1;
+        Year year11=programScheduleRepository.save(year);
+        return year11;
     }
-    public List<ProgramSchedule> getALl()
+    public List<Year> getALl()
     {
-        return  (List<ProgramSchedule>)programScheduleRepository.findAll();
+        return  (List<Year>)programScheduleRepository.findAll();
     }
-    public  ProgramSchedule put(ProgramSchedule programSchedule, String id)
-    {
-        programSchedule.setUserId(id);
-        return programScheduleRepository.save(programSchedule);
-    }
+
 }

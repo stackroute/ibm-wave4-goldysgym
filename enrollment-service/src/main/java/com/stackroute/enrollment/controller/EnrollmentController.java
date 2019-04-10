@@ -27,6 +27,7 @@ public class EnrollmentController
     @PostMapping("/enrollment")
     public ResponseEntity<?> saveEnrollment(@RequestBody Enrollment enrollment) {
       Enrollment  enrollment1= enrollmentServiceImpl.saveEnrollment(enrollment);
+
         rabbitProducer.produce(enrollment1);
         return new ResponseEntity<String>("succefullly created", HttpStatus.CREATED);
     }
@@ -39,13 +40,18 @@ public class EnrollmentController
     }
     // this method will get Enrollment by id
     @GetMapping("enrollment/{id}")
-    public ResponseEntity<?> getEnrollmentById(@PathVariable String id) {
+    public ResponseEntity<?> getEnrollmentById(@PathVariable String id) throws Exception {
         Enrollment enrollment= enrollmentServiceImpl.findbyId(id);
+        if(enrollment==null) {
+            throw new Exception();
+        }
         return new ResponseEntity<Enrollment>(enrollment,HttpStatus.OK);
     }
     @DeleteMapping("enrollment/{id}")
-    public  ResponseEntity<?> deleteEnrollment(@PathVariable String id)
-    {
+    public  ResponseEntity<?> deleteEnrollment(@PathVariable String id) throws Exception {
+        if(id==null) {
+            throw new Exception();
+        }
         enrollmentServiceImpl.delete(id);
         return new ResponseEntity<String>("succefullly deleted", HttpStatus.OK);
     }
