@@ -1,13 +1,13 @@
-package com.stackroute.adminservice;
+package com.stackroute.programservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class AdminServiceApplication {
+public class ProgramServiceApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(AdminServiceApplication.class, args);
+        SpringApplication.run(ProgramServiceApplication.class, args);
     }
 
 }

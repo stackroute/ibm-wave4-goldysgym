@@ -1,7 +1,6 @@
-package com.stackroute.adminservice.repository;
+package com.stackroute.programservice.repository;
 
-import com.mongodb.Mongo;
-import com.stackroute.adminservice.domain.Program;
+import com.stackroute.programservice.domain.Program;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 

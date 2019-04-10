@@ -1,8 +1,8 @@
-package com.stackroute.adminservice.controller;
+package com.stackroute.programservice.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.stackroute.adminservice.domain.Program;
-import com.stackroute.adminservice.service.ProgramService;
+import com.stackroute.programservice.domain.Program;
+import com.stackroute.programservice.service.ProgramService;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

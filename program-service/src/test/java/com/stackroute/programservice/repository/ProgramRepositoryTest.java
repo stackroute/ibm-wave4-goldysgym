@@ -1,6 +1,6 @@
-package com.stackroute.adminservice.repository;
+package com.stackroute.programservice.repository;
 
-import com.stackroute.adminservice.domain.Program;
+import com.stackroute.programservice.domain.Program;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;

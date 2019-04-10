@@ -1,9 +1,7 @@
-package com.stackroute.adminservice.service;
+package com.stackroute.programservice.service;
 
-import com.stackroute.adminservice.domain.Program;
-import com.stackroute.adminservice.repository.ProgramRepository;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import com.stackroute.programservice.domain.Program;
+import com.stackroute.programservice.repository.ProgramRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

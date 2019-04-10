@@ -11,6 +11,7 @@ services:
     container_name: mongonew
     network_mode: host
 
+
   db:
     image: mysql:5.7
     restart: always
@@ -28,6 +29,7 @@ services:
       # <Port exposed> : < MySQL Port running inside container>
       - 3306:3306
 
+
   eureka-server:
     build: eureka-server/
     restart: always
@@ -36,6 +38,7 @@ services:
     ports:
       - 8761:8761
 
+
   config-service:
     build: config-server/
     restart: always
@@ -43,6 +46,7 @@ services:
     hostname: localhost
     ports:
       - 8888:8888
+
 
   zuul-apigateway:
     build: zuul-api/
@@ -55,6 +59,8 @@ services:
     ports:
       - 8080:8080
 
+    mem_reservation: 100m
+
   subscription-service:
     build: subscription-service/
     restart: always
@@ -62,6 +68,7 @@ services:
     hostname: localhost
     ports:
       - 9003:9003
+
 
 
   enrollment:
@@ -76,6 +83,7 @@ services:
     ports:
       - 8091:8091
 
+
   program-schedular:
     build: program-schedular/
     restart: always
@@ -89,6 +97,7 @@ services:
       - 8092:8092
 
 
+
   program-service:
     build: program-service/
     restart: always
@@ -100,6 +109,8 @@ services:
       - mongo
     ports:
       - 9001:9001
+
+
 
   jwtfirst:
     build: jwtfirst/

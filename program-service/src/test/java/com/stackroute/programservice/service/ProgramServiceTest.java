@@ -1,7 +1,7 @@
-package com.stackroute.adminservice.service;
+package com.stackroute.programservice.service;
 
-import com.stackroute.adminservice.domain.Program;
-import com.stackroute.adminservice.repository.ProgramRepository;
+import com.stackroute.programservice.domain.Program;
+import com.stackroute.programservice.repository.ProgramRepository;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

@@ -1,6 +1,6 @@
-package com.stackroute.adminservice.service;
+package com.stackroute.programservice.service;
 
-import com.stackroute.adminservice.domain.Program;
+import com.stackroute.programservice.domain.Program;
 
 import java.util.List;
 
