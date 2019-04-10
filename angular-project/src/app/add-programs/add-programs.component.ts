@@ -9,9 +9,9 @@ import { ProgramService } from '../program.service';
 export class AddProgramsComponent implements OnInit {
 
   constructor(private programService: ProgramService) { }
-// data: any;
+
   ngOnInit() {
-    // this.putProgram(this.data);
+   
   }
 
   putProgram(data) {
