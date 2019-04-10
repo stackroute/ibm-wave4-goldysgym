@@ -1,24 +1,31 @@
+<div class="col-md-4">
+</div>
+<div class="container justify-content-center  mt-1">
 
-<div class="container mt-5" >
-    
-  <div class="row">
-    <div class="col-md-6">
-      <img src={{details.image}} alt="image">
-      
+    <div class="container text-center">
+        <h1>{{details.subscriptionName}}</h1>
     </div>
-    <div class="col-md-6 text-justify">
-        <h3><u>Name</u></h3>{{details.name}}
-        <h3><u>Amount</u></h3>{{details.amount}}<br><br>
-        <h3><u>Duration</u></h3>{{details.duration}}
-        <h3><u>About</u></h3>{{details.about}}<br><br>
-       
-    </div>
-  </div>
+
 
   
   <div class=" d-flex justify-content-center mt-5">
       <div class="btn btn-success" routerLink="/enroll">Subscribe</div>
       <div class="btn btn-danger" routerLink="/home">Back</div>
+
+    <div class="container col-md-5">
+        <div class="card-body">
+            <img src={{details.imageUrl}} alt="image">
+        </div>
+        <div class="card-body">
+            <h2><b>Description</b></h2>{{details.description}}<br>
+            <h2><b>Amount</b></h2>{{details.amount}}<br>
+            <h2><b>Duration</b></h2>{{details.duration}}months
+        </div>
+    </div>
 </div>
 
 
+<div class=" d-flex justify-content-center mt-3">
+    <div class="btn btn-success" routerLink="/enrolltest">Subscribe</div>
+    <div class="btn btn-danger" routerLink="/home">Back</div>
+</div>

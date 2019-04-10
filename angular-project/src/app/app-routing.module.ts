@@ -19,7 +19,7 @@ import { ProgramDetailsComponent } from './program-details/program-details.compo
 import{EditProgramformComponent} from './edit-programform/edit-programform.component';
 import{AdminProgramdetailsComponent } from './admin-programdetails/admin-programdetails.component';
 import { EnrolltestComponent } from './enrolltest/enrolltest.component';
-
+import {SubscriptionviewComponent  } from './subscriptionview/subscriptionview.component';
 const routes: Routes = [
 
   {path:'prog-details/:id',component: ProgramDetailsComponent},
@@ -27,8 +27,9 @@ const routes: Routes = [
   {path: "signup", component:SignupComponent},
   {path: "login", component:LoginComponent},
   {path: "enroll", component:EnrolltestComponent},
+  {path: 'subdetails/:id', component:SubscriptionviewComponent},
   {
-    // admin page routes 
+    
     path: 'admin', component: AdminDashboardComponent, children: [
       { path: 'add-subs', component: AddSubscriptionsComponent },
       { path: 'edit-subs', component: EditSubscriptionsComponent },
@@ -40,7 +41,6 @@ const routes: Routes = [
       
     ]
   },
-  //User page routes
   {path :'user', component:UserDashboardComponent,children:[
     { path: 'follow', component: FollowGymatesComponent },
     { path: 'leaderboard', component: LeaderboardComponent },
@@ -49,7 +49,7 @@ const routes: Routes = [
     {path:'mysubs', component:UserSubscriptionsComponent},
     { path: '', redirectTo: '/user/profile', pathMatch: 'full' }
   ]},
-   // default route
+   
    { path: '**', redirectTo: '/home', pathMatch: 'full' },
    { path: 'home', component: HomecomponentComponent},
    

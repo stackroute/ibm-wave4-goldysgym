@@ -8,20 +8,16 @@ import { ProgramService } from '../program.service';
 })
 export class AddSubscriptionsComponent implements OnInit {
 
-  // programs : any;
+ 
   
 
   constructor(private programService: ProgramService) { }
 
   ngOnInit() {
-    // this.getPrograms();
+   
   }
 
-  // getPrograms() {
-  //   this.programService.getPrograms().subscribe((x) => {
-  //     this.programs= x
-  //     console.log(this.programs)
-  //   });
+  
 
     putSubscription(data) {
       let newData = {
@@ -32,16 +28,11 @@ export class AddSubscriptionsComponent implements OnInit {
           "imageUrl": data.imageUrl,
           "duration": data.Duration,
           "amount": data.amount,
-          // "user": [
-          //     {
-          //         "userId": "1",
-          //         "startDate": "today"
-          //     }
-          // ]
+         
       }
       
       this.programService.putSubscription(newData).subscribe((x) => {
-        // this.data = x
+       
         console.log(data)
       });
     }
