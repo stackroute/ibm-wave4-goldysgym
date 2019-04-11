@@ -7,11 +7,10 @@ env:
   COMPOSE_VERSION: 1.5.2
   
 script:
-  - docker-compose -f docker-compose.yml up --build
+  - docker-compose up --build
   
 after_success:
   - bash <(curl -s https://codecov.io/bash)
-# script:
-#   - mvn clean package -DskipTests=true
+
 
 
