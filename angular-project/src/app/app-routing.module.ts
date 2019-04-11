@@ -19,6 +19,8 @@ import { ProgramDetailsComponent } from './program-details/program-details.compo
 import{EditProgramformComponent} from './edit-programform/edit-programform.component';
 import{AdminProgramdetailsComponent } from './admin-programdetails/admin-programdetails.component';
 import { EnrolltestComponent } from './enrolltest/enrolltest.component';
+import { UserMyprogramsComponent } from './user-myprograms/user-myprograms.component';
+
 import {SubscriptionviewComponent  } from './subscriptionview/subscriptionview.component';
 const routes: Routes = [
 
@@ -47,6 +49,7 @@ const routes: Routes = [
     { path: 'profile', component: UserProfileComponent },
     {path:'programs', component:ProgramsComponent},
     {path:'mysubs', component:UserSubscriptionsComponent},
+    {path:'mypros',component:UserMyprogramsComponent},
     { path: '', redirectTo: '/user/profile', pathMatch: 'full' }
   ]},
    

@@ -33,7 +33,7 @@
         <module>zuul-api</module>
         <module>enrollment-service</module>
         <module>program-service</module>
-        <module>jwtfirst</module>
+        <module>user-authentication-service</module>
         <module>subscription-service</module>
         <module>program-schedular</module>
     </modules>
