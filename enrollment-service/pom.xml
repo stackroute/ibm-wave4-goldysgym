@@ -9,7 +9,7 @@
 		<relativePath>../pom.xml</relativePath>
 	</parent>
 	<groupId>com.stackroute</groupId>
-	<artifactId>enrollment</artifactId>
+	<artifactId>enrollment-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>enrollment-service</name>
 	<description>Demo project for Spring Boot</description>
