@@ -6,9 +6,8 @@ cache:
 env:
   COMPOSE_VERSION: 1.5.2
   
-before_install:
-  - docker-compose pull
-  - docker-compose up
+script:
+  - docker-compose -f docker-compose.yml up --build
   
 after_success:
   - bash <(curl -s https://codecov.io/bash)
