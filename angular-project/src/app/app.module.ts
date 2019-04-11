@@ -37,6 +37,7 @@ import { MatRadioModule} from '@angular/material';
 import { MatDatepickerModule,MatNativeDateModule,MatFormFieldModule,} from '@angular/material';
 import {MatCardModule} from '@angular/material/card';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import { EditSubscriptionformComponent } from './edit-subscriptionform/edit-subscriptionform.component';
 
 
 
@@ -69,7 +70,8 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     UserProfileComponent,
     UserSubscriptionsComponent,
     ProgramDetailsComponent,
-    EnrolltestComponent
+    EnrolltestComponent,
+    EditSubscriptionformComponent
   ],
   imports: [
     BrowserModule,
