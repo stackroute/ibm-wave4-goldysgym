@@ -3,11 +3,9 @@ jdk: openjdk11
 cache:
   directories:
     - "$HOME/.m2/repository"
-env:
-  COMPOSE_VERSION: 1.5.2
+
   
-script:
-  - docker-compose up --build
+
   
 after_success:
   - bash <(curl -s https://codecov.io/bash)
