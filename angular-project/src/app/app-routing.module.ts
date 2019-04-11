@@ -22,6 +22,7 @@ import { EnrolltestComponent } from './enrolltest/enrolltest.component';
 import { UserMyprogramsComponent } from './user-myprograms/user-myprograms.component';
 
 import {SubscriptionviewComponent  } from './subscriptionview/subscriptionview.component';
+import{EditSubscriptionformComponent} from './edit-subscriptionform/edit-subscriptionform.component';
 const routes: Routes = [
 
   {path:'prog-details/:id',component: ProgramDetailsComponent},
@@ -39,6 +40,7 @@ const routes: Routes = [
       { path: 'edit-prog', component: EditProgramsComponent },
       { path: 'summary', component: SummaryPageComponent },
       { path: 'edit/:id', component: EditProgramformComponent },
+      { path: 'edit/:id/subs', component: EditSubscriptionformComponent},
       { path: '', redirectTo: '/admin/summary', pathMatch: 'full' }
       
     ]

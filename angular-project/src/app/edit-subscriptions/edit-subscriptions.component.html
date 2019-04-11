@@ -1,7 +1,19 @@
-<p>
-  edit-subscriptions works!
-</p>
-<button type="button" class="btn btn-primary" (click)="clicked()">View</button>
-
- <h4 class="alert alert-success">{{data}}</h4> 
-  
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Controls</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let b of subscriptions">
+      <th scope="row">{{b.Id}}</th>
+      <td>{{b.subscriptionName}}</td>
+      <td>{{b.description}}</td>
+      <td><button type="button" routerLink="/admin/edit/{{b.subscriptionId}}/subs" class="btn btn-primary">Edit</button>&nbsp;
+        <button type="button" (click)="remove(b.subscriptionId)" class="btn btn-danger">Remove</button></td>
+    </tr>
+    </tbody>
+</table>
