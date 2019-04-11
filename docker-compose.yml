@@ -74,7 +74,7 @@ services:
 
 
   enrollment:
-    build: enrollment/
+    build: enrollment-service/
     restart: always
     network_mode: "host"
     hostname: localhost
@@ -114,7 +114,7 @@ services:
 
 
 
-  jwtfirst:
+  user-authentication:
     build: user-authentication-service/
     restart: always
     network_mode: "host"
