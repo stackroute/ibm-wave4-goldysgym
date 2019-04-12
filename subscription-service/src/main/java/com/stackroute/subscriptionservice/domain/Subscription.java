@@ -5,6 +5,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.validation.constraints.NotNull;
+import java.util.ArrayList;
 
 @Document
 @Data
@@ -25,5 +26,5 @@ public class Subscription {
     private int duration;
     @NotNull
     private double amount;
-    private User user[];
+    private ArrayList<User> user;
 }
