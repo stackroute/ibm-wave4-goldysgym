@@ -7,6 +7,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 
+
+
 @Document
 @Data
 @NoArgsConstructor
@@ -27,4 +29,5 @@ public class Subscription {
     @NotNull
     private double amount;
     private ArrayList<User> user;
+
 }

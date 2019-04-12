@@ -1,0 +1,1 @@
+This service is responsible for user enrollment and generating token for login authentication.
