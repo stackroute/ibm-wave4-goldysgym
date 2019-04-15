@@ -37,12 +37,14 @@ import { MatRadioModule} from '@angular/material';
 import { MatDatepickerModule,MatNativeDateModule,MatFormFieldModule,} from '@angular/material';
 import {MatCardModule} from '@angular/material/card';
 import {MatCheckboxModule} from '@angular/material/checkbox';
-<<<<<<< HEAD
+
 import { EditSubscriptionformComponent } from './edit-subscriptionform/edit-subscriptionform.component';
-=======
+
+
 import { UserMyprogramsComponent } from './user-myprograms/user-myprograms.component';
 import {MatTableModule} from '@angular/material/table';
->>>>>>> 85da911404638901dac88db37db4012e7aac5a14
+
+
 
 
 
@@ -76,12 +78,13 @@ import {MatTableModule} from '@angular/material/table';
     UserSubscriptionsComponent,
     ProgramDetailsComponent,
     EnrolltestComponent,
-<<<<<<< HEAD
-    EditSubscriptionformComponent
-=======
-    UserMyprogramsComponent,
-    
->>>>>>> 85da911404638901dac88db37db4012e7aac5a14
+
+    EditSubscriptionformComponent,
+
+    UserMyprogramsComponent
+
+   
+
   ],
   imports: [
     BrowserModule,
