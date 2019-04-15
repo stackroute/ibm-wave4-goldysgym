@@ -58,6 +58,16 @@ export class ProgramService {
     return this.http.put(environment.dbUrlOut2,data);
    
   }
+  deleteSubscription(id) {
+    return this.http.delete(environment.dbUrlOut4+id);
+  }
+  editSubscription(data)
+  {
+   
+    return this.http.put(environment.dbUrlOut4,data);
+   
+  }
+
 
   getProgramsOfUser()
   {

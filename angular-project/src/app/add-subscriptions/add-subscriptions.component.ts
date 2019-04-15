@@ -7,29 +7,17 @@ import { ProgramService } from '../program.service';
   styleUrls: ['./add-subscriptions.component.css']
 })
 export class AddSubscriptionsComponent implements OnInit {
-
- 
-  
-
   constructor(private programService: ProgramService) { }
-
-  ngOnInit() {
-   
+  ngOnInit() {   
   }
-
-  
-
     putSubscription(data) {
       let newData = {
-        
-          
-          "subscriptionName": data.sname,
+         "subscriptionName": data.sname,
           "description": data.sdes,
           "imageUrl": data.imageUrl,
           "duration": data.Duration,
           "amount": data.amount,
-         
-      }
+         }
       
       this.programService.putSubscription(newData).subscribe((x) => {
        

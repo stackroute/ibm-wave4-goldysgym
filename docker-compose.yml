@@ -10,6 +10,8 @@ services:
       - 27017
     container_name: mongonew
     network_mode: host
+    volumes:
+      - /mongo-volume:/data/db
 
 
   db:
@@ -72,7 +74,7 @@ services:
 
 
   enrollment:
-    build: enrollment/
+    build: enrollment-service/
     restart: always
     network_mode: "host"
     hostname: localhost
@@ -112,8 +114,8 @@ services:
 
 
 
-  jwtfirst:
-    build: jwtfirst/
+  user-authentication-service:
+    build: user-authentication-service/
     restart: always
     network_mode: "host"
     hostname: localhost
