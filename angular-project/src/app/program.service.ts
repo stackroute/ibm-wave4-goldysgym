@@ -59,5 +59,12 @@ export class ProgramService {
    
   }
 
-
+  getProgramsOfUser()
+  {
+    return this.http.get("http://localhost:3000/month",);
+  }
+  putUser(data)
+  {
+  return this.http.post("http://localhost:3000/month",data);
+ } 
 }
