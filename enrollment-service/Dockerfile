@@ -1,8 +1,8 @@
 
 FROM openjdk:11
 
-ADD ./target/enrollment-0.0.1-SNAPSHOT.jar /usr/src/enrollment-0.0.1-SNAPSHOT.jar
+ADD ./target/enrollment-service-0.0.1-SNAPSHOT.jar /usr/src/enrollment-service-0.0.1-SNAPSHOT.jar
 
 WORKDIR usr/src
 
-ENTRYPOINT ["java","-jar", "enrollment-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java","-jar", "enrollment-service-0.0.1-SNAPSHOT.jar"]

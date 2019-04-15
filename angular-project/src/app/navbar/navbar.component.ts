@@ -12,6 +12,7 @@ export class NavbarComponent implements OnInit {
   public currentstatus: any;
 
   constructor(private authService: LoginAuthService,private router:Router) {
+    
     this.currentstatus = this.authService.getStatus().subscribe(currentstatus =>{
       this.currentstatus  = currentstatus;
     })

@@ -24,11 +24,11 @@ public class EnrollmentServiceImpl implements EnrollmentService{
         Calendar calendar = Calendar.getInstance();
         Subscription subscription = enrollment.getSubscription();
         int duration=subscription.getDuration();
-        calendar.setTime(enrollment.getStartDate());
+        enrollment.setStartDate(calendar.getTime());
         calendar.add(Calendar.MONTH, duration);
         Date futureDate =calendar.getTime();
         enrollment.setEndDate(futureDate);
-        enrollment.setStartDate(new Date());
+
         Enrollment enrollment1=enrollmentRepository.save(enrollment);
         return  enrollment1;
     }

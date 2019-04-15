@@ -1,17 +1,31 @@
 import { Injectable } from '@angular/core';
 import { Observable,Subject} from 'rxjs';
+import {CanActivate, Router, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
-export class LoginAuthService {
+export class LoginAuthService implements CanActivate  {
 
   private subject = new Subject<any>();
+
+  constructor(private router: Router) { }
+
+  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot){
+    if(this.isLoggedIn())
+    return true;
+
+    this.router.navigate(['login']);
+    return false;
+  }
+
   isLoggedIn(){
     if(localStorage.getItem('currentUser')){
       this.subject.next({status: true});
+      return true
     }else{
       this.subject.next({status: false});
+      return false
     }
   }
 
@@ -23,5 +37,5 @@ export class LoginAuthService {
     return this.subject.asObservable();
   }
 
-  constructor() { }
+  
 }
