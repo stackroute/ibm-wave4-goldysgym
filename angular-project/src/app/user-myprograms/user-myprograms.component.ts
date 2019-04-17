@@ -52,7 +52,7 @@ export class UserMyprogramsComponent implements OnInit {
                               "programName": "thies",
                               "capacity": 25,
                               "users": [
-                                  "abhinab",
+                                  "abhinafkdmfb",
                                   "saunak",
                                   "rakesh",
                                   "yash",
