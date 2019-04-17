@@ -2,6 +2,7 @@ package com.stackroute.enrollment.controller;
 
 import com.stackroute.enrollment.component.RabbitProducer;
 import com.stackroute.enrollment.domain.Enrollment;
+import com.stackroute.enrollment.service.EnrollmentService;
 import com.stackroute.enrollment.service.EnrollmentServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -14,19 +15,19 @@ import java.util.List;
 @CrossOrigin
 public class EnrollmentController {
 
-    private EnrollmentServiceImpl enrollmentServiceImpl;
+    private EnrollmentService enrollmentService;
     private RabbitProducer rabbitProducer;
 
     @Autowired
-    public EnrollmentController(EnrollmentServiceImpl enrollmentServiceImpl, RabbitProducer rabbitProducer) {
-        this.enrollmentServiceImpl = enrollmentServiceImpl;
+    public EnrollmentController(EnrollmentService enrollmentService, RabbitProducer rabbitProducer) {
+        this.enrollmentService = enrollmentService;
         this.rabbitProducer = rabbitProducer;
     }
 
     //it will add new enrollements
     @PostMapping("/enrollment")
     public ResponseEntity<?> saveEnrollment(@RequestBody Enrollment enrollment) throws Exception {
-        Enrollment enrollment1 = enrollmentServiceImpl.saveEnrollment(enrollment);
+        Enrollment enrollment1 = enrollmentService.saveEnrollment(enrollment);
         if (enrollment1==null) {
             throw new Exception();
         } else {
@@ -38,14 +39,14 @@ public class EnrollmentController {
     // this method will get all Enrollments
     @GetMapping("enrollments")
     public ResponseEntity<List<Enrollment>> getALlEnrollments() {
-        List<Enrollment> list = enrollmentServiceImpl.getALLRest();
+        List<Enrollment> list = enrollmentService.getALLRest();
         return new ResponseEntity<List<Enrollment>>(list, HttpStatus.OK);
     }
 
     // this method will get Enrollment by id
     @GetMapping("enrollment/{id}")
     public ResponseEntity<?> getEnrollmentById(@PathVariable String id) throws Exception {
-        Enrollment enrollment = enrollmentServiceImpl.findbyId(id);
+        Enrollment enrollment = enrollmentService.findbyId(id);
         if (enrollment == null) {
             throw new Exception();
         }
@@ -58,7 +59,7 @@ public class EnrollmentController {
         if (id == null) {
             throw new Exception();
         }
-        enrollmentServiceImpl.delete(id);
+        enrollmentService.delete(id);
         return new ResponseEntity<String>("succefullly deleted", HttpStatus.OK);
     }
 
