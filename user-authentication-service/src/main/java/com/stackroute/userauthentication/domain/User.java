@@ -55,7 +55,7 @@ public class User implements Serializable {
 
 
     public User() {
-        this.id=UUID.randomUUID().toString();
+        this.id = UUID.randomUUID().toString();
     }
 
     public String getId() {

@@ -1,7 +1,6 @@
 package com.stackroute.enrollment.controller;
 
 
-
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.stackroute.enrollment.component.RabbitProducer;
 import com.stackroute.enrollment.domain.Enrollment;
@@ -46,10 +45,10 @@ public class EnrollmentControllerTest {
     @InjectMocks
     private EnrollmentController enrollmentController;
 
-    private List<Enrollment> list =null;
+    private List<Enrollment> list = null;
 
     @Before
-    public void setUp(){
+    public void setUp() {
 
         MockitoAnnotations.initMocks(this);
         mockMvc = MockMvcBuilders.standaloneSetup(enrollmentController).build();
@@ -60,10 +59,11 @@ public class EnrollmentControllerTest {
         enrollment.setLastName("Doe");
         enrollment.setEmail("Jhon@gmail.com");
         enrollment.setPassword("12345");
-        enrollment.setDateOfBirth(new Date(1993-03-26));
+        enrollment.setDateOfBirth(new Date(1993 - 03 - 26));
         enrollment.setGender("Male");
         enrollment.setHeight(180.00);
-        enrollment.setWeight(62.00);enrollment.setSubscription(new Subscription("1","Gold","Desc","xyz",6,4200.00));
+        enrollment.setWeight(62.00);
+        enrollment.setSubscription(new Subscription("1", "Gold", "Desc", "xyz", 6, 4200.00));
         list = new ArrayList();
         list.add(enrollment);
 
@@ -92,23 +92,14 @@ public class EnrollmentControllerTest {
     }
 
 
-    private static String asJsonString(final Object obj)
-    {
-        try{
+    private static String asJsonString(final Object obj) {
+        try {
             return new ObjectMapper().writeValueAsString(obj);
 
-        }catch(Exception e){
+        } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
-
-
-
-
-
-
-
-
 
 
 }

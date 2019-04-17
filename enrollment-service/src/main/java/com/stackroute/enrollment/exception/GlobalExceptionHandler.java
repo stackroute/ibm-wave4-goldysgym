@@ -6,9 +6,9 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 @RestControllerAdvice
-public class ProgramGlobalException {
+public class GlobalExceptionHandler {
     @ExceptionHandler(Exception.class)
-    public ResponseEntity handleGeneralException(Exception exception){
+    public ResponseEntity handleGeneralException(Exception exception) {
         return new ResponseEntity(exception.getMessage(), HttpStatus.NOT_FOUND);
     }
 }

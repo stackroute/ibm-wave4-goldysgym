@@ -10,7 +10,7 @@ import java.util.Date;
 import java.util.List;
 
 @Service
-public class EnrollmentServiceImpl implements EnrollmentService{
+public class EnrollmentServiceImpl implements EnrollmentService {
     private EnrollmentRepository enrollmentRepository;
 
 
@@ -19,27 +19,28 @@ public class EnrollmentServiceImpl implements EnrollmentService{
     }
 
 
-    public Enrollment saveEnrollment(Enrollment enrollment)
-    {
+    public Enrollment saveEnrollment(Enrollment enrollment) {
         Calendar calendar = Calendar.getInstance();
         Subscription subscription = enrollment.getSubscription();
-        int duration=subscription.getDuration();
+        int duration = subscription.getDuration();
         enrollment.setStartDate(calendar.getTime());
         calendar.add(Calendar.MONTH, duration);
-        Date futureDate =calendar.getTime();
+        Date futureDate = calendar.getTime();
         enrollment.setEndDate(futureDate);
 
-        Enrollment enrollment1=enrollmentRepository.save(enrollment);
-        return  enrollment1;
+        return enrollmentRepository.save(enrollment);
+
     }
-    public List<Enrollment> getALLRest(){
-        return (List<Enrollment>)enrollmentRepository.findAll();
+
+    public List<Enrollment> getALLRest() {
+        return enrollmentRepository.findAll();
     }
+
     public Enrollment findbyId(String id) {
         return enrollmentRepository.findById(id).get();
     }
-    public void delete(String id)
-    {
+
+    public void delete(String id) {
         enrollmentRepository.deleteById(id);
     }
 

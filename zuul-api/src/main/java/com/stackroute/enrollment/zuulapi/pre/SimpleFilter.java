@@ -1,10 +1,7 @@
 package com.stackroute.enrollment.zuulapi.pre;
 
 import com.netflix.zuul.ZuulFilter;
-import com.netflix.zuul.context.RequestContext;
 import com.netflix.zuul.exception.ZuulException;
-
-import javax.servlet.http.HttpServletRequest;
 
 public class SimpleFilter extends ZuulFilter {
     @Override

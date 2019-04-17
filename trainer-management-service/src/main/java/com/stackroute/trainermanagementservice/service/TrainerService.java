@@ -6,5 +6,6 @@ import java.util.List;
 
 public interface TrainerService {
     Trainer saveTrainer(Trainer trainer);
+
     List<Trainer> getAllTrainer();
 }

@@ -6,8 +6,12 @@ import java.util.List;
 
 public interface SubscriptionService {
     Subscription saveSubscription(Subscription subscription);
+
     List<Subscription> getAllSubscription();
+
     Subscription getSubscriptionById(String subscriptionId);
+
     Subscription updateSubscription(Subscription subscription);
+
     void deleteSubscription(String subscriptionId);
 }

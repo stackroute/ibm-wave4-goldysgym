@@ -25,36 +25,14 @@ public class TrainerController {
     @PostMapping("/trainer")
     public ResponseEntity<Trainer> saveSubscription(@RequestBody @Valid Trainer trainer) {
         Trainer trainer1 = trainerService.saveTrainer(trainer);
-        return new ResponseEntity<Trainer>(trainer1, HttpStatus.CREATED);
+        return new ResponseEntity<>(trainer1, HttpStatus.CREATED);
     }
 
     @GetMapping("/subscriptions")
     public ResponseEntity<List<Trainer>> getSubscriptions() {
         List<Trainer> allSubscriptions = trainerService.getAllTrainer();
-        return new ResponseEntity<List<Trainer>>(allSubscriptions, HttpStatus.OK);
+        return new ResponseEntity<>(allSubscriptions, HttpStatus.OK);
     }
 
-//    @GetMapping("/subscriptions/{subscriptionId}")
-//    public ResponseEntity<Subscription> getSubscriptionById(@PathVariable String subscriptionId) throws Exception {
-//        Subscription subscriptionById = subscriptionService.getSubscriptionById(subscriptionId);
-//        if(subscriptionById==null)
-//            throw new Exception();
-//        return new ResponseEntity<Subscription>(subscriptionById, HttpStatus.OK);
-//
-//    }
-//
-//    @PutMapping("/subscription")
-//    public ResponseEntity<Subscription> updateSubscription(@RequestBody Subscription subscription) {
-//        Subscription updatedSubscription = subscriptionService.updateSubscription(subscription);
-//        return new ResponseEntity<Subscription>(updatedSubscription, HttpStatus.ACCEPTED);
-//    }
-//
-//    @DeleteMapping("/subscriptions/{subscriptionId}")
-//    public ResponseEntity<List<Subscription>> deleteSubscription(@PathVariable String subscriptionId) throws Exception {
-//        if(subscriptionService.getSubscriptionById(subscriptionId)==null)
-//            throw new Exception();
-//        subscriptionService.deleteSubscription(subscriptionId);
-//        List<Subscription> allSubscriptions = subscriptionService.getAllSubscription();
-//        return new ResponseEntity<List<Subscription>>(allSubscriptions, HttpStatus.OK);
-//    }
+
 }

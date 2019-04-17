@@ -5,8 +5,8 @@ public class Subscription {
     String subscriptionName;
     String description;
     String imageUrl;
-     int duration;
-     Double amount;
+    int duration;
+    Double amount;
 
     public Subscription() {
     }
