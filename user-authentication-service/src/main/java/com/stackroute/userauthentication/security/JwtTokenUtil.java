@@ -24,6 +24,7 @@ public class JwtTokenUtil implements Serializable {
     static final String CLAM_KEY_AUDIANCE = "audiance";
     static final String CLAM_KEY_CREATED = "created";
 
+
     @Value("${jwt.secret}")
     private String secret;
 

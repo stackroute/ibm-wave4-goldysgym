@@ -26,4 +26,9 @@ export class UserService {
   getUserDetails() {
     return this.http.get("http://localhost:8091/enrollments");
   }
+  
+  getUserDetailsById(userid) {
+   
+    return this.http.get(`http://localhost:8091/enrollment/${userid}`);
+  }
 }

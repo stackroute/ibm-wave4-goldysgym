@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
 import { HttpClient } from '@angular/common/http';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-user-profile',
@@ -9,12 +10,16 @@ import { HttpClient } from '@angular/common/http';
 })
 export class UserProfileComponent implements OnInit {
 
-  constructor(private user:UserService,private http: HttpClient) { }
-  arrayUser:any=[];
+  constructor(private userService:UserService,private http: HttpClient, private route: ActivatedRoute) { }
+  user:any=[];
+  userId: any;
+  userData:any
   ngOnInit() {
-    this.user.getUserDetails().subscribe(data=>{
-      this.arrayUser=data
-      console.log(this.arrayUser)     
+    this.userData=JSON.parse(localStorage.getItem('currentUser'))
+    console.log(this.userData.user.id)
+    this.userService.getUserDetailsById(this.userData.user.id).subscribe(data=>{
+      this.user=data
+      console.log(this.user)     
     });
   }
 

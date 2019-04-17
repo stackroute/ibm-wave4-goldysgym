@@ -20,10 +20,12 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
   errorMsg: boolean = false;
-  loginUser(user:any){
+  userId : any;
 
-    this.userService.loginUser(user).subscribe((response)=>{
-        localStorage.setItem('currentUser',JSON.stringify(response));
+  loginUser(user:any){
+   this.userService.loginUser(user).subscribe(response=>{
+     localStorage.setItem('currentUser',JSON.stringify(response));
+       
         if(response.user.role === 'ADMIN'){
            this.router.navigate(['/admin']);
         }else if(response.user.role === 'USER'){
