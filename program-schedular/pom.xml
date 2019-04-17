@@ -6,7 +6,7 @@
         <groupId>com.stackroute</groupId>
         <artifactId>goldy-gym</artifactId>
         <version>1.0.0</version>
-<!--        <relativePath/> &lt;!&ndash; lookup parent from repository &ndash;&gt;-->
+
     </parent>
     <groupId>com.stackroute</groupId>
     <artifactId>program-schedular</artifactId>

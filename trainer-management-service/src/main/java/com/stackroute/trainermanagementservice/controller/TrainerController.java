@@ -28,12 +28,12 @@ public class TrainerController {
         return new ResponseEntity<Trainer>(trainer1, HttpStatus.CREATED);
     }
 
-//    @GetMapping("/subscriptions")
-//    public ResponseEntity<List<Subscription>> getSubscriptions() {
-//        List<Subscription> allSubscriptions = subscriptionService.getAllSubscription();
-//        return new ResponseEntity<List<Subscription>>(allSubscriptions, HttpStatus.OK);
-//    }
-//
+    @GetMapping("/subscriptions")
+    public ResponseEntity<List<Trainer>> getSubscriptions() {
+        List<Trainer> allSubscriptions = trainerService.getAllTrainer();
+        return new ResponseEntity<List<Trainer>>(allSubscriptions, HttpStatus.OK);
+    }
+
 //    @GetMapping("/subscriptions/{subscriptionId}")
 //    public ResponseEntity<Subscription> getSubscriptionById(@PathVariable String subscriptionId) throws Exception {
 //        Subscription subscriptionById = subscriptionService.getSubscriptionById(subscriptionId);
