@@ -27,7 +27,7 @@ export class EnrolltestComponent implements OnInit {
   // startDate = new Date(1990, 0, 1);
   // endDate = new Date(1990, 0, 1);
 
-  isLinear = false;
+  isLinear = true;
   firstFormGroup: FormGroup = new FormGroup({});
   secondFormGroup: FormGroup = new FormGroup({});
   thirdFormGroup: FormGroup = new FormGroup({});
@@ -57,8 +57,6 @@ export class EnrolltestComponent implements OnInit {
       "email": user.email,
       "password": user.pwd,
       "gender": user.gender,
-      //"startDate": user.startdate.toISOString().substring(0, 10),
-      //"endDate": user.enddate.toISOString().substring(0, 10),
       "dateOfBirth": user.date.toISOString().substring(0, 10),
       "height": user.ht,
       "weight": user.wt,

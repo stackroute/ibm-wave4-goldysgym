@@ -14,6 +14,8 @@ export class UserProfileComponent implements OnInit {
   user:any=[];
   userId: any;
   userData:any
+
+  // const getAge = this.userData.user.dateOfBirth => Math.floor((new Date() - new Date(birthDate).getTime()) / 3.15576e+10)
   ngOnInit() {
     this.userData=JSON.parse(localStorage.getItem('currentUser'))
     console.log(this.userData.user.id)

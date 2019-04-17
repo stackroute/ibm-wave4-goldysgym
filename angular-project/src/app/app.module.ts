@@ -31,7 +31,7 @@ import { ProgramDetailsComponent } from './program-details/program-details.compo
 import { EditProgramformComponent } from './edit-programform/edit-programform.component';
 import { AdminProgramdetailsComponent } from './admin-programdetails/admin-programdetails.component';
 import { SubscriptionviewComponent } from './subscriptionview/subscriptionview.component';
-import { EnrolltestComponent } from './enrolltest/enrolltest.component';
+import { EnrolltestComponent } from './enrollmentPage/enrolltest.component';
 import { MatStepperModule, MatInputModule, MatButtonModule, MatAutocompleteModule } from '@angular/material';
 import { MatRadioModule} from '@angular/material';
 import { MatDatepickerModule,MatNativeDateModule,MatFormFieldModule,} from '@angular/material';

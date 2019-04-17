@@ -18,7 +18,7 @@ import { UserSubscriptionsComponent } from './user-subscriptions/user-subscripti
 import { ProgramDetailsComponent } from './program-details/program-details.component';
 import{EditProgramformComponent} from './edit-programform/edit-programform.component';
 import{AdminProgramdetailsComponent } from './admin-programdetails/admin-programdetails.component';
-import { EnrolltestComponent } from './enrolltest/enrolltest.component';
+import { EnrolltestComponent } from './enrollmentPage/enrolltest.component';
 import { UserMyprogramsComponent } from './user-myprograms/user-myprograms.component';
 
 import {SubscriptionviewComponent  } from './subscriptionview/subscriptionview.component';
