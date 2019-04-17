@@ -3,7 +3,10 @@ package com.stackroute.enrollment.controller;
 
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.stackroute.enrollment.component.RabbitProducer;
 import com.stackroute.enrollment.domain.Enrollment;
+import com.stackroute.enrollment.domain.Subscription;
+import com.stackroute.enrollment.service.EnrollmentService;
 import com.stackroute.enrollment.service.EnrollmentServiceImpl;
 import org.junit.Before;
 import org.junit.Test;
@@ -23,6 +26,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import static org.mockito.ArgumentMatchers.any;
@@ -36,7 +40,9 @@ public class EnrollmentControllerTest {
     private MockMvc mockMvc;
     private Enrollment enrollment;
     @MockBean
-    private EnrollmentServiceImpl enrollmentServiceImpl;
+    private RabbitProducer rabbitProducer;
+    @MockBean
+    private EnrollmentService enrollmentService;
     @InjectMocks
     private EnrollmentController enrollmentController;
 
@@ -48,9 +54,16 @@ public class EnrollmentControllerTest {
         MockitoAnnotations.initMocks(this);
         mockMvc = MockMvcBuilders.standaloneSetup(enrollmentController).build();
         enrollment = new Enrollment();
-        enrollment.setFirstName("Jonny");
-        enrollment.setUserId("101");
-        enrollment.setLastName("Jenny");
+        enrollment = new Enrollment();
+        enrollment.setUserId("1");
+        enrollment.setFirstName("Jhon");
+        enrollment.setLastName("Doe");
+        enrollment.setEmail("Jhon@gmail.com");
+        enrollment.setPassword("12345");
+        enrollment.setDateOfBirth(new Date(1993-03-26));
+        enrollment.setGender("Male");
+        enrollment.setHeight(180.00);
+        enrollment.setWeight(62.00);enrollment.setSubscription(new Subscription("1","Gold","Desc","xyz",6,4200.00));
         list = new ArrayList();
         list.add(enrollment);
 
@@ -58,7 +71,7 @@ public class EnrollmentControllerTest {
 
     @Test
     public void saveUser() throws Exception {
-        when(enrollmentServiceImpl.saveEnrollment(any())).thenReturn(enrollment);
+        when(enrollmentService.saveEnrollment(any())).thenReturn(enrollment);
         mockMvc.perform(MockMvcRequestBuilders.post("/enrollment")
                 .contentType(MediaType.APPLICATION_JSON).content(asJsonString(enrollment)))
                 .andExpect(MockMvcResultMatchers.status().isCreated())
@@ -70,7 +83,7 @@ public class EnrollmentControllerTest {
 
     @Test
     public void getAllUser() throws Exception {
-        when(enrollmentServiceImpl.getALLRest()).thenReturn(list);
+        when(enrollmentService.getALLRest()).thenReturn(list);
         mockMvc.perform(MockMvcRequestBuilders.get("/enrollments")
                 .contentType(MediaType.APPLICATION_JSON).content(asJsonString(enrollment)))
                 .andExpect(MockMvcResultMatchers.status().isOk())
