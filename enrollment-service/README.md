@@ -1,0 +1,1 @@
+enrollment-service registers the users,it handles CRUD operation using MongoDB

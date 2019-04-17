@@ -1,4 +1,4 @@
-package com.stackroute.userauthentication;
+package com.stackroute.userauthentication.service;
 
 import com.stackroute.userauthentication.domain.User;
 import com.stackroute.userauthentication.repo.UserRepository;

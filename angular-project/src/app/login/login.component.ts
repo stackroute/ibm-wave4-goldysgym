@@ -38,9 +38,9 @@ export class LoginComponent implements OnInit {
   (error:any)=>{
     this.errorMsg=true;
     console.warn(error);
-  });
-  
- 
   }
+  );
+  }
+  
 
 }

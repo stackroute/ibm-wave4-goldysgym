@@ -24,6 +24,8 @@ import { UserMyprogramsComponent } from './user-myprograms/user-myprograms.compo
 import {SubscriptionviewComponent  } from './subscriptionview/subscriptionview.component';
 import{EditSubscriptionformComponent} from './edit-subscriptionform/edit-subscriptionform.component';
 import { LoginAuthService } from './login-auth.service';
+import { ProgramScheduleComponent } from './program-schedule/program-schedule.component';
+import {AdmineditpgmComponent} from './admineditpgm/admineditpgm.component';
 const routes: Routes = [
 
   {path:'prog-details/:id',component: ProgramDetailsComponent, canActivate:[LoginAuthService]},
@@ -42,8 +44,11 @@ const routes: Routes = [
       { path: 'summary', component: SummaryPageComponent , canActivate:[LoginAuthService]},
       { path: 'edit/:id', component: EditProgramformComponent, canActivate:[LoginAuthService] },
       { path: 'edit/:id/subs', component: EditSubscriptionformComponent, canActivate:[LoginAuthService]},
-      { path: '', redirectTo: '/admin/summary', pathMatch: 'full', canActivate:[LoginAuthService] }
-      
+      { path: '', redirectTo: '/admin/summary', pathMatch: 'full', canActivate:[LoginAuthService] },
+      { path: 'pro-schedule', component: ProgramScheduleComponent, canActivate:[LoginAuthService]},
+      { path: 'admineditpgmform/:id', component: AdmineditpgmComponent, canActivate:[LoginAuthService]}
+   
+     
     ]
   },
   {path :'user', component:UserDashboardComponent,children:[
