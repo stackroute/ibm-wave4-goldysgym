@@ -8,7 +8,7 @@ public class Subscription {
      int duration;
      Double amount;
 
-    public Subscription() {git
+    public Subscription() {
     }
 
     public Subscription(String subscriptionId, String subscriptionName, String description, String imageUrl, int duration, Double amount) {
