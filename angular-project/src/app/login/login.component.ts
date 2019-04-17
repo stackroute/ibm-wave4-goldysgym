@@ -38,8 +38,7 @@ export class LoginComponent implements OnInit {
     console.warn(error);
   }
   );
-  
- 
   }
+  
 
 }

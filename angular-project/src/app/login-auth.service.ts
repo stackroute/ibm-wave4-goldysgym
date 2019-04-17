@@ -37,5 +37,5 @@ export class LoginAuthService implements CanActivate  {
     return this.subject.asObservable();
   }
 
-  
+
 }
