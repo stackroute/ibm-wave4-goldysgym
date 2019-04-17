@@ -40,6 +40,8 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import { EditSubscriptionformComponent } from './edit-subscriptionform/edit-subscriptionform.component';
 import { UserMyprogramsComponent } from './user-myprograms/user-myprograms.component';
 import { MatTableModule } from '@angular/material/table';
+import { ProgramScheduleComponent } from './program-schedule/program-schedule.component';
+import { AdmineditpgmComponent } from './admineditpgm/admineditpgm.component';
 
 
 
@@ -74,7 +76,9 @@ import { MatTableModule } from '@angular/material/table';
     ProgramDetailsComponent,
     EnrolltestComponent,
     EditSubscriptionformComponent,
-    UserMyprogramsComponent
+    UserMyprogramsComponent,
+    ProgramScheduleComponent,
+    AdmineditpgmComponent
     
   ],
   imports: [

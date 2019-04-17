@@ -68,7 +68,7 @@ export class UserMyprogramsComponent implements OnInit {
                                   "saunak",
                                   "rakesh",
                                   "yash",
-                                  "shweta"
+                                  "swetha"
                               ]
                           }
                       ]
