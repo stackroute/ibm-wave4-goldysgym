@@ -23,17 +23,12 @@ export class UserService {
     return this.http.post("http://localhost:9002/login",user,{headers:headers});
 
   }
-  // getAllUsers(token: any): Observable<any>{
-  //   const headers = new HttpHeaders({'Authorization': "Bearer "+ token});
-  //   return this.http.get("http://localhost:9002/users",{headers:headers});
-
-  // }
-  // getUser(token: any): Observable<any>{
-  //   const headers = new HttpHeaders({'Authorization': "Bearer "+ token});
-  //   return this.http.get("http://localhost:9002/getuser ",{headers:headers});
-
-  // }
   getUserDetails() {
     return this.http.get("http://localhost:8091/enrollments");
+  }
+  
+  getUserDetailsById(userid) {
+   
+    return this.http.get(`http://localhost:8091/enrollment/${userid}`);
   }
 }

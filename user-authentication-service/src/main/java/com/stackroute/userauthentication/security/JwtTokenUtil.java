@@ -21,6 +21,7 @@ public class JwtTokenUtil implements Serializable {
     private static final long serialVersionUID=-13l;
 
     static  final String CLAM_KEY_USERNAME="sub";
+
     static  final String CLAM_KEY_AUDIANCE="audiance";
     static  final String CLAM_KEY_CREATED="created";
 
