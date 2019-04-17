@@ -34,32 +34,25 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     private AuthenticationTokenFilter filter;
 
 
-
     @Override
-    public void configure(AuthenticationManagerBuilder authenticationManagerBuilder)throws Exception
-    {
+    public void configure(AuthenticationManagerBuilder authenticationManagerBuilder) throws Exception {
         authenticationManagerBuilder.userDetailsService(this.userDetailsService).passwordEncoder(PasswordEncoder());
     }
 
     @Bean
-    public  PasswordEncoder PasswordEncoder()
-    {
+    public PasswordEncoder PasswordEncoder() {
         return new BCryptPasswordEncoder();
     }
 
     @Override
     @Bean
-    public AuthenticationManager authenticationManagerBean() throws Exception
-    {
+    public AuthenticationManager authenticationManagerBean() throws Exception {
         return super.authenticationManagerBean();
     }
 
 
-
-
     @Override
-    public void configure(HttpSecurity httpSecurity) throws Exception
-    {
+    public void configure(HttpSecurity httpSecurity) throws Exception {
         httpSecurity.csrf().disable().exceptionHandling().authenticationEntryPoint(authenticationEntryPoint).and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
                 .authorizeRequests()

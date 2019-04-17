@@ -1,6 +1,5 @@
 package com.stackroute.programschedular.domain;
 
-import org.springframework.data.annotation.Id;
 
 import java.util.Date;
 
@@ -9,6 +8,11 @@ public class Day {
     Slots[] slots = new Slots[3];
 
     public Day() {
+    }
+
+    public Day(Date date, Slots[] slots) {
+        this.date = date;
+        this.slots = slots;
     }
 
     public Date getDate() {

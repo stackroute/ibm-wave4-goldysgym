@@ -12,7 +12,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/v1")
 @CrossOrigin
-public class   ProgramController {
+public class ProgramController {
     private ProgramService programService;
 
     public ProgramController(ProgramService programServiceImpl) {
@@ -22,37 +22,37 @@ public class   ProgramController {
     @PostMapping("/program")
     public ResponseEntity<Program> saveProgram(@RequestBody @Valid Program program) {
         Program programAdded = programService.saveProgram(program);
-        return new ResponseEntity<Program>(programAdded, HttpStatus.CREATED);
+        return new ResponseEntity<>(programAdded, HttpStatus.CREATED);
     }
 
     @GetMapping("/programs")
     public ResponseEntity<List<Program>> getPrograms() {
         List<Program> allPrograms = programService.getAllPrograms();
-        return new ResponseEntity<List<Program>>(allPrograms, HttpStatus.OK);
+        return new ResponseEntity<>(allPrograms, HttpStatus.OK);
     }
 
     @GetMapping("/programs/{programId}")
     public ResponseEntity<Program> getProgramsById(@PathVariable String programId) throws Exception {
         Program programById = programService.getProgramById(programId);
-        if(programById==null)
+        if (programById == null)
             throw new Exception();
-        return new ResponseEntity<Program>(programById, HttpStatus.OK);
+        return new ResponseEntity<>(programById, HttpStatus.OK);
     }
 
 
     @PutMapping("/programs")
     public ResponseEntity<Program> updateProgram(@RequestBody Program program) {
         Program updatedProgram = programService.updateProgram(program);
-        return new ResponseEntity<Program>(updatedProgram, HttpStatus.OK);
+        return new ResponseEntity<>(updatedProgram, HttpStatus.OK);
     }
 
     @DeleteMapping("/programs/{programId}")
     public ResponseEntity<List<Program>> deleteProgram(@PathVariable String programId) throws Exception {
-        if(programService.getProgramById(programId)==null)
+        if (programService.getProgramById(programId) == null)
             throw new Exception();
         programService.deleteProgram(programId);
         List<Program> allPrograms = programService.getAllPrograms();
-        return new ResponseEntity<List<Program>>(allPrograms, HttpStatus.OK);
+        return new ResponseEntity<>(allPrograms, HttpStatus.OK);
 
     }
 

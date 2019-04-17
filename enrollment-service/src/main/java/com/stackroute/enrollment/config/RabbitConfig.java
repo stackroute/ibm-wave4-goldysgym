@@ -10,31 +10,29 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 
-
 @Configuration
-public class RabbitConfig
-{
-    public static final String QUEUE_NAME="goldy.gym";
-    public static final String EXCHANGE_NAME="goldy.gym.exchange";
-    public static final String ROUTING_KEY="goldy.gym.key";
+public class RabbitConfig {
+    public static final String QUEUE_NAME = "goldy.gym";
+    public static final String EXCHANGE_NAME = "goldy.gym.exchange";
+    public static final String ROUTING_KEY = "goldy.gym.key";
 
     @Bean
-    Queue queueOne()
-    {
-        return new Queue(QUEUE_NAME,true);
+    Queue queueOne() {
+        return new Queue(QUEUE_NAME, true);
     }
+
     @Bean
-    TopicExchange topicExchange(){
+    TopicExchange topicExchange() {
         return new TopicExchange(EXCHANGE_NAME);
     }
+
     @Bean
-    Binding binding()
-    {
+    Binding binding() {
         return BindingBuilder.bind(queueOne()).to(topicExchange()).with(ROUTING_KEY);
     }
+
     @Bean
-    public MessageConverter jsonMessage()
-    {
+    public MessageConverter jsonMessage() {
         return new Jackson2JsonMessageConverter();
     }
 }

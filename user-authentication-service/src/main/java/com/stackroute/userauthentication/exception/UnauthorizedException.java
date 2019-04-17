@@ -11,11 +11,11 @@ public class UnauthorizedException extends RuntimeException {
 
     protected static MessageSourceAccessor message = SpringSecurityMessageSource.getAccessor();
 
-    public UnauthorizedException(){
+    public UnauthorizedException() {
         super(message.getMessage("AbstractAcessDecisionManager.accessDenied", "Access is Denied"));
     }
 
-    public UnauthorizedException(String message){
+    public UnauthorizedException(String message) {
         super(message);
     }
 }

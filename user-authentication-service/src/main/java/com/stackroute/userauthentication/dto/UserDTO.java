@@ -4,7 +4,7 @@ import com.stackroute.userauthentication.domain.User;
 
 import java.io.Serializable;
 
-public class UserDTO  implements Serializable {
+public class UserDTO implements Serializable {
 
     private User user;
     private String token;

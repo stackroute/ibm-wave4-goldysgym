@@ -12,10 +12,10 @@ import java.util.List;
 
 
 @Service
-public class UserServiceImpl implements UserService{
-   private UserRepository userRepository;
+public class UserServiceImpl implements UserService {
+    private UserRepository userRepository;
 
-   @Autowired
+    @Autowired
     public UserServiceImpl(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
@@ -24,13 +24,13 @@ public class UserServiceImpl implements UserService{
     public User save(User user) {
         String password = PasswordUtil.getPasswordHash(user.getPassword());
         user.setPassword(password);
-        user.setRegdate( LocalDate.now());
+        user.setRegdate(LocalDate.now());
         return userRepository.save(user);
     }
 
     @Override
     public List<User> findAll() {
-            return (List<User>) userRepository.findAll();
+        return userRepository.findAll();
     }
 
     @Override

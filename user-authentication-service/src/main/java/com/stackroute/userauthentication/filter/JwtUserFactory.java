@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 public class JwtUserFactory {
 
     public static JwtUser create(User user) {
-        return new JwtUser(user.getId(),user.getEmail(),user.getPassword(),user, maptoGrantedAuthorities(new ArrayList<String>(Arrays.asList("ROLE_"+user.getRole()))),user.isEnabled());
+        return new JwtUser(user.getId(), user.getEmail(), user.getPassword(), user, maptoGrantedAuthorities(new ArrayList<String>(Arrays.asList("ROLE_" + user.getRole()))), user.isEnabled());
     }
 
     private static List<GrantedAuthority> maptoGrantedAuthorities(ArrayList<String> authorities) {

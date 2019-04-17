@@ -38,10 +38,11 @@ public class EnrollmentServiceImplTest {
         enrollment.setLastName("Doe");
         enrollment.setEmail("Jhon@gmail.com");
         enrollment.setPassword("12345");
-        enrollment.setDateOfBirth(new Date(1993-03-26));
+        enrollment.setDateOfBirth(new Date(1993 - 03 - 26));
         enrollment.setGender("Male");
         enrollment.setHeight(180.00);
-        enrollment.setWeight(62.00);enrollment.setSubscription(new Subscription("1","Gold","Desc","xyz",6,4200.00));
+        enrollment.setWeight(62.00);
+        enrollment.setSubscription(new Subscription("1", "Gold", "Desc", "xyz", 6, 4200.00));
         list = new ArrayList<>();
         list.add(enrollment);
 
