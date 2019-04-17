@@ -12,7 +12,7 @@ export class ProgramService {
 
   
   tf:any[] = [false,false,false,false,false];
-
+  
   tfToggle(a){
     this.tf= [false,false,false,false,false];
     this.tf[a] = true;
@@ -71,7 +71,7 @@ export class ProgramService {
 
   getProgramsOfUser()
   {
-    return this.http.get("http://localhost:3000/month",);
+    return this.http.get("http://localhost:3000/month");
   }
   putUser(data)
   {

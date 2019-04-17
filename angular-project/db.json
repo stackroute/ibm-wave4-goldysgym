@@ -6,9 +6,10 @@
                 {
                     "date": "2019-04-01T00:00:00.000+0000",
                     "slots": [
-                        {
+                        {   
+                            
                             "time": "Morning",
-                            "programName": "thies",
+                            "programName": "yoga",
                             "capacity": 25,
                             "users": [
                                 "abhinab",
@@ -17,8 +18,8 @@
                                 "yash"
                             ]
                         },
-                        {
-                            "time": "Evenning",
+                        {    
+                            "time": "Evening",
                             "programName": "Boxing",
                             "capacity": 25,
                             "users": [
