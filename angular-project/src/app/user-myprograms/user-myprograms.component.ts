@@ -9,8 +9,13 @@ import { HttpClient, HttpHeaders} from '@angular/common/http'
 export class UserMyprogramsComponent implements OnInit {
   
 
-  constructor(private program:ProgramService,private http:HttpClient) { }
-  arrayPrograms:any=[];
+  constructor(private program:ProgramService,private http:HttpClient) {
+    this.view()
+   }
+  arrayPrograms:any;
+  userData:any
+  today: number = Date.now();
+  showMsg: boolean = false;
   x:any;
   y:any=[];
   counter(i: number) {
@@ -18,7 +23,8 @@ export class UserMyprogramsComponent implements OnInit {
 }
 
   ngOnInit() {
- this.view()
+    this.userData=JSON.parse(localStorage.getItem('currentUser'))
+    console.log(this.userData.user.email)
   }
 
   view()
@@ -34,52 +40,23 @@ export class UserMyprogramsComponent implements OnInit {
   viewdata(x,y)
   {
     this.x=x;
-
+    
     this.y=y;
     console.log(y)
  }
- publish()
+ publish(date,time)
  {
-  let newData = 
-          [{
-              "monthName": "April",
-              "days": [
-                  {
-                      "date": "2019-04-21T00:00:00.000+0000",
-                      "slots": [
-                          {
-                              "time": "Morning",
-                              "programName": "thies",
-                              "capacity": 25,
-                              "users": [
-                                  "abhinafkdmfb",
-                                  "saunak",
-                                  "rakesh",
-                                  "yash",
-                                  "santosh"
-                              ]
-                          },
-                          {
-                              "time": "Evenning",
-                              "programName": "Boxing",
-                              "capacity": 25,
-                              "users": [
-                                  "abhinab",
-                                  "saunak",
-                                  "rakesh",
-                                  "yash",
-                                  "shweta"
-                              ]
-                          }
-                      ]
-                  },
-                ]           
-  }
-]
-  console.log(newData)
-  this.program.putUser(newData).subscribe(x=> {
+   console.log(date)
+   console.log(time)
+  let newData= this.arrayPrograms
+
+  console.log(newData[0])
+  this.program.putUser(newData[0],time,date,this.userData.user.email).subscribe(x=> {
     console.log(x)
+   
   })
+  this.showMsg=true;
+  location.reload();
  }
   
 }

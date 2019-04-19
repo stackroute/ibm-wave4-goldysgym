@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../environments/environment';
+import { Observable, from } from 'rxjs';
+import {HttpParams} from '@angular/common/http';
 
 
 @Injectable({
@@ -71,10 +73,45 @@ export class ProgramService {
 
   getProgramsOfUser()
   {
-    return this.http.get("http://localhost:3000/month",);
+    return this.http.get("http://localhost:8092/programs",);
   }
-  putUser(data)
+  putUser(data,time,date,name)
   {
-  return this.http.post("http://localhost:3000/month",data);
+          let params = new HttpParams();
+
+     // Begin assigning parameters
+//      const params = new URLSearchParams();
+// params.set('time', time);
+// params.set('date', date);
+// params.set('name', name);
+
+     params = params.append('time', time);
+     params = params.append('date', date);
+     params = params.append('name', name);
+     console.log(data)
+     console.log(params)
+     let id="2019";
+  return this.http.put("http://localhost:8092/user",data,{params:params});
+ } 
+ putadmin(data,time,date,pgm,cpc)
+  {
+          let params = new HttpParams();
+
+     // Begin assigning parameters
+//      const params = new URLSearchParams();
+// params.set('time', time);
+// params.set('date', date);
+// params.set('name', name);
+
+     params = params.append('time', time);
+     params = params.append('date', date);
+     params = params.append('program', pgm);
+     params = params.append('capacity', cpc);
+
+     console.log(data)
+     console.log(params)
+     let id="2019";
+  return this.http.put("http://localhost:8092/adminupdate",data,{params:params});
  } 
 }
+  
