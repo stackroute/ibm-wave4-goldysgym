@@ -29,6 +29,6 @@ export class UserService {
   
   getUserDetailsById(userid) {
    
-    return this.http.get(`http://13.234.148.231:8080/enrollment/${userid}`);
+    return this.http.get(`http://13.234.148.231:8080/enrollment/enrollment/${userid}`);
   }
 }
