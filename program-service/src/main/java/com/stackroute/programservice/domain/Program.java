@@ -26,9 +26,8 @@ public class Program {
     private String imageUrl;
     @NotNull
     private String programDescription;
-    @NotNull
+    private String trainerId;
     private String trainerName;
-    @NotNull
     private String trainerDescription;
     @NotNull
     private int totalSeats;

@@ -1,5 +1,6 @@
 package com.stackroute.programservice.service;
 
+import com.stackroute.programservice.component.RabbitProducer;
 import com.stackroute.programservice.domain.Program;
 import com.stackroute.programservice.repository.ProgramRepository;
 import org.junit.Assert;
@@ -23,7 +24,8 @@ public class ProgramServiceTest {
     //Create a mock for UserRepository
     @Mock
     private ProgramRepository programRepository;
-
+    @Mock
+    private RabbitProducer rabbitProducer;
     //Inject the mocks as dependencies into UserServiceImpl
     @InjectMocks
     private ProgramServiceImpl programServiceImpl;
