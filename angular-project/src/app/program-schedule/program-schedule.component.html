@@ -1,0 +1,59 @@
+<div class="container-fluid" *ngFor="let user of arrayPrograms">
+  <div class="row">
+    <div class="card-body col-md-3" *ngFor="let day1 of user.days">
+      <a
+        class="card-title btn btn-outline-primary"
+        data-toggle="modal"
+        data-target="#myModal"
+        (click)="viewdata(day1.date, day1.slots)"
+        >Date: {{ day1.date }}</a>
+    </div>
+  </div>
+  </div>
+  
+  <div class="container">
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title">{{ x }}</h2>
+          <button
+            type="button"
+            class="btn btn-danger close"
+            data-dismiss="modal"
+          >
+            &times;
+          </button>
+        </div>
+        <div class="modal-body" *ngFor="let abc of y">
+          <div class="col">
+            <p>Program Name : {{ abc.programName }}</p>
+            <p>Time : {{ abc.time }}</p>
+            <div class="form-check">
+              <!-- <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="defaultCheck1"
+              /> -->
+              <div class="btn btn-danger" data-dismiss="modal" (click) ="routeToEdit(abc.programName)">Edit Program</div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">
+            Close
+          </button>
+          <button
+            type="button"
+            class="btn btn-primary"
+            (click)="publish()"
+            data-dismiss="modal"
+          >
+            publish
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>

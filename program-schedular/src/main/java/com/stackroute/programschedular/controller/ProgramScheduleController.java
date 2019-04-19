@@ -22,6 +22,7 @@ public class ProgramScheduleController {
         this.programScheduleService = programScheduleService;
     }
 
+
     @RequestMapping("/program")
     public ResponseEntity<?> save(@RequestBody Year year) {
         Year year1 = programScheduleService.save(year);
@@ -77,10 +78,11 @@ public class ProgramScheduleController {
         return new ResponseEntity<String>("succefullly created", HttpStatus.OK);
     }
 
-    @RequestMapping("/programs")
+
+    @GetMapping("/programs")
     public ResponseEntity<List<Year>> get() {
         List<Year> list = programScheduleService.getALl();
-        return new ResponseEntity<List<Year>>(list, HttpStatus.OK);
+        return new ResponseEntity<>(list, HttpStatus.OK);
     }
 
 }

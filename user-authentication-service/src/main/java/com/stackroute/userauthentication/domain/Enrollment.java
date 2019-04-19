@@ -4,13 +4,13 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
+
 import java.util.Date;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Enrollment
-{
+public class Enrollment {
     @Id
     String userId;
     String firstName;
@@ -22,7 +22,7 @@ public class Enrollment
     String gender;
     Double height;
     Double weight;
-    int interest[]= new int[3];
+    int[] interest = new int[3];
     Date startDate;
     Date endDate;
     Subscription subscription;

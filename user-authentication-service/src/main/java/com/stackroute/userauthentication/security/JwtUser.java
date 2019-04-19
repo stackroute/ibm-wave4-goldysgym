@@ -11,9 +11,9 @@ public class JwtUser implements UserDetails {
 
 
     private final String id;
-    private  final String username;
-    private  final  String password;
-    private  final User user;
+    private final String username;
+    private final String password;
+    private final User user;
     private final Collection<? extends GrantedAuthority> authorities;
     private final boolean enabled;
 
@@ -41,11 +41,13 @@ public class JwtUser implements UserDetails {
     public boolean isAccountNonExpired() {
         return true;
     }
+
     @JsonIgnore
     @Override
     public boolean isAccountNonLocked() {
         return true;
     }
+
     @JsonIgnore
     @Override
     public boolean isCredentialsNonExpired() {

@@ -1,4 +1,4 @@
-package com.stackroute.userauthentication;
+package com.stackroute.userauthentication.service;
 
 import com.stackroute.userauthentication.domain.User;
 import com.stackroute.userauthentication.repo.UserRepository;
@@ -14,8 +14,9 @@ import org.springframework.test.context.ContextConfiguration;
 
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
+
 @SpringBootTest
-@ContextConfiguration(locations =  {"classpath*:/spring/test-context.xml"})
+@ContextConfiguration(locations = {"classpath*:/spring/test-context.xml"})
 public class UserServiceTest {
 
     private User user;
@@ -27,7 +28,6 @@ public class UserServiceTest {
     //Inject the mocks as dependencies into UserServiceImpl
     @InjectMocks
     private UserServiceImpl userServiceImpl;
-
 
 
     @Before
@@ -58,11 +58,12 @@ public class UserServiceTest {
         verify(userRepository, times(1)).save(user);
 
     }
+
     @Test
     public void saveUserTestFailure() {
         when(userRepository.save((User) any())).thenReturn(null);
         User savedUser = userServiceImpl.save(user);
-       // System.out.println("savedUser" + savedUser);
+        // System.out.println("savedUser" + savedUser);
         Assert.assertNotEquals(user, savedUser);
 
        /*doThrow(new UserAlreadyExistException()).when(userRepository).findById(eq(101));

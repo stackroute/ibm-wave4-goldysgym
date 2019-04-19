@@ -5,8 +5,20 @@ public class Subscription {
     String subscriptionName;
     String description;
     String imageUrl;
-     int duration;
-     Double amount;
+    int duration;
+    Double amount;
+
+    public Subscription() {
+    }
+
+    public Subscription(String subscriptionId, String subscriptionName, String description, String imageUrl, int duration, Double amount) {
+        this.subscriptionId = subscriptionId;
+        this.subscriptionName = subscriptionName;
+        this.description = description;
+        this.imageUrl = imageUrl;
+        this.duration = duration;
+        this.amount = amount;
+    }
 
     public String getSubscriptionId() {
         return subscriptionId;

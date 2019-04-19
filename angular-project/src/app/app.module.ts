@@ -31,7 +31,7 @@ import { ProgramDetailsComponent } from './program-details/program-details.compo
 import { EditProgramformComponent } from './edit-programform/edit-programform.component';
 import { AdminProgramdetailsComponent } from './admin-programdetails/admin-programdetails.component';
 import { SubscriptionviewComponent } from './subscriptionview/subscriptionview.component';
-import { EnrolltestComponent } from './enrolltest/enrolltest.component';
+import { EnrolltestComponent } from './enrollmentPage/enrolltest.component';
 import { MatStepperModule, MatInputModule, MatButtonModule, MatAutocompleteModule } from '@angular/material';
 import { MatRadioModule} from '@angular/material';
 import { MatDatepickerModule,MatNativeDateModule,MatFormFieldModule,} from '@angular/material';
@@ -41,6 +41,8 @@ import { EditSubscriptionformComponent } from './edit-subscriptionform/edit-subs
 import { UserMyprogramsComponent } from './user-myprograms/user-myprograms.component';
 import { MatTableModule } from '@angular/material/table';
 import { AdminMyprogramsComponent } from './admin-myprograms/admin-myprograms.component';
+import { ProgramScheduleComponent } from './program-schedule/program-schedule.component';
+import { AdmineditpgmComponent } from './admineditpgm/admineditpgm.component';
 
 
 
@@ -76,7 +78,9 @@ import { AdminMyprogramsComponent } from './admin-myprograms/admin-myprograms.co
     EnrolltestComponent,
     EditSubscriptionformComponent,
     UserMyprogramsComponent,
-    AdminMyprogramsComponent
+    AdminMyprogramsComponent,
+    ProgramScheduleComponent,
+    AdmineditpgmComponent
     
   ],
   imports: [

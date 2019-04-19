@@ -27,7 +27,6 @@ public class AuthenticationController {
     @Value("${jwt.header}")
     private String tokenHeader;
 
-//    private AuthenticationManager authenticationManager;
     private JwtTokenUtil jwtTokenUtil;
 
     private AuthenticationManager authenticationManager;
@@ -45,13 +44,13 @@ public class AuthenticationController {
             final JwtUser userDetails = (JwtUser) authentication.getPrincipal();
             SecurityContextHolder.getContext().setAuthentication(authentication);
             final String token = jwtTokenUtil.generateToken(userDetails);
-            response.setHeader("Token",token);
+            response.setHeader("Token", token);
 
-            return new ResponseEntity<UserDTO>(new UserDTO(userDetails.getUser(),token), HttpStatus.OK);
+            return new ResponseEntity<>(new UserDTO(userDetails.getUser(), token), HttpStatus.OK);
 
         } catch (Exception e) {
 
-            return new ResponseEntity<String>("email id or password is worng ", HttpStatus.CONFLICT);
+            return new ResponseEntity<>("email id or password is worng ", HttpStatus.CONFLICT);
         }
 
     }

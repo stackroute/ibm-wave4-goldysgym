@@ -1,7 +1,13 @@
 version: '2'
-
-services:
-
+services:  
+  front-end: 
+    build: angular-project/
+    restart: always
+    network_mode: "host"
+    hostname: localhost
+    # ports:
+    #   - 8888:8888
+  
   mongo:
     image: mongo:3.4-jessie
     ports:
@@ -9,7 +15,7 @@ services:
     expose:
       - 27017
     container_name: mongonew
-    network_mode: host
+    network_mode: "host"
     volumes:
       - /mongo-volume:/data/db
 
@@ -68,6 +74,11 @@ services:
     restart: always
     network_mode: "host"
     hostname: localhost
+    depends_on:
+      - zuul-apigateway
+      - config-service
+      - eureka-server
+      - mongo
     ports:
       - 9003:9003
 
@@ -79,6 +90,8 @@ services:
     network_mode: "host"
     hostname: localhost
     depends_on:
+      - zuul-apigateway
+      - rabbitmq
       - config-service
       - eureka-server
       - mongo
@@ -92,6 +105,7 @@ services:
     network_mode: "host"
     hostname: localhost
     depends_on:
+      - zuul-apigateway
       - config-service
       - eureka-server
       - mongo
@@ -106,12 +120,24 @@ services:
     network_mode: "host"
     hostname: localhost
     depends_on:
+      - zuul-apigateway
       - config-service
       - eureka-server
       - mongo
+      - rabbitmq
     ports:
       - 9001:9001
 
+  trainer-management-service:
+    build: trainer-management-service/
+    restart: always
+    network_mode: "host"
+    hostname: localhost
+    depends_on:
+      - mongo
+      - rabbitmq
+    ports:
+      - 9004:9004
 
 
   user-authentication-service:
@@ -120,6 +146,7 @@ services:
     network_mode: "host"
     hostname: localhost
     depends_on:
+      - rabbitmq
       - config-service
       - eureka-server
       - db
@@ -129,10 +156,10 @@ services:
 
 
   rabbitmq:
-    image: "rabbitmq:3-management"
-    hostname: "rabbit"
+    image: rabbitmq:3-management
+    hostname: rabbit
     ports:
-       - "15672:15672"
-       - "5672:5672"
+       - 15672:15672
+       - 5672:5672
     labels:
-       NAME: "rabbitmq"
+       NAME: rabbitmq

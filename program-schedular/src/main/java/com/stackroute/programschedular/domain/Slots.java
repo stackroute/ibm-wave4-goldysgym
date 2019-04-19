@@ -1,6 +1,5 @@
 package com.stackroute.programschedular.domain;
 
-import org.springframework.data.annotation.Id;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +8,7 @@ public class Slots {
     String time;
     String programName;
     int capacity;
-    List<String> users = new ArrayList<String>();
+    List<String> users = new ArrayList<>();
 
     public Slots() {
     }

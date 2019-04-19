@@ -1,6 +1,5 @@
 package com.stackroute.programschedular.domain;
 
-import org.springframework.data.annotation.Id;
 
 public class Month {
     String monthName;

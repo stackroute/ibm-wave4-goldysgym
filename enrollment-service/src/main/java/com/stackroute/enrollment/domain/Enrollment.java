@@ -6,7 +6,6 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.time.LocalDate;
 import java.util.Date;
 
 @Document
@@ -27,7 +26,7 @@ public class Enrollment {
     Date startDate;
     Date endDate;
     Subscription subscription;
-    int interest[] = new int[3];
+    int[] interest = new int[3];
 
 
     public String getUserId() {

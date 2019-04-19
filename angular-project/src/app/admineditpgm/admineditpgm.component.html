@@ -1,0 +1,64 @@
+<div class="container-fluid">
+  <div class="row form-container">
+    <div class="col-lg-7">
+      <form #form="ngForm" >
+        <div class="card-body" style=" background: white">
+
+
+          <div class="form-group row">
+            <label for="pname" class="col-sm-6 col-form-label ">ProgramName</label>
+            <div class="col-sm-6">
+              <input ngModel type="text" class="form-control"  name="pname" id="pname" >
+            </div>
+          </div>
+
+       
+          <div class="form-group row">
+          <div class="col-sm-6">Time</div>
+          <div class="col-sm-6">
+            <div class="form-check">
+              <input class="form-check-input" ngModel name="exampleRadios" type="radio" id="radio1" value="Morning">
+              <label class="form-check-label" for="radio1">Morning(6am-10am)</label>
+            </div>&nbsp;
+            <div class="form-check">
+              <input class="form-check-input" ngModel name="exampleRadios" type="radio" id="radio2" value="Afternoon">
+              <label class="form-check-label" for="radio2">Afternoon(12pm-4pm)</label>
+            </div>&nbsp;
+            <div class="form-check">
+              <input class="form-check-input" ngModel name="exampleRadios" type="radio" id="radio3" value="Evening">
+              <label class="form-check-label" for="radio3">Evening(5pm-9pm)</label>
+            </div>&nbsp;
+          </div>
+          </div>
+
+
+
+        <div class="form-group row">
+        <label for="seats" class="col-sm-6 col-form-label">NumberOfSeats</label>
+        <div class="col-sm-6">
+            <input placeholder="seats" ngModel required type="number" name="seats" value="" min="0" max="100" />
+        </div>
+        </div>
+
+
+        <div class="form-group row">
+          <!-- <label for="" class="col-sm-6 col-form-label"></label> -->
+        <div class="col-sm-6 d-flex">
+            <div>
+              <button type="back" routerLink="/admin/pro-schedule" class="btn btn-success">Back</button>&nbsp;
+            </div>
+            <div>
+              <button type="submit" class="btn btn-primary">Submit</button>&nbsp;
+            </div>
+            <div>
+              <button type="reset" class="btn btn-danger">Clear</button>&nbsp;
+            </div>
+        </div>
+        </div>
+
+
+    </div>
+    </form>
+</div>
+</div>
+</div>

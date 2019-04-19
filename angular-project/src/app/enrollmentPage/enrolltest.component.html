@@ -46,17 +46,7 @@
               <!-- <mat-error >{{getErrorMessage1()}}</mat-error> -->
             </mat-form-field>
           </div>
-          <br /><br />
-          <!-- <ng-template matStepLabel>Fill out your name</ng-template> -->
-          <!-- <div class="example-container">
-            <mat-form-field>
-              <input matInput class="form-control" formControlName="cnfpwd"   placeholder="confirm password"
-                [errorStateMatcher]="errorMatcher" type="password" required />
-              <mat-error *ngIf="firstFormGroup.hasError('passwordsDoNotMatch')">
-                Passwords do not match!
-              </mat-error>
-            </mat-form-field>
-          </div> -->
+          <br/><br/>
           <button mat-button matStepperNext [disabled]="!firstFormGroup.valid">
             NEXT
           </button>
