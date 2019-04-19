@@ -14,21 +14,21 @@ export class UserService {
   saveUser(user: any): Observable<any>{
     const headers = new HttpHeaders({'Access-Control-Allow-Orgin': "*"});
     console.log(user, "this is user object in user service")
-    return this.http.post("http://localhost:8091/enrollment",user,{headers:headers, responseType:"text"});
+    return this.http.post("http://13.234.148.231:8080/enrollment/enrollment",user,{headers:headers, responseType:"text"});
 
   }
 
   loginUser(user: any): Observable<any>{
     const headers = new HttpHeaders({'Access-Control-Allow-Orgin': "*"});
-    return this.http.post("http://localhost:9002/login",user,{headers:headers});
+    return this.http.post("http://13.234.148.231:8080/authentication/login",user,{headers:headers});
 
   }
   getUserDetails() {
-    return this.http.get("http://localhost:8091/enrollments");
+    return this.http.get("http://13.234.148.231:8080/enrollment/enrollments");
   }
   
   getUserDetailsById(userid) {
    
-    return this.http.get(`http://localhost:8091/enrollment/${userid}`);
+    return this.http.get(`http://13.234.148.231:8080/enrollment/enrollment/${userid}`);
   }
 }

@@ -1,7 +1,13 @@
 version: '2'
-
-services:
-
+services:  
+  front-end: 
+    build: angular-project/
+    restart: always
+    network_mode: "host"
+    hostname: localhost
+    # ports:
+    #   - 8888:8888
+  
   mongo:
     image: mongo:3.4-jessie
     ports:
