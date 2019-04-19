@@ -1,7 +1,10 @@
 package com.stackroute.programservice.controller;
 
+//import com.netflix.discovery.converters.Auto;
+import com.stackroute.programservice.component.RabbitProducer;
 import com.stackroute.programservice.domain.Program;
 import com.stackroute.programservice.service.ProgramService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,14 +17,18 @@ import java.util.List;
 @CrossOrigin
 public class ProgramController {
     private ProgramService programService;
+    private RabbitProducer rabbitProducer;
 
-    public ProgramController(ProgramService programServiceImpl) {
+    @Autowired
+    public ProgramController(ProgramService programServiceImpl, RabbitProducer rabbitProducer) {
         this.programService = programServiceImpl;
+        this.rabbitProducer = rabbitProducer;
     }
 
     @PostMapping("/program")
     public ResponseEntity<Program> saveProgram(@RequestBody @Valid Program program) {
         Program programAdded = programService.saveProgram(program);
+        rabbitProducer.produce(programAdded);
         return new ResponseEntity<>(programAdded, HttpStatus.CREATED);
     }
 
