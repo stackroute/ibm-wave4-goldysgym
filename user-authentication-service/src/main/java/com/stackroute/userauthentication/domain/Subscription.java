@@ -25,7 +25,7 @@ public class Subscription {
     private int duration;
     @NotNull
     private double amount;
-    private User user[];
+    private User[] user;
 
     public String getSubscriptionId() {
         return subscriptionId;

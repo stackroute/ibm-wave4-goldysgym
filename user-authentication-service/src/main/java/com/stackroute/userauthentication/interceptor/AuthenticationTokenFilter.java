@@ -29,9 +29,6 @@ public class AuthenticationTokenFilter extends OncePerRequestFilter {
         this.jwtTokenUtil = jwtTokenUtil;
     }
 
-//    public AuthenticationTokenFilter() {
-//    }
-
     @Value("${jwt.header}")
     private String tokenHeader;
 

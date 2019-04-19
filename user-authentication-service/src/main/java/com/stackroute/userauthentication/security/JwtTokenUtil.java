@@ -4,6 +4,8 @@ package com.stackroute.userauthentication.security;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
@@ -19,6 +21,7 @@ import java.util.Map;
 public class JwtTokenUtil implements Serializable {
 
     private static final long serialVersionUID = -13l;
+    Logger logger = LoggerFactory.getLogger(this.getClass());
 
     static final String CLAM_KEY_USERNAME = "sub";
     static final String CLAM_KEY_AUDIANCE = "audiance";
@@ -38,7 +41,7 @@ public class JwtTokenUtil implements Serializable {
             username = claims.getSubject();
 
         } catch (Exception e) {
-
+           return null;
         }
         return username;
     }
@@ -48,7 +51,7 @@ public class JwtTokenUtil implements Serializable {
         try {
             claims = Jwts.parser().setSigningKey(secret).parseClaimsJws(token).getBody();
         } catch (Exception e) {
-            return null;
+            logger.info("Error: ",e);
         }
         return claims;
     }
@@ -61,29 +64,26 @@ public class JwtTokenUtil implements Serializable {
     }
 
     private boolean isTokenExpired(String token) {
-        final Date expiration = getExpirationDatefromToken(token);
-        return expiration.before(new Date());
+        final Date expirationDate = getExpirationDatefromToken(token);
+        return expirationDate.before(new Date());
     }
 
     private Date getExpirationDatefromToken(String token) {
-        Date expiration = null;
+        Date expirationDate = null;
         try {
             final Claims claims = getClaimsFromToken(token);
             if (claims != null) {
-                expiration = claims.getExpiration();
-            } else {
-                expiration = null;
+                expirationDate = claims.getExpiration();
             }
-
         } catch (Exception e) {
-
+           logger.info("Error: ",e);
         }
-        return expiration;
+        return expirationDate;
     }
 
     public String generateToken(JwtUser userDetails) {
 
-        Map<String, Object> claims = new HashMap<String, Object>();
+        Map<String, Object> claims = new HashMap<>();
         claims.put(CLAM_KEY_USERNAME, userDetails.getUsername());
         claims.put(CLAM_KEY_CREATED, new Date());
         return generateToken(claims);

@@ -10,10 +10,9 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Consumer {
-    // public static final String QUEUE_NAME="goldy.gym";
     Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    public UserService userService;
+    private UserService userService;
 
     @Autowired
     public Consumer(UserService userService) {
@@ -24,7 +23,7 @@ public class Consumer {
 
     @RabbitListener(queues = RabbitConfig.QUEUE_NAME)
     public void consume(Enrollment enrollment) {
-        logger.info("Message has: " + enrollment.getFirstName());
+        logger.info("Message has: ", enrollment.getFirstName());
         user.setId(enrollment.getUserId());
         user.setFirstName(enrollment.getFirstName());
         user.setLastName(enrollment.getLastName());
@@ -33,7 +32,6 @@ public class Consumer {
         user.setCnfpassword(enrollment.getPassword());
         user.setActive(true);
         user.setRole("USER");
-        // user.setRegdate(enrollment.getStartDate());
         userService.save(user);
     }
 }

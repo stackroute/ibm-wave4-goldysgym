@@ -22,7 +22,7 @@ public class Enrollment {
     String gender;
     Double height;
     Double weight;
-    int interest[] = new int[3];
+    int[] interest = new int[3];
     Date startDate;
     Date endDate;
     Subscription subscription;

@@ -3,7 +3,6 @@ package com.stackroute.userauthentication.domain;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.UUID;
 
 @Entity
@@ -42,7 +41,7 @@ public class User implements Serializable {
     }
 
     public User(String id, String firstName, String lastName, String email, String password, String cnfpassword, boolean enabled, String role, LocalDate regdate) {
-        this.id = UUID.randomUUID().toString();
+//       this.id = UUID.randomUUID().toString();
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
