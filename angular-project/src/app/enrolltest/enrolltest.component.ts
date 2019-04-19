@@ -27,7 +27,7 @@ export class EnrolltestComponent implements OnInit {
   // startDate = new Date(1990, 0, 1);
   // endDate = new Date(1990, 0, 1);
 
-  isLinear = false;
+  isLinear = true;
   firstFormGroup: FormGroup = new FormGroup({});
   secondFormGroup: FormGroup = new FormGroup({});
   thirdFormGroup: FormGroup = new FormGroup({});

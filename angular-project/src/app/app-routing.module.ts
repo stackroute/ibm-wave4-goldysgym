@@ -22,46 +22,44 @@ import { EnrolltestComponent } from './enrolltest/enrolltest.component';
 import { UserMyprogramsComponent } from './user-myprograms/user-myprograms.component';
 
 import {SubscriptionviewComponent  } from './subscriptionview/subscriptionview.component';
-import{EditSubscriptionformComponent} from './edit-subscriptionform/edit-subscriptionform.component';
-import { LoginAuthService } from './login-auth.service';
+import{EditSubscriptionformComponent} from './edit-subscriptionform/edit-subscriptionform.component'
 import { ProgramScheduleComponent } from './program-schedule/program-schedule.component';
 import {AdmineditpgmComponent} from './admineditpgm/admineditpgm.component';
 const routes: Routes = [
 
-  {path:'prog-details/:id',component: ProgramDetailsComponent, canActivate:[LoginAuthService]},
-  {path: 'admin-prog-details/:id', component: AdminProgramdetailsComponent, canActivate:[LoginAuthService]},
+  {path:'prog-details/:id',component: ProgramDetailsComponent},
+  {path: 'admin-prog-details/:id', component: AdminProgramdetailsComponent},
   {path: "signup", component:SignupComponent},
   {path: "login", component:LoginComponent},
   {path: "enroll", component:EnrolltestComponent},
-  {path: 'subdetails/:id', component:SubscriptionviewComponent, canActivate:[LoginAuthService]},
+  {path: 'subdetails/:id', component:SubscriptionviewComponent},
   {
     
     path: 'admin', component: AdminDashboardComponent,  children: [
-      { path: 'add-subs', component: AddSubscriptionsComponent, canActivate:[LoginAuthService] },
-      { path: 'edit-subs', component: EditSubscriptionsComponent, canActivate:[LoginAuthService] },
-      { path: 'add-prog', component: AddProgramsComponent, canActivate:[LoginAuthService] },
-      { path: 'edit-prog', component: EditProgramsComponent, canActivate:[LoginAuthService] },
-      { path: 'summary', component: SummaryPageComponent , canActivate:[LoginAuthService]},
-      { path: 'edit/:id', component: EditProgramformComponent, canActivate:[LoginAuthService] },
-      { path: 'edit/:id/subs', component: EditSubscriptionformComponent, canActivate:[LoginAuthService]},
-      { path: '', redirectTo: '/admin/summary', pathMatch: 'full', canActivate:[LoginAuthService] },
-      { path: 'pro-schedule', component: ProgramScheduleComponent, canActivate:[LoginAuthService]},
-      { path: 'admineditpgmform/:id', component: AdmineditpgmComponent, canActivate:[LoginAuthService]}
-   
+      { path: 'add-subs', component: AddSubscriptionsComponent },
+      { path: 'edit-subs', component: EditSubscriptionsComponent },
+      { path: 'add-prog', component: AddProgramsComponent },
+      { path: 'edit-prog', component: EditProgramsComponent },
+      { path: 'summary', component: SummaryPageComponent },
+      { path: 'edit/:id', component: EditProgramformComponent },
+      { path: 'edit/:id/subs', component: EditSubscriptionformComponent},
+      { path: '', redirectTo: '/admin/summary', pathMatch: 'full' },
+      { path: 'pro-schedule', component: ProgramScheduleComponent},
+      { path: 'admineditpgmform/:id', component: AdmineditpgmComponent}
      
     ]
   },
   {path :'user', component:UserDashboardComponent,children:[
-    { path: 'follow', component: FollowGymatesComponent, canActivate:[LoginAuthService]},
-    { path: 'leaderboard', component: LeaderboardComponent, canActivate:[LoginAuthService] },
-    { path: 'profile', component: UserProfileComponent, canActivate:[LoginAuthService]},
-    {path:'programs', component:ProgramsComponent, canActivate:[LoginAuthService]},
-    {path:'mysubs', component:UserSubscriptionsComponent, canActivate:[LoginAuthService]},
-    {path:'mypros',component:UserMyprogramsComponent, canActivate:[LoginAuthService]},
-    { path: '', redirectTo: '/user/profile', pathMatch: 'full', canActivate:[LoginAuthService] }
+    { path: 'follow', component: FollowGymatesComponent},
+    { path: 'leaderboard', component: LeaderboardComponent },
+    { path: 'profile', component: UserProfileComponent},
+    {path:'programs', component:ProgramsComponent},
+    {path:'mysubs', component:UserSubscriptionsComponent},
+    {path:'mypros',component:UserMyprogramsComponent},
+    { path: '', redirectTo: '/user/profile', pathMatch: 'full' }
   ]},
    
-   { path: '**', redirectTo: '/home', pathMatch: 'full', canActivate:[LoginAuthService] },
+   { path: '**', redirectTo: '/home', pathMatch: 'full' },
    { path: 'home', component: HomecomponentComponent},
    
 ];
