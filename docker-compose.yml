@@ -15,7 +15,7 @@ services:
     expose:
       - 27017
     container_name: mongonew
-    network_mode: host
+    network_mode: "host"
     volumes:
       - /mongo-volume:/data/db
 
@@ -124,9 +124,20 @@ services:
       - config-service
       - eureka-server
       - mongo
+      - rabbitmq
     ports:
       - 9001:9001
 
+  trainer-management-service:
+    build: trainer-management-service/
+    restart: always
+    network_mode: "host"
+    hostname: localhost
+    depends_on:
+      - mongo
+      - rabbitmq
+    ports:
+      - 9004:9004
 
 
   user-authentication-service:
@@ -145,10 +156,10 @@ services:
 
 
   rabbitmq:
-    image: "rabbitmq:3-management"
-    hostname: "rabbit"
+    image: rabbitmq:3-management
+    hostname: rabbit
     ports:
-       - "15672:15672"
-       - "5672:5672"
+       - 15672:15672
+       - 5672:5672
     labels:
-       NAME: "rabbitmq"
+       NAME: rabbitmq

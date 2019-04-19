@@ -8,4 +8,7 @@ public interface TrainerService {
     Trainer saveTrainer(Trainer trainer);
 
     List<Trainer> getAllTrainer();
+    void deleteTrainer();
+
+
 }

@@ -20,7 +20,6 @@ public class ProgramServiceImpl implements ProgramService {
 
     @Override
     public Program saveProgram(Program program) {
-        rabbitProducer.produce(program);
         return (programRepository.save(program));
     }
 
