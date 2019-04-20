@@ -31,7 +31,7 @@ public class Consumer {
         user.setPassword(enrollment.getPassword());
         user.setCnfpassword(enrollment.getPassword());
         user.setActive(true);
-        user.setRole("ADMIN");
+        user.setRole("USER");
         userService.save(user);
     }
 }
