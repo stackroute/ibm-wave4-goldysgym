@@ -13,13 +13,14 @@ import org.springframework.stereotype.Component;
 public class RabbitProducer {
     Logger log = LoggerFactory.getLogger(this.getClass());
     private RabbitTemplate rabbitTemplate;
+
     @Autowired
     public RabbitProducer(RabbitTemplate rabbitTemplate) {
         this.rabbitTemplate = rabbitTemplate;
     }
 
-    public void produce(Program program){
-        rabbitTemplate.convertAndSend(RabbitConfig.EXCHANGE_NAME_2,RabbitConfig.ROUTING_KEY_2,program);
+    public void produce(Program program) {
+        rabbitTemplate.convertAndSend(RabbitConfig.EXCHANGE_NAME_2, RabbitConfig.ROUTING_KEY_2, program);
         log.info("message sent");
     }
 }

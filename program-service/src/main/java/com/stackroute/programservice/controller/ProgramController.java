@@ -1,6 +1,7 @@
 package com.stackroute.programservice.controller;
 
 //import com.netflix.discovery.converters.Auto;
+
 import com.stackroute.programservice.component.RabbitProducer;
 import com.stackroute.programservice.domain.Program;
 import com.stackroute.programservice.service.ProgramService;
@@ -54,13 +55,19 @@ public class ProgramController {
     }
 
     @DeleteMapping("/programs/{programId}")
-    public ResponseEntity<List<Program>> deleteProgram(@PathVariable String programId) throws Exception {
+    public ResponseEntity<List<Program>> deleteProgramById(@PathVariable String programId) throws Exception {
         if (programService.getProgramById(programId) == null)
             throw new Exception();
-        programService.deleteProgram(programId);
+        programService.deleteProgramById(programId);
         List<Program> allPrograms = programService.getAllPrograms();
         return new ResponseEntity<>(allPrograms, HttpStatus.OK);
 
     }
 
+    @DeleteMapping("/programs/deleteAll")
+    public ResponseEntity<String> deleteProgram() {
+        programService.deleteProgram();
+        return new ResponseEntity<>("Successfully deleted", HttpStatus.OK);
+
+    }
 }
