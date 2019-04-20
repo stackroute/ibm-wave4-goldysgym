@@ -46,53 +46,12 @@ export class UserMyprogramsComponent implements OnInit {
  }
  publish(date,time)
  {
-<<<<<<< HEAD
    console.log(date)
    console.log(time)
   let newData= this.arrayPrograms
 
   console.log(newData[0])
   this.program.putUser(newData[0],time,date,this.userData.user.email).subscribe(x=> {
-=======
-  let newData = 
-          [{
-              "monthName": "April",
-              "days": [
-                  {
-                      "date": "2019-04-21T00:00:00.000+0000",
-                      "slots": [
-                          {
-                              "time": "Morning",
-                              "programName": "thies",
-                              "capacity": 25,
-                              "users": [
-                                  "abhinafkdmfb",
-                                  "saunak",
-                                  "rakesh",
-                                  "yash",
-                                  "santosh"
-                              ]
-                          },
-                          {
-                              "time": "Evenning",
-                              "programName": "Boxing",
-                              "capacity": 25,
-                              "users": [
-                                  "abhinab",
-                                  "saunak",
-                                  "rakesh",
-                                  "yash",
-                                  "swetha"
-                              ]
-                          }
-                      ]
-                  },
-                ]           
-  }
-]
-  console.log(newData)
-  this.program.putUser(newData).subscribe(x=> {
->>>>>>> 91ee969a479cf717828d3500a6dcb06055309402
     console.log(x)
    
   })

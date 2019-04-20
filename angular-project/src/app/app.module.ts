@@ -41,7 +41,6 @@ import { EditSubscriptionformComponent } from './edit-subscriptionform/edit-subs
 import { UserMyprogramsComponent } from './user-myprograms/user-myprograms.component';
 import { MatTableModule } from '@angular/material/table';
 import { AdminMyprogramsComponent } from './admin-myprograms/admin-myprograms.component';
-import { ProgramScheduleComponent } from './program-schedule/program-schedule.component';
 import { AdmineditpgmComponent } from './admineditpgm/admineditpgm.component';
 
 
@@ -79,7 +78,6 @@ import { AdmineditpgmComponent } from './admineditpgm/admineditpgm.component';
     EditSubscriptionformComponent,
     UserMyprogramsComponent,
     AdminMyprogramsComponent,
-    ProgramScheduleComponent,
     AdmineditpgmComponent
     
   ],

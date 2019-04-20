@@ -27,7 +27,6 @@ import { LoginAuthService } from './login-auth.service';
 import { AdminMyprogramsComponent } from './admin-myprograms/admin-myprograms.component';
 import { RoleAuthService } from "./role-auth.service";
 import { UserroleAuthService } from "./userrole-auth.service";
-import { ProgramScheduleComponent } from "./program-schedule/program-schedule.component";
 import { AdmineditpgmComponent } from "./admineditpgm/admineditpgm.component";
 const routes: Routes = [
   { path: "prog-details/:id", component: ProgramDetailsComponent },
@@ -77,10 +76,7 @@ const routes: Routes = [
         redirectTo: "/admin/summary",
         pathMatch: "full",
       },
-      {
-        path: "pro-schedule",
-        component: ProgramScheduleComponent,
-      },
+  
       {
         path: "admineditpgmform/:id",
         component: AdmineditpgmComponent,
