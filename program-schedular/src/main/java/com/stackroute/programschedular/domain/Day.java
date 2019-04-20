@@ -4,22 +4,17 @@ package com.stackroute.programschedular.domain;
 import java.util.Date;
 
 public class Day {
-    Date date;
+    String date;
     Slots[] slots = new Slots[3];
 
     public Day() {
     }
 
-    public Day(Date date, Slots[] slots) {
-        this.date = date;
-        this.slots = slots;
-    }
-
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
