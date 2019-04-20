@@ -17,7 +17,6 @@ public class RabbitmqConsumer {
     private TrainerAllocation trainerAllocation;
 
 
-
     /**
      * This method annotated with RabbitListener listens to the queue and takes up tha message in the queue
      *

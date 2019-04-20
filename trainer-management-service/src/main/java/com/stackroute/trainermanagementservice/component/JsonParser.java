@@ -16,11 +16,8 @@ public class JsonParser {
         Gson gson = new Gson();
         BufferedReader br = new BufferedReader(
                 new FileReader("/home/upasana/Music/ibm-wave4-goldysgym/trainer-management-service/src/main/resources/rules.json"));
-      //  JsonReader reader = Json.createReader(new FileInputStream(new File("/home/upasana/ibm-wave4-goldysgym/trainer-management-service/src/main/resources/rules.json")));
-       // JsonObject jsonObject = reader.readObject();
-        //reader.close();
-//        System.out.println(jsonObject.getInt("numberOfTrainers"));
-        Rules rules=gson.fromJson(br,Rules.class);
+
+        Rules rules = gson.fromJson(br, Rules.class);
         System.out.println(rules.toString());
     }
 }

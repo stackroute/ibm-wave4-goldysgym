@@ -23,10 +23,11 @@ public class TrainerController {
 
     @Autowired
     private TrainerAllocation trainerAllocation;
+
     @Autowired
-    public TrainerController(TrainerService trainerService,JsonParser jsonParser) {
+    public TrainerController(TrainerService trainerService, JsonParser jsonParser) {
         this.trainerService = trainerService;
-        this.jsonParser=jsonParser;
+        this.jsonParser = jsonParser;
 
     }
 
@@ -34,7 +35,7 @@ public class TrainerController {
     public ResponseEntity<Trainer> saveTrainer(@RequestBody @Valid Trainer trainer) throws FileNotFoundException {
         Trainer trainer1 = trainerService.saveTrainer(trainer);
 
-       // jsonParser.parser();
+        // jsonParser.parser();
         return new ResponseEntity<Trainer>(trainer1, HttpStatus.CREATED);
     }
 
@@ -44,32 +45,13 @@ public class TrainerController {
 
         return new ResponseEntity<List<Trainer>>(allTrainer, HttpStatus.OK);
     }
-//
-//    @GetMapping("/subscriptions/{subscriptionId}")
-//    public ResponseEntity<Subscription> getSubscriptionById(@PathVariable String subscriptionId) throws Exception {
-//        Subscription subscriptionById = subscriptionService.getSubscriptionById(subscriptionId);
-//        if(subscriptionById==null)
-//            throw new Exception();
-//        return new ResponseEntity<Subscription>(subscriptionById, HttpStatus.OK);
-//
-//    }
-//
-//    @PutMapping("/subscription")
-//    public ResponseEntity<Subscription> updateSubscription(@RequestBody Subscription subscription) {
-//        Subscription updatedSubscription = subscriptionService.updateSubscription(subscription);
-//        return new ResponseEntity<Subscription>(updatedSubscription, HttpStatus.ACCEPTED);
-//    }
-//
+
     @DeleteMapping("/deletetrainer")
     public ResponseEntity<List<Trainer>> deleteTrainer() throws Exception {
-//        if(trainerService.getSubscriptionById(subscriptionId)==null)
-//            throw new Exception();
         trainerService.deleteTrainer();
         List<Trainer> allTrainers = trainerService.getAllTrainer();
         return new ResponseEntity<List<Trainer>>(allTrainers, HttpStatus.OK);
     }
-
-
 
 
 }

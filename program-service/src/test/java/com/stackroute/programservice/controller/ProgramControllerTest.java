@@ -1,6 +1,7 @@
 package com.stackroute.programservice.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.stackroute.programservice.component.RabbitProducer;
 import com.stackroute.programservice.domain.Program;
 import com.stackroute.programservice.service.ProgramService;
 import org.junit.Before;
@@ -35,6 +36,8 @@ public class ProgramControllerTest {
     private Program program;
     @MockBean
     private ProgramService programService;
+    @MockBean
+    private RabbitProducer rabbitProducer;
     @InjectMocks
     private ProgramController programController;
 
