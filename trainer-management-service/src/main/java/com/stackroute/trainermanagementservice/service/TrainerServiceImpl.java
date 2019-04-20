@@ -21,10 +21,15 @@ public class TrainerServiceImpl implements TrainerService {
     public Trainer saveTrainer(Trainer trainer) {
         return trainerRepository.save(trainer);
     }
-
     @Override
     public List<Trainer> getAllTrainer() {
         return trainerRepository.findAll();
+    }
+
+    @Override
+
+    public void deleteTrainer() {
+        trainerRepository.deleteAll();
     }
 
 

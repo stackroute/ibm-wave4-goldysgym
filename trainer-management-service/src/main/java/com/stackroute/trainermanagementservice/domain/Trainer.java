@@ -1,6 +1,7 @@
 package com.stackroute.trainermanagementservice.domain;
 
 import lombok.*;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.List;
@@ -12,12 +13,13 @@ import java.util.List;
 @Setter
 @Data
 public class Trainer {
-    private String trainerid;
-    private String trainername;
+    @Id
+    private String trainerId;
+    private String trainerName;
+    private String trainerDescription;
     private String imageUrl;
     private List<String> programType;
-    private String description;
     private boolean availability;
-    private List<Program> program;
+    private ProgramDetails programDetails;
 
 }

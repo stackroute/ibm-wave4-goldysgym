@@ -13,14 +13,13 @@ public class ProgramServiceImpl implements ProgramService {
     private ProgramRepository programRepository;
     private RabbitProducer rabbitProducer;
 
-    public ProgramServiceImpl(ProgramRepository programRepository,RabbitProducer rabbitProducer) {
+    public ProgramServiceImpl(ProgramRepository programRepository, RabbitProducer rabbitProducer) {
         this.programRepository = programRepository;
         this.rabbitProducer = rabbitProducer;
     }
 
     @Override
     public Program saveProgram(Program program) {
-        rabbitProducer.produce(program);
         return (programRepository.save(program));
     }
 
@@ -39,8 +38,14 @@ public class ProgramServiceImpl implements ProgramService {
         return (programRepository.save(program));
     }
 
+
     @Override
-    public void deleteProgram(String programId) {
+    public void deleteProgram() {
+        programRepository.deleteAll();
+    }
+
+    @Override
+    public void deleteProgramById(String programId) {
         programRepository.deleteById(programId);
     }
 }

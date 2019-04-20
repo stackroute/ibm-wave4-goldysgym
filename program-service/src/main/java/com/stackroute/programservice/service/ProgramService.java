@@ -13,5 +13,6 @@ public interface ProgramService {
 
     Program updateProgram(Program program);
 
-    void deleteProgram(String programId);
+    void deleteProgramById(String programId);
+    void deleteProgram();
 }

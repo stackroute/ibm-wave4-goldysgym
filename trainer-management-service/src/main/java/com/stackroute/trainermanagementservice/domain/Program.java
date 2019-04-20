@@ -1,16 +1,38 @@
 package com.stackroute.trainermanagementservice.domain;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+import javax.validation.constraints.NotNull;
+
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Getter
-@Setter
-@Data
 public class Program {
-    private String programid;
-    private String programname;
+
+
+    @NotNull
+    private String programId;
+    @NotNull
+    private String programName;
+    @NotNull
     private String day;
-    private String slot;
+    @NotNull
+    private String timing;
+    @NotNull
+    private String imageUrl;
+    @NotNull
+    private String programDescription;
+    private String trainerName;
+    private String trainerId;
+    @NotNull
+    private String trainerDescription;
+    @NotNull
+    private int totalSeats;
 
 }
+
+

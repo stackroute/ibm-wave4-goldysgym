@@ -1,6 +1,6 @@
 package com.stackroute.programservice.component;
 
-import com.stackroute.programservice.configuration.RabbitProducerConfig;
+import com.stackroute.programservice.configuration.RabbitConfig;
 import com.stackroute.programservice.domain.Program;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,7 +21,7 @@ public class RabbitProducer {
 
     public void produce(Program program) {
         logger.info("Inserting message to queue");
-        rabbitTemplate.convertAndSend(RabbitProducerConfig.EXCHANGE_NAME, RabbitProducerConfig.ROUTING_KEY, program);
+        rabbitTemplate.convertAndSend(RabbitConfig.EXCHANGE_NAME_1, RabbitConfig.ROUTING_KEY_1, program);
         logger.info("Message successfully sent");
 
     }
