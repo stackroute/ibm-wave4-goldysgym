@@ -73,8 +73,8 @@ export class ProgramService {
 
   getProgramsOfUser()
   {
-    return this.http.get("http://localhost:8092/programs",);
-    return this.http.get("http://localhost:3000/month");
+    return this.http.get("http://13.234.148.231:8080/schedular/programs",);
+   // return this.http.get("http://localhost:3000/month");
   }
   putUser(data,time,date,name)
   {
@@ -92,7 +92,7 @@ export class ProgramService {
      console.log(data)
      console.log(params)
      let id="2019";
-  return this.http.put("http://localhost:8092/user",data,{params:params});
+  return this.http.put("http://13.234.148.231:8080/schedular/user",data,{params:params});
  } 
  putadmin(data,time,date,pgm,cpc)
   {
@@ -112,7 +112,7 @@ export class ProgramService {
      console.log(data)
      console.log(params)
      let id="2019";
-  return this.http.put("http://localhost:8092/adminupdate",data,{params:params});
+  return this.http.put("http://13.234.148.231:8080/schedular/adminupdate",data,{params:params});
  } 
 }
   
