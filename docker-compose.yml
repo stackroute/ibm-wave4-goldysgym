@@ -184,5 +184,7 @@ services:
     image: grafana/grafana
     ports:
       - "3000:3000"
+    network_mode: "host"
+    hostname: localhost
     depends_on:
       - prom
