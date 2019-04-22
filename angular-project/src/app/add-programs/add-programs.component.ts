@@ -14,7 +14,7 @@ export class AddProgramsComponent implements OnInit {
    
   }
 
-  putProgram(data) {
+  putProgram(data, form) {
     let newData = {
       "programName": data.pname,
       "day": data.inputday,
@@ -25,6 +25,7 @@ export class AddProgramsComponent implements OnInit {
       "trainerDescription":null, 
       "totalSeats": data.seats
     }
+    form.reset();
     this.programService.putProgram(newData).subscribe((x) => {
       // this.data = x
       console.log(data)

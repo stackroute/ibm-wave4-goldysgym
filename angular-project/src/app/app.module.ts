@@ -24,7 +24,6 @@ import { LoginComponent } from './login/login.component';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 import { UserDashboardSidebarComponent } from './user-dashboard-sidebar/user-dashboard-sidebar.component';
 import { FollowGymatesComponent } from './follow-gymates/follow-gymates.component';
-import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserSubscriptionsComponent } from './user-subscriptions/user-subscriptions.component';
 import { ProgramDetailsComponent } from './program-details/program-details.component';
@@ -70,7 +69,6 @@ import { AdmineditpgmComponent } from './admineditpgm/admineditpgm.component';
     UserDashboardComponent,
     UserDashboardSidebarComponent,
     FollowGymatesComponent,
-    LeaderboardComponent,
     UserProfileComponent,
     UserSubscriptionsComponent,
     ProgramDetailsComponent,

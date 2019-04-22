@@ -11,7 +11,6 @@ import { SignupComponent } from "./signup/signup.component";
 import { LoginComponent } from "./login/login.component";
 import { UserDashboardComponent } from "./user-dashboard/user-dashboard.component";
 import { FollowGymatesComponent } from "./follow-gymates/follow-gymates.component";
-import { LeaderboardComponent } from "./leaderboard/leaderboard.component";
 import { UserProfileComponent } from "./user-profile/user-profile.component";
 import { ProgramsComponent } from "./programs/programs.component";
 import { UserSubscriptionsComponent } from "./user-subscriptions/user-subscriptions.component";
@@ -98,10 +97,6 @@ const routes: Routes = [
       {
         path: "follow",
         component: FollowGymatesComponent,
-      },
-      {
-        path: "leaderboard",
-        component: LeaderboardComponent,
       },
       {
         path: "profile",
