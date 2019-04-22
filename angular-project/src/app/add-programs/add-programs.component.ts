@@ -21,8 +21,8 @@ export class AddProgramsComponent implements OnInit {
       "timing": data.exampleRadios,
       "imageUrl": data.imageUrl,
       "programDescription": data.description,
-      "trainerName": data.tname,
-      "trainerDescription": data.tdescription,
+      "trainerName": null,
+      "trainerDescription":null, 
       "totalSeats": data.seats
     }
     this.programService.putProgram(newData).subscribe((x) => {

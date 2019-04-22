@@ -74,7 +74,7 @@ export class ProgramService {
   getProgramsOfUser()
   {
     return this.http.get("http://13.234.148.231:8080/schedular/programs",);
-   // return this.http.get("http://localhost:3000/month");
+   
   }
   putUser(data,time,date,name)
   {

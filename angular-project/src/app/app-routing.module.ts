@@ -76,6 +76,10 @@ const routes: Routes = [
         redirectTo: "/admin/summary",
         pathMatch: "full",
       },
+      {
+        path: "mypros",
+        component: AdminMyprogramsComponent,
+      },
   
       {
         path: "admineditpgmform/:id",
