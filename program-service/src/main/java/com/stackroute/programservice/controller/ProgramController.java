@@ -11,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -45,6 +46,12 @@ public class ProgramController {
         if (programById == null)
             throw new Exception();
         return new ResponseEntity<>(programById, HttpStatus.OK);
+    }
+
+    @GetMapping("/programs/")
+    public ResponseEntity<List<Program>> getProgramsByDate(@RequestParam Date date){
+        List<Program> programs = programService.getProgramByDate(date);
+        return new ResponseEntity<>(programs, HttpStatus.OK);
     }
 
 

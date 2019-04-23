@@ -1,0 +1,18 @@
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Program Name</th>
+      <th scope="col">Timing</th>
+      <th scope="col">Assigned Trainer</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let a of programs">
+      <th scope="row">{{a.id}}</th>
+      <td>{{a.programName}}</td>
+      <td>{{a.trainerName}}</td>
+    </tr>
+    
+  </tbody>
+</table>

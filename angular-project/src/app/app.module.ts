@@ -41,6 +41,7 @@ import { UserMyprogramsComponent } from './user-myprograms/user-myprograms.compo
 import { MatTableModule } from '@angular/material/table';
 import { AdminMyprogramsComponent } from './admin-myprograms/admin-myprograms.component';
 import { AdmineditpgmComponent } from './admineditpgm/admineditpgm.component';
+import { TrainerManagementComponent } from './trainer-management/trainer-management.component';
 
 
 
@@ -76,7 +77,8 @@ import { AdmineditpgmComponent } from './admineditpgm/admineditpgm.component';
     EditSubscriptionformComponent,
     UserMyprogramsComponent,
     AdminMyprogramsComponent,
-    AdmineditpgmComponent
+    AdmineditpgmComponent,
+    TrainerManagementComponent
     
   ],
   imports: [

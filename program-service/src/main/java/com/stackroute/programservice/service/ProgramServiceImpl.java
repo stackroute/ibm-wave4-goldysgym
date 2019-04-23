@@ -6,6 +6,7 @@ import com.stackroute.programservice.repository.ProgramRepository;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -31,6 +32,11 @@ public class ProgramServiceImpl implements ProgramService {
     @Override
     public Program getProgramById(String programId) {
         return programRepository.findById(programId).get();
+    }
+
+    @Override
+    public List<Program> getProgramByDate(Date date) {
+        return programRepository.findByprogramDate(date);
     }
 
     @Override
