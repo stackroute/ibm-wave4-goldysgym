@@ -11,7 +11,7 @@ export class TrainerManagementComponent implements OnInit {
   constructor(private programService:ProgramService ) { }
 
   ngOnInit() {
-    getPrograms()
+    this.getPrograms()
   }
 
   getPrograms() {
