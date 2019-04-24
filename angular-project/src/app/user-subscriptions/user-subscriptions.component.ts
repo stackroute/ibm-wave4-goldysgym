@@ -19,5 +19,7 @@ arraySubscriptions:any=[];
       this.user=data
       console.log(this.user)   
   });
- }
+  }
 }
+
+

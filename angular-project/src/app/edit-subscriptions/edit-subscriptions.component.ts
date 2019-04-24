@@ -28,7 +28,7 @@ getPrograms() {
 remove(id)
 {
   console.log(id);
-  return this.programService.deleteSubscription(id).subscribe(()=>{this.getPrograms})
+  return this.programService.deleteSubscription(id).subscribe(()=>{this.getPrograms()})
  }
 
 }

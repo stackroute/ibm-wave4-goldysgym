@@ -33,7 +33,7 @@
           <br /><br />
           <div class="example-container">
             <mat-form-field>
-              <input matInput placeholder="Enter your email"  formControlName="email"  [formControl]="email" required />
+              <input matInput  class="form-control" placeholder="Enter your email"  formControlName="email"  [formControl]="email" required />
               <!-- <mat-error *ngIf="!email.valid">{{ getErrorMessage() }}</mat-error> -->
             </mat-form-field>
           </div>
@@ -103,8 +103,10 @@
     <mat-step [stepControl]="thirdFormGroup" #stepper2>
         <form [formGroup]="thirdFormGroup" #userFormThree="ngForm" >
       <ng-template matStepLabel>Interests</ng-template>
-      <div class="d-flex justify-content-around">
-        <mat-card class="example-card col-lg-3"  *ngFor="let ints of programs">
+      <div class="container-fluid">
+      <div class="row">
+      <div class="col-lg-3 col-md-1" *ngFor="let ints of programs">
+        <mat-card class="example-card" >
           <mat-card-header>
             <div mat-card-avatar></div>
           </mat-card-header>
@@ -118,6 +120,8 @@
           </mat-card-footer>
         </mat-card>
       </div>
+      </div>
+      </div>
       <div>
         <br />
         <button mat-button matStepperPrevious>BACK</button>
@@ -129,8 +133,10 @@
     <mat-step [stepControl]="forthFormGroup">
       <form [formGroup]="forthFormGroup" #userFormFour="ngForm">
         <ng-template matStepLabel>subscriptions</ng-template>
-        <div class="d-flex justify-content-around">
-          <mat-card class="example-card col-lg-3" *ngFor="let sub of subscriptions">
+        <div class="container-fluid">
+          <div class="row">
+        <div class="col-lg-3 col-md-1" *ngFor="let sub of subscriptions">
+          <mat-card class="example-card" >
             <mat-card-header>
               <div mat-card-avatar></div>
             </mat-card-header>
@@ -146,29 +152,11 @@
               </div>
             </mat-card-footer>
           </mat-card>
+          </div>
         </div>
+      </div>
         <hr />
-        <!-- <div class="d-flex">
-          <div class="example-container">
-            <mat-form-field>
-              <input matInput  [matDatepicker]="picker1" class="form-control" formControlName="startdate"
-                placeholder="Choose start date" />
-              <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
-              <mat-datepicker #picker1 [startAt]="startDate"></mat-datepicker>
-            </mat-form-field>
-          </div>
-          <br />
-  
-          <div class="example-container ml-auto">
-            <mat-form-field>
-              <input matInput [matDatepicker]="picker2" class="form-control" formControlName="enddate"
-                placeholder="Choose end date" />
-              <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
-              <mat-datepicker #picker2 [startAt]="endDate"></mat-datepicker>
-            </mat-form-field>
-          </div>
-          <br />
-        </div> -->
+    
         <div> 
           <button mat-button matStepperPrevious>BACK</button>
           <button mat-button  (click)="saveUser(userFormOne.value,userFormTwo.value,userFormThree.value,userFormFour.value, userForm)" type="button">
