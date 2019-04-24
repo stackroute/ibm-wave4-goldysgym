@@ -8,6 +8,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -26,6 +28,12 @@ public class EnrollmentController {
     //it will add new enrollements
     @PostMapping("/enrollment")
     public ResponseEntity<String> saveEnrollment(@RequestBody Enrollment enrollment) throws Exception {
+        Calendar cal=Calendar.getInstance();
+        cal.setTime(enrollment.getDateOfBirth());
+        int dobYear=cal.get(Calendar.YEAR);
+        cal.setTime(new Date());
+        int curYear= cal.get(Calendar.YEAR);
+        enrollment.setAge(curYear-dobYear);
         Enrollment enrollment1 = enrollmentService.saveEnrollment(enrollment);
         if (enrollment1 == null) {
             throw new Exception();
