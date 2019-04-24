@@ -18,6 +18,6 @@ arraySubscriptions:any=[];
     this.userService.getUserDetailsById(this.userData.user.id).subscribe(data=>{
       this.user=data
       console.log(this.user)   
-  }
-
+  });
+ }
 }

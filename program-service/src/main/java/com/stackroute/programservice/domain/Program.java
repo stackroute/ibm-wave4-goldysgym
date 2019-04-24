@@ -19,20 +19,10 @@ public class Program {
     private String programId;
     @NotNull
     private String programName;
-    Date programDate;
-    @NotNull
-    private String day;
-    @NotNull
-    private String timing;
     @NotNull
     private String imageUrl;
     @NotNull
     private String programDescription;
-    private String trainerId;
-    private String trainerName;
-    private String trainerDescription;
-    @NotNull
-    private int totalSeats;
 
 
 }
