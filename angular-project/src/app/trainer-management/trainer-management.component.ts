@@ -8,9 +8,10 @@ import { ProgramService } from '../program.service';
 })
 export class TrainerManagementComponent implements OnInit {
   programs:any
-  constructor(private programService:ProgramService,private ) { }
+  constructor(private programService:ProgramService ) { }
 
   ngOnInit() {
+    this.getPrograms()
   }
 
   getPrograms() {
