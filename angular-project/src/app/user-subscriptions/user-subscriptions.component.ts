@@ -8,14 +8,16 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./user-subscriptions.component.css']
 })
 export class UserSubscriptionsComponent implements OnInit {
-
-  constructor(private user:UserService,private http:HttpClient) { }
+  userData:any
+  user:any
+  constructor(private userService:UserService,private http:HttpClient) { }
 arraySubscriptions:any=[];
   ngOnInit() {
-this.user.getUserDetails().subscribe(data=>{
-      this.arraySubscriptions=data
-      console.log(this.arraySubscriptions)     
-    });
+    this.userData=JSON.parse(localStorage.getItem('currentUser'))
+    console.log(this.userData.user.id)
+    this.userService.getUserDetailsById(this.userData.user.id).subscribe(data=>{
+      this.user=data
+      console.log(this.user)   
   }
 
 }
