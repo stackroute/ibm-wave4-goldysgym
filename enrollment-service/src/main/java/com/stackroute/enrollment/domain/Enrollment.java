@@ -20,6 +20,7 @@ public class Enrollment {
     String email;
     String password;
     Date dateOfBirth;
+    int age;
     String gender;
     Double height;
     Double weight;

@@ -27,6 +27,7 @@ import { AdminMyprogramsComponent } from './admin-myprograms/admin-myprograms.co
 import { RoleAuthService } from "./role-auth.service";
 import { UserroleAuthService } from "./userrole-auth.service";
 import { AdmineditpgmComponent } from "./admineditpgm/admineditpgm.component";
+import { TrainerManagementComponent } from './trainer-management/trainer-management.component';
 const routes: Routes = [
   { path: "prog-details/:id", component: ProgramDetailsComponent },
   { path: "admin-prog-details/:id", component: AdminProgramdetailsComponent },
@@ -78,6 +79,10 @@ const routes: Routes = [
       {
         path: "mypros",
         component: AdminMyprogramsComponent,
+      },
+      {
+        path: "assignedtrainers",
+        component: TrainerManagementComponent,
       },
   
       {
