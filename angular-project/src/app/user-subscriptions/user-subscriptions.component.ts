@@ -17,5 +17,6 @@ this.user.getUserDetails().subscribe(data=>{
       console.log(this.arraySubscriptions)     
     });
   }
-
 }
+
+
