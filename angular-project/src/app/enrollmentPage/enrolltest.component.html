@@ -103,8 +103,8 @@
     <mat-step [stepControl]="thirdFormGroup" #stepper2>
         <form [formGroup]="thirdFormGroup" #userFormThree="ngForm" >
       <ng-template matStepLabel>Interests</ng-template>
-      <div class="d-flex justify-content-around" *ngFor="let ints of programs">
-        <mat-card class="example-card col-lg-3" >
+      <div class="col-lg-3 col-md-1" *ngFor="let ints of programs">
+        <mat-card class="example-card" >
           <mat-card-header>
             <div mat-card-avatar></div>
           </mat-card-header>
@@ -129,8 +129,8 @@
     <mat-step [stepControl]="forthFormGroup">
       <form [formGroup]="forthFormGroup" #userFormFour="ngForm">
         <ng-template matStepLabel>subscriptions</ng-template>
-        <div class="d-flex justify-content-around">
-          <mat-card class="example-card col-lg-3" *ngFor="let sub of subscriptions">
+        <div class="col-lg-3 col-md-1" *ngFor="let sub of subscriptions">
+          <mat-card class="example-card" >
             <mat-card-header>
               <div mat-card-avatar></div>
             </mat-card-header>
