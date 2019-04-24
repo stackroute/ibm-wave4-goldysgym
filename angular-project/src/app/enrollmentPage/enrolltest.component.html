@@ -129,6 +129,8 @@
     <mat-step [stepControl]="forthFormGroup">
       <form [formGroup]="forthFormGroup" #userFormFour="ngForm">
         <ng-template matStepLabel>subscriptions</ng-template>
+        <div class="container-fluid">
+          <div class="row">
         <div class="col-lg-3 col-md-1" *ngFor="let sub of subscriptions">
           <mat-card class="example-card" >
             <mat-card-header>
@@ -146,7 +148,9 @@
               </div>
             </mat-card-footer>
           </mat-card>
+          </div>
         </div>
+      </div>
         <hr />
         <!-- <div class="d-flex">
           <div class="example-container">
