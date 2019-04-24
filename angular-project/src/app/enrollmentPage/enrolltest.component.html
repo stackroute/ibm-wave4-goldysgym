@@ -103,6 +103,8 @@
     <mat-step [stepControl]="thirdFormGroup" #stepper2>
         <form [formGroup]="thirdFormGroup" #userFormThree="ngForm" >
       <ng-template matStepLabel>Interests</ng-template>
+      <div class="container-fluid">
+      <div class="row">
       <div class="col-lg-3 col-md-1" *ngFor="let ints of programs">
         <mat-card class="example-card" >
           <mat-card-header>
@@ -117,6 +119,8 @@
             <mat-checkbox  class="ml-2" (click)="Interests(ints.programId)" >Check me!</mat-checkbox><br />
           </mat-card-footer>
         </mat-card>
+      </div>
+      </div>
       </div>
       <div>
         <br />
