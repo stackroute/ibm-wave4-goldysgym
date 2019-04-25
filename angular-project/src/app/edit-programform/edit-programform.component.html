@@ -4,17 +4,17 @@
             <form #form="ngForm" (ngSubmit)=editProgram(form.value,form)>
                 <div class="card-body" style=" background: white">
                     <div class="form-group row">
-                        <label for="pname" class="col-sm-6 col-form-label ">ProgramName</label>
+                        <label for="pname" class="col-sm-6 col-form-label ">Program Name</label>
                         <div class="col-sm-6">
-                            <input ngModel type="text" class="form-control" [ngValue]="{{program.programName}}" name="pname" id="pname" placeholder="{{program.programName}}" required>
+                            <input ngModel type="text" class="form-control" value="{{program.programName}}" name="pname" id="pname" placeholder="{{program.programName}}" required>
 
                         </div>
 
                     </div>
                     <div class="form-group row">
-                        <label for="description" class="col-sm-6 col-form-label">ProgramDescription</label>
+                        <label for="description" class="col-sm-6 col-form-label">Program Description</label>
                         <div class="col-sm-6">
-                            <textarea ngModel class="form-control" [ngValue]="{{program.programDescription}}" id="description" name="description" placeholder="{{program.programDescription}}" required></textarea>
+                            <textarea ngModel class="form-control" value="{{program.programDescription}}" id="description" name="description" placeholder="{{program.programDescription}}" required></textarea>
                         </div>
                     </div>
          
@@ -26,10 +26,8 @@
                         <div class="input-group col-sm-6">
 
 
-                            <input ngModel type="text" class="form-control" name="imageUrl" id="pname" [ngValue]="{{program.imageUrl}}" placeholder="{{program.imageUrl}}" required>
+                            <input ngModel type="text" class="form-control" name="imageUrl" id="pname" value="{{program.imageUrl}}" placeholder="{{program.imageUrl}}" required>
 
-
-                            <!-- <input type="text" class="form-control bg-primary" required> -->
                         </div>
                     </div>
                    
@@ -42,7 +40,7 @@
                                 <button type="back" routerLink="/admin/edit-prog" class="btn btn-success">Back</button>&nbsp;
                             </div>
                             <div>
-                                <button type="submit" class="btn btn-primary">Submit</button>&nbsp;
+                                <button type="submit" class="btn btn-primary" routerLink="/edit-prog">Submit</button>&nbsp;
                             </div>
 
                             <div>
