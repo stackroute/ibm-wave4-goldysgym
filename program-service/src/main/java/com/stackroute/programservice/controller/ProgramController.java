@@ -30,7 +30,7 @@ public class ProgramController {
     @PostMapping("/program")
     public ResponseEntity<Program> saveProgram(@RequestBody @Valid Program program) {
         Program programAdded = programService.saveProgram(program);
-        rabbitProducer.produce(programAdded);
+        rabbitProducer.produce(programService.getAllPrograms());
         return new ResponseEntity<>(programAdded, HttpStatus.CREATED);
     }
 
@@ -48,11 +48,7 @@ public class ProgramController {
         return new ResponseEntity<>(programById, HttpStatus.OK);
     }
 
-    @GetMapping("/programs/")
-    public ResponseEntity<List<Program>> getProgramsByDate(@RequestParam Date date){
-        List<Program> programs = programService.getProgramByDate(date);
-        return new ResponseEntity<>(programs, HttpStatus.OK);
-    }
+
 
 
     @PutMapping("/programs")

@@ -12,11 +12,11 @@ import java.util.List;
 @Service
 public class ProgramServiceImpl implements ProgramService {
     private ProgramRepository programRepository;
-    private RabbitProducer rabbitProducer;
 
-    public ProgramServiceImpl(ProgramRepository programRepository, RabbitProducer rabbitProducer) {
+
+    public ProgramServiceImpl(ProgramRepository programRepository) {
         this.programRepository = programRepository;
-        this.rabbitProducer = rabbitProducer;
+
     }
 
     @Override
@@ -34,10 +34,6 @@ public class ProgramServiceImpl implements ProgramService {
         return programRepository.findById(programId).get();
     }
 
-    @Override
-    public List<Program> getProgramByDate(Date date) {
-        return programRepository.findByprogramDate(date);
-    }
 
     @Override
     public Program updateProgram(Program program) {

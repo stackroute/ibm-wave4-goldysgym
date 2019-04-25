@@ -9,6 +9,6 @@ import java.util.List;
 
 @Repository
 public interface ProgramRepository extends MongoRepository<Program, String> {
-    List<Program> findByprogramDate(Date date);
+
 
 }
