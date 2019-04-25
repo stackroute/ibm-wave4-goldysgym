@@ -57,7 +57,7 @@ export class ProgramService {
   editProgram(data)
   {
    
-    return this.http.put(environment.dbUrlOut2,data);
+    return this.http.put(environment.dbUrlOut,data);
    
   }
   deleteSubscription(id) {

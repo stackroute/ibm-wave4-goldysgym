@@ -133,4 +133,8 @@ public class Enrollment {
     public void setSubscription(Subscription subscription) {
         this.subscription = subscription;
     }
+
+    public int getAge() {return age;}
+
+    public void setAge(int age) {this.age = age;}
 }
