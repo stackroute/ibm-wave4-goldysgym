@@ -51,13 +51,8 @@ public class ProgramControllerTest {
         program = new Program();
         program.setProgramId("1");
         program.setProgramName("Yoga");
-        program.setDay("Monday");
-        program.setTiming("Morning");
         program.setImageUrl("image");
         program.setProgramDescription("Demo desc");
-        program.setTrainerName("Rohan");
-        program.setTrainerDescription("Demo Trainer Desc");
-        program.setTotalSeats(25);
         list = new ArrayList();
         list.add(program);
     }

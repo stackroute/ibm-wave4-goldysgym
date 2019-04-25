@@ -39,13 +39,8 @@ public class ProgramServiceTest {
         program = new Program();
         program.setProgramId("1");
         program.setProgramName("Yoga");
-        program.setDay("Monday");
-        program.setTiming("Morning");
         program.setImageUrl("xyz");
         program.setProgramDescription("hjh");
-        program.setTrainerName("Rohan");
-        program.setTrainerDescription("asdd");
-        program.setTotalSeats(20);
         list = new ArrayList<>();
         list.add(program);
 
