@@ -27,7 +27,7 @@ public class Enrollment {
     Date startDate;
     Date endDate;
     Subscription subscription;
-    int[] interest = new int[3];
+    String[] interest = new String[3];
 
 
     public String getUserId() {
@@ -102,11 +102,11 @@ public class Enrollment {
         this.weight = weight;
     }
 
-    public int[] getInterest() {
+    public String[] getInterest() {
         return interest;
     }
 
-    public void setInterest(int[] interest) {
+    public void setInterest(String[] interest) {
         this.interest = interest;
     }
 
