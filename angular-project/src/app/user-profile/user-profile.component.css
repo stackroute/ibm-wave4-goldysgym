@@ -1,0 +1,11 @@
+.conatainer{
+    align-content: center;
+}
+.table{
+    font-size: large;
+
+}
+
+.card-body {
+    box-shadow: 5px 10px 18px #888888;
+}

@@ -17,17 +17,11 @@ export class AddProgramsComponent implements OnInit {
   putProgram(data, form) {
     let newData = {
       "programName": data.pname,
-      "day": data.inputday,
-      "timing": data.exampleRadios,
       "imageUrl": data.imageUrl,
       "programDescription": data.description,
-      "trainerName": null,
-      "trainerDescription":null, 
-      "totalSeats": data.seats
     }
     form.reset();
     this.programService.putProgram(newData).subscribe((x) => {
-      // this.data = x
       console.log(data)
     });
   }
