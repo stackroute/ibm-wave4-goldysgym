@@ -136,6 +136,6 @@ export class EnrolltestComponent implements OnInit {
     if(this.counter<3){
     this.interest[this.counter] = ints
     this.counter++}
-    console.log(interest)
+    console.log(this.interest)
   }
 }
