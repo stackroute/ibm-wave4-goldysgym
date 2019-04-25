@@ -6,7 +6,7 @@
                     <div class="form-group row">
                         <label for="pname" class="col-sm-6 col-form-label ">ProgramName</label>
                         <div class="col-sm-6">
-                            <input ngModel type="text" class="form-control" value="{{program.programName}}" name="pname" id="pname" placeholder="{{program.programName}}">
+                            <input ngModel type="text" class="form-control" value="{{program.programName}}" name="pname" id="pname" placeholder="{{program.programName}}" required>
 
                         </div>
 
@@ -14,7 +14,7 @@
                     <div class="form-group row">
                         <label for="description" class="col-sm-6 col-form-label">ProgramDescription</label>
                         <div class="col-sm-6">
-                            <textarea ngModel class="form-control" value="{{program.programDescription}}" id="description" name="description" placeholder="{{program.programDescription}}"></textarea>
+                            <textarea ngModel class="form-control" value="{{program.programDescription}}" id="description" name="description" placeholder="{{program.programDescription}}" required></textarea>
                         </div>
                     </div>
          
@@ -26,10 +26,10 @@
                         <div class="input-group col-sm-6">
 
 
-                            <input ngModel type="text" class="form-control" name="imageUrl" id="pname" value="{{program.imageUrl}}" placeholder="{{program.imageUrl}}">
+                            <input ngModel type="text" class="form-control" name="imageUrl" id="pname" value="{{program.imageUrl}}" placeholder="{{program.imageUrl}}" required>
 
 
-                            <input type="text" class="form-control bg-primary" readonly>
+                            <!-- <input type="text" class="form-control bg-primary" required> -->
                         </div>
                     </div>
                    
