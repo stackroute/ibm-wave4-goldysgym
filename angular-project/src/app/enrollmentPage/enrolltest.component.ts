@@ -60,7 +60,7 @@ export class EnrolltestComponent implements OnInit {
       "dateOfBirth": user.date.toISOString().substring(0, 10),
       "height": user.ht,
       "weight": user.wt,
-      "interests": this.interest,
+      "interest": this.interest,
       "subscription": this.subscription,
     }
     console.log(data)
