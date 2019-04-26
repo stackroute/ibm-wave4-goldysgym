@@ -130,11 +130,7 @@ export class EnrolltestComponent implements OnInit {
     this.subscription = sub
 
   }
-<<<<<<< HEAD
    interest= [];
-=======
-   interest:any
->>>>>>> 65f84c9b22a219bb9bb37c824df0b81e460fde22
   counter:any=0
   Interests(ints){
     if(this.counter < 3){
