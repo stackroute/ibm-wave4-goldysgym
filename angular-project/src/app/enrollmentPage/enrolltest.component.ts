@@ -136,10 +136,6 @@ export class EnrolltestComponent implements OnInit {
     if(this.counter<3){
     this.interest[this.counter] = ints
     this.counter++}
-<<<<<<< HEAD
     
-=======
-    console.log(this.interest)
->>>>>>> 0a92d3dbade83fde12398cb935e935a824f181b5
   }
 }
