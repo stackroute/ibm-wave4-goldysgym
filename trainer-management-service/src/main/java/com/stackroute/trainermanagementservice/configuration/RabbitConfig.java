@@ -20,6 +20,8 @@ public class RabbitConfig {
     public static final String QUEUE_NAME_2 = "goldy.gym.2";
     public static final String ROUTING_KEY_2 = "goldy.gym.key.2";
     public static final String EXCHANGE_NAME_2 = "goldy.gym.exchange.2";
+    public static final String QUEUE_NAME_3 = "goldy.gym.8";
+    public static final String ROUTING_KEY_3 = "goldy.gym.key.8";
 
     //Bean declaration of the queue
     @Bean
@@ -31,6 +33,13 @@ public class RabbitConfig {
     @Bean
     Queue queueOne() {
         return new Queue(QUEUE_NAME_2, true);
+    }
+
+
+    //Bean declaration of the queue
+    @Bean
+    Queue queueTwo() {
+        return new Queue(QUEUE_NAME_3, true);
     }
 
     //Bean declaration of the exchange(Topic exchange)
@@ -55,6 +64,12 @@ public class RabbitConfig {
     @Bean
     Binding bindingOne(Queue queueOne, TopicExchange topicExchangeTwo) {
         return BindingBuilder.bind(queueOne).to(topicExchangeTwo).with(ROUTING_KEY_2);
+    }
+
+    //Bean declaration for the binding between the queue and the exchange using the routing key
+    @Bean
+    Binding bindingTwo(Queue queueTwo, TopicExchange topicExchangeTwo) {
+        return BindingBuilder.bind(queueTwo).to(topicExchangeTwo).with(ROUTING_KEY_3);
     }
 
     @Bean
