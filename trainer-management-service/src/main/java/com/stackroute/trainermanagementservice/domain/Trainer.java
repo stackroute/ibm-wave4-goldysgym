@@ -20,6 +20,6 @@ public class Trainer {
     private String imageUrl;
     private List<String> programType;
     private boolean availability;
-    private ProgramDetails programDetails;
+    private ProgramDto programDto;
 
 }

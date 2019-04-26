@@ -14,7 +14,7 @@ import org.springframework.context.annotation.Configuration;
 public class RabbitConfig
 {
     public static final String QUEUE_NAME="goldy.gym.8";
-    public static final String EXCHANGE_NAME="goldy.gym.exchange";
+    public static final String EXCHANGE_NAME="goldy.gym.exchange.1";
     public static final String ROUTING_KEY="goldy.gym.key.8";
 
     @Bean
