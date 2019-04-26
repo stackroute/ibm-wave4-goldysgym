@@ -1,10 +1,17 @@
 .conatainer {
+  height: 100%;
   align-content: center;
 }
 
 .table {
   font-size: larger;
 
+}
+.row{
+  justify-content: center
+}
+.card{
+  text-align: center
 }
 
 .card {
