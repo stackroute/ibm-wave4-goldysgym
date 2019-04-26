@@ -24,7 +24,7 @@ export class EditSubscriptionformComponent implements OnInit {
     
   }
   sub:any;
-    editSubscription(data) {
+    editSubscription(data,form) {
       let newData = {
          "subscriptionName": data.sname,
           "description": data.sdes,
@@ -32,7 +32,7 @@ export class EditSubscriptionformComponent implements OnInit {
           "duration": data.Duration,
           "amount": data.amount,
          }
-      
+         form.reset();
          console.log(this.id)
          this.programService.editSubscription(newData).subscribe(data =>{
          this.sub = newData
