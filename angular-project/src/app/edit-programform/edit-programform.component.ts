@@ -30,6 +30,7 @@ export class EditProgramformComponent implements OnInit {
       "programDescription": data.description,
      
     }
+    console.log(newData)
     form.reset();
   
     console.log(this.id)

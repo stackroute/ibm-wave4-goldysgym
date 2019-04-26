@@ -88,6 +88,10 @@ const routes: Routes = [
       {
         path: "admineditpgmform/:id",
         component: AdmineditpgmComponent,
+      },
+      {
+        path: "subscriptionview",
+        component: AdmineditpgmComponent,
       }
     ]
   },

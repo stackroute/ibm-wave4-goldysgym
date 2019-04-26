@@ -1,1 +1,0 @@
-program-schedular service manages the schedule for booking of the program by users as well as creatio of those programs by the gymowner 

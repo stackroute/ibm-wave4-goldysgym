@@ -1,4 +1,4 @@
-<!-- <div class="container-fluid" *ngFor="let user of arrayPrograms">
+<div class="container-fluid" *ngFor="let user of arrayPrograms">
   <div class="row"*ngFor="let month of user.month" >
     <div class="card-body col-md-3" *ngFor="let day1 of month.days">
       <a
@@ -26,118 +26,60 @@
             &times;
           </button>
         </div>
-        <div class="modal-body" *ngFor="let abc of y">
-          <div class="row">
-          <div class="col-md-12">
-              <div class="input-group mb-3">
-                  Program Name: &nbsp;<input class="form-control"  type="text"  value="{{abc.programName}}">
-              </div>
-              <div class="input-group mt-3">
-                  Time: &nbsp;<input class="form-control" type="text" value="{{abc.time}}">
-              </div>
-              <div class="input-group mt-3">
-                Capacity: {{abc.capacity}}
-            </div>
-              <div class="input-group mt-3">
-                  Update Capacity: &nbsp;<input class="form-control" type="text" value="{{abc.capacity}}" [(ngModel)]="cpc">
-              </div>
-            <div class="form-check mt-3">
-              <button type="button" class="btn btn-success" (click)="publish(x, abc.time,abc.programName)" data-dismiss="modal">
-                Update
-              </button>
-            </div>
-          </div>
+       <div class="modal-body" >
+         <div class="row">
           <div class="col-md-6">
-               <div class="input-group mb-3">
-                Program Name: &nbsp;<input class="form-control" type="text" >
-              </div>
-              <div class="input-group mt-3">
-                  Time: &nbsp;<input class="form-control" type="text">
-              </div>
-              <div class="input-group mt-3">
-                  Capacity: &nbsp;<input class="form-control" type="text">
-              </div>
-        
-          <button type="button mt-3" class="btn btn-success" (click)="publish(x, abc.time)" data-dismiss="modal">
-              Add
-            </button>
-          </div> 
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">
-            Close
-          </button>
-          
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
- -->
-
- <div class="container-fluid" *ngFor="let user of arrayPrograms">
-  <div class="row"*ngFor="let month of user.month" >
-    <div class="card-body col-md-3" *ngFor="let day1 of month.days">
-      <a
-        class="card-title btn btn-outline-primary"
-        data-toggle="modal"
-        data-target="#myModal"
-        (click)="viewdata(day1.date, day1.slots)">
-        Date: {{ day1.date | date }}</a
-      >
-    </div>
-  </div>
- </div>
- 
- <div class="container">
-  <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog modal-md">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h2 class="modal-title">{{ x | date}}</h2>
-          <button
-            type="button"
-            class="btn btn-danger close"
-            data-dismiss="modal"
-          >
-            &times;
-          </button>
-        </div>
-       <div class="modal-body" *ngFor="let abc of y">
-         <div class="card-body" id="div12">
+         <div class="card-body  " id="div12" *ngFor="let abc of y">
           <div class="form-group row">
-          <div class="col-md-10">
               <div class="input-group mb-3">
-                  Program Name: &nbsp;<input class="form-control" style="margin-left:.5rem;"  type="text"  value="{{abc.programName}}">
+                  Program Name: {{abc.programName}}
               </div>
               <div class="input-group mt-3">
-                  Time: &nbsp;<input class="form-control" style="margin-left:5rem;" type="text" value="{{abc.time}}">
+                  Time: {{abc.time}}
               </div>
               <div class="input-group mt-3">
                 Capacity: {{abc.capacity}}
             </div>
-              <div class="input-group mt-3">
-                  Update Capacity: &nbsp;<input class="form-control" type="text" value="{{abc.capacity}}" [(ngModel)]="cpc">
-              </div>
-            <div class="form-check mt-3">
-              <button type="button" class="btn btn-success" (click)="publish(x, abc.time,abc.programName)" data-dismiss="modal">
-                Update
-              </button>
-           </div>
+          </div>
            </div>
           </div>
- 
-          </div>
+          <div class="col-md-6 " > 
+          <label for="sel1">Select Slot Timing</label>
+          <select class="form-control" id="sel1" #slt>
+              <option value="Morning" >Morning</option>
+            <option value="Afternoon">Afternoon</option>
+            <option value="Evening">Evening</option>
+          </select>
+          <br>
+          <br>
+          <label for="sel2">Select Program</label>
+          <select class="form-control" id="sel2" #pgm>
+            <option value="hrx">HRX</option>
+            <option value="jumba" >JUMBA</option>
+            <option value="yoga">YOGA</option>
+            <option value="boxing">BOXING</option>
+          </select>
+          <br>
+          <br>
+          <label >enter Capacity</label>
+          <input  class="form-control" type="text" #cap />
+          <br>
+          <button type="button" class="btn btn-success" (click)="add(cap.value,pgm.value,slt.value,x)">
+            Add 
+          </button>
+         
         </div>
+       </div>
+       </div>
         <div class="modal-footer">
+    
           <button type="button" class="btn btn-danger" data-dismiss="modal">
             Close
           </button>
- 
+      </div>
+       
+         
         </div>
       </div>
     </div>
   </div>
- </div>

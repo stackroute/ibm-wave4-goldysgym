@@ -14,7 +14,7 @@ export class ProgramService {
 
   
   tf:any[] = [false,false,false,false,false];
-  
+
   tfToggle(a){
     this.tf= [false,false,false,false,false];
     this.tf[a] = true;
@@ -74,17 +74,10 @@ export class ProgramService {
   getProgramsOfUser()
   {
     return this.http.get("http://13.234.148.231:8080/schedular/programs",);
-   
   }
   putUser(data,time,date,name)
   {
           let params = new HttpParams();
-
-     // Begin assigning parameters
-//      const params = new URLSearchParams();
-// params.set('time', time);
-// params.set('date', date);
-// params.set('name', name);
 
      params = params.append('time', time);
      params = params.append('date', date);
@@ -94,20 +87,15 @@ export class ProgramService {
      let id="2019";
   return this.http.put("http://13.234.148.231:8080/schedular/user",data,{params:params});
  } 
- putadmin(data,time,date,pgm,cpc)
+ putadmin(data,pgm,slot,cap,date)
   {
           let params = new HttpParams();
 
-     // Begin assigning parameters
-//      const params = new URLSearchParams();
-// params.set('time', time);
-// params.set('date', date);
-// params.set('name', name);
 
-     params = params.append('time', time);
+     params = params.append('time', slot);
      params = params.append('date', date);
      params = params.append('program', pgm);
-     params = params.append('capacity', cpc);
+     params = params.append('capacity', cap);
 
      console.log(data)
      console.log(params)
@@ -115,4 +103,5 @@ export class ProgramService {
   return this.http.put("http://13.234.148.231:8080/schedular/adminupdate",data,{params:params});
  } 
 }
+
   
