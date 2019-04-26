@@ -1,5 +1,6 @@
 package com.stackroute.programschedular.controller;
 
+import com.stackroute.programschedular.component.RabbitProducer;
 import com.stackroute.programschedular.domain.*;
 import com.stackroute.programschedular.service.ProgramScheduleService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,14 +17,16 @@ import java.util.List;
 public class ProgramScheduleController {
 
     private ProgramScheduleService programScheduleService;
+    private RabbitProducer rabbitProducer;
 
     @Autowired
-    public ProgramScheduleController(ProgramScheduleService programScheduleService) {
+    public ProgramScheduleController(ProgramScheduleService programScheduleService,RabbitProducer rabbitProducer) {
         this.programScheduleService = programScheduleService;
+        this.rabbitProducer = rabbitProducer;
+
     }
 
-
-    @RequestMapping("/program")
+    @PutMapping("/program")
     public ResponseEntity<?> save(@RequestBody Year year) {
         Year year1 = programScheduleService.save(year);
         return new ResponseEntity<String>("succefullly created", HttpStatus.CREATED);
@@ -38,23 +41,23 @@ public class ProgramScheduleController {
         Day[] day = month[0].getDays();
         for (int i = 0; i < day.length; i++) {
             if (day[i].getDate().equals(date)) {
-                Slots[] slots = day[i].getSlots();
-                for (int j = 0; j < slots.length; j++) {
-                    if (slots[j].getTime().equals(time)) {
-                        System.out.println("SLOTSSSSS******" + slots[j].getUsers());
-                        users = slots[j].getUsers();
+                List<Slots> slots = day[i].getSlots();
+                for (int j = 0; j < slots.size(); j++) {
+                    if (slots.get(j).getTime().equals(time)) {
+                        System.out.println("SLOTSSSSS******" + slots.get(j).getUsers());
+                        users = slots.get(j).getUsers();
                         users.add(name);
-                        slots[j].setUsers(users);
-
-                      break;
+                        slots.get(j).setUsers(users);
+//                        programScheduleService.save(year);
+//                        System.out.println("success");
+                       break;
                     }
                 }
             }
         }
         Year year1 = programScheduleService.save(year);
-        return new ResponseEntity<String>("succefullly created", HttpStatus.CREATED);
+        return new ResponseEntity<String>("succefullly created", HttpStatus.OK);
     }
-
     @PutMapping("/adminupdate")
     public ResponseEntity<?> adminsave(@RequestParam String time, @RequestParam String date, @RequestParam String program,@RequestParam int capacity, @RequestBody Year year) throws Exception {
         List<String> users = null;
@@ -63,26 +66,26 @@ public class ProgramScheduleController {
         Day[] day = month[0].getDays();
         for (int i = 0; i < day.length; i++) {
             if (day[i].getDate().equals(date)) {
-                Slots[] slots = day[i].getSlots();
-                for (int j = 0; j < slots.length; j++) {
-                    if (slots[j].getTime().equals(time)) {
-                        System.out.println("SLOTSSSSS******" + slots[j].getUsers());
-                        slots[j].setTime(time);
-                        slots[j].setProgramName(program);
-                        slots[j].setCapacity(capacity);
-                    }
+                Slots slots= new Slots();
+                slots.setTime(time);
+                slots.setCapacity(capacity);
+                slots.setProgramName(program);
+                List<Slots> slots1=day[i].getSlots();
+                slots1.add(slots);
+                 day[i].setSlots(slots1);
                 }
             }
-        }
+
         Year year1 = programScheduleService.save(year);
+        ProgramDto programDto= new ProgramDto(date,time,program);
+        rabbitProducer.produce(programDto);
         return new ResponseEntity<String>("succefullly created", HttpStatus.OK);
     }
-
 
     @GetMapping("/programs")
     public ResponseEntity<List<Year>> get() {
         List<Year> list = programScheduleService.getALl();
-        return new ResponseEntity<>(list, HttpStatus.OK);
+        return new ResponseEntity<List<Year>>(list, HttpStatus.OK);
     }
 
 }

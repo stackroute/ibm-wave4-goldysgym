@@ -27,7 +27,7 @@ export class AdminMyprogramsComponent implements OnInit {
        this.program.getProgramsOfUser().subscribe(data=>{
          console.log(data)
          this.arrayPrograms=data
-         console.log(this.arrayPrograms);
+         console.log(this.arrayPrograms.date);
       }) 
      }
    
@@ -38,21 +38,19 @@ export class AdminMyprogramsComponent implements OnInit {
        this.y=y;
        console.log(y)
     }
-    publish(date,time,pgm)
+    add(cap,pgm,slot,date)
     {
       console.log(date)
-      console.log(time)
+      console.log(slot)
       console.log(pgm)
-      console.log(this.cpc)
+      console.log(cap)
      let newData= this.arrayPrograms
    
      console.log(newData[0])
-     this.program.putadmin(newData[0],time,date,pgm,this.cpc).subscribe(x=> {
+     this.program.putadmin(newData[0],pgm,slot,cap,date).subscribe(x=> {
        console.log(x)
      })
-     location.reload();
-
-    // location.reload();
+    location.reload();
     }
      
    }

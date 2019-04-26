@@ -7,21 +7,22 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class ProgramScheduleService {
+public class ProgramScheduleService
+{
 
     ProgramScheduleRepository programScheduleRepository;
-
     public ProgramScheduleService(ProgramScheduleRepository programScheduleRepository) {
         this.programScheduleRepository = programScheduleRepository;
     }
 
-    public Year save(Year year) {
-        return programScheduleRepository.save(year);
-
+    public Year save(Year year)
+    {
+        Year year11=programScheduleRepository.save(year);
+        return year11;
     }
-
-    public List<Year> getALl() {
-        return programScheduleRepository.findAll();
+    public List<Year> getALl()
+    {
+        return  (List<Year>)programScheduleRepository.findAll();
     }
 
 }
