@@ -130,12 +130,13 @@ export class EnrolltestComponent implements OnInit {
     this.subscription = sub
 
   }
-  interest: any
+   interest= new Array[3]
   counter:any=0
   Interests(ints){
     if(this.counter<3){
     this.interest[this.counter] = ints
     this.counter++}
+    console.log(this.interest)
     
   }
 }
