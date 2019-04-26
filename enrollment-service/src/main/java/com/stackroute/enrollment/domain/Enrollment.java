@@ -104,11 +104,11 @@ public class Enrollment {
         this.weight = weight;
     }
 
-    public String[] getInterest() {
+    public List<String> getInterest() {
         return interest;
     }
 
-    public void setInterest(String[] interest) {
+    public void setInterest(List<String> interest) {
         this.interest = interest;
     }
 
