@@ -1,12 +1,11 @@
 language: java
-jdk: openjdk11
+jdk: openjdk8
 cache:
   directories:
     - "$HOME/.m2/repository"
-
-  
-
-  
+    
+script:
+  - mvn install -DskipTests=true
 after_success:
   - bash <(curl -s https://codecov.io/bash)
 
