@@ -148,8 +148,8 @@
           <br>
           <br>
           <label for="sel2">Select Program</label>
-          <select class="form-control" id="sel2" *ngFor="let program of programs" #pgm>
-            <option value="program.programName">{{program.programName}}</option>
+          <select class="form-control" id="sel2" #pgm>
+            <option value="program.programName" *ngFor="let program of programs">{{program.programName}}</option>
             <!-- <option value="jumba" >JUMBA</option>
             <option value="yoga">YOGA</option>
             <option value="boxing">BOXING</option> -->

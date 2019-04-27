@@ -2,34 +2,32 @@
   <div class="row">
     <div class="col-11">
       <div class="card">
-        <table class="table table-hover table-responsive">
-          <thead>
-            <tr>
-              <th><h2>Details</h2></th>
-              <th></th>
-            </tr>
-            <tr>
-              <th>Name</th>
-              <th>{{user.firstName}} {{user.lastName}}</th>
-            </tr>
-            <tr>
-              <th>Email Id</th>
-              <th>{{user.email}}</th>
-            </tr>
-            <tr>
-              <th>Age</th>
-              <th>{{user.age}} years</th>
-            </tr>
-            <tr>
-              <th>Weight</th>
-              <th>{{user.weight}} kgs</th>
-            </tr>
-            <tr>
-              <th>Height</th>
-              <th>{{user.height}} cm</th>
-            </tr>
-          </thead>
-        </table>
+        <div class="card-title">
+          <table class="table table-hover table-responsive">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>{{ user.firstName }} {{ user.lastName }}</th>
+              </tr>
+              <tr>
+                <th>Email Id</th>
+                <th>{{ user.email }}</th>
+              </tr>
+              <tr>
+                <th>Age</th>
+                <th>{{ user.age }} years</th>
+              </tr>
+              <tr>
+                <th>Weight</th>
+                <th>{{ user.weight }} kgs</th>
+              </tr>
+              <tr>
+                <th>Height</th>
+                <th>{{ user.height }} cm</th>
+              </tr>
+            </thead>
+          </table>
+        </div>
       </div>
     </div>
   </div>
