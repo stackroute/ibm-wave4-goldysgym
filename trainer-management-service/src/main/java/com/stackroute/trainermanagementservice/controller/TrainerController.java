@@ -46,6 +46,13 @@ public class TrainerController {
         return new ResponseEntity<List<Trainer>>(allTrainer, HttpStatus.OK);
     }
 
+    @GetMapping("/trainer/false")
+    public ResponseEntity<List<Trainer>> getTrainersFalse() {
+        List<Trainer> selectedTrainer = trainerService.getTrainer();
+
+        return new ResponseEntity<List<Trainer>>(selectedTrainer, HttpStatus.OK);
+    }
+
     @DeleteMapping("/deletetrainer")
     public ResponseEntity<List<Trainer>> deleteTrainer() throws Exception {
         trainerService.deleteTrainer();

@@ -27,6 +27,11 @@ public class TrainerServiceImpl implements TrainerService {
     }
 
     @Override
+    public List<Trainer> getTrainer() {
+        return trainerRepository.getByavailability(false);
+    }
+
+    @Override
 
     public void deleteTrainer() {
         trainerRepository.deleteAll();
