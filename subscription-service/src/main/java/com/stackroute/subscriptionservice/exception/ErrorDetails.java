@@ -1,7 +1,5 @@
 package com.stackroute.subscriptionservice.exception;
 
-import org.springframework.stereotype.Component;
-
 import java.util.Date;
 
 
@@ -14,7 +12,7 @@ public class ErrorDetails {
     }
 
     public ErrorDetails(Date timestamp, String message, String details) {
-        //super();
+        super();
         this.timestamp = timestamp;
         this.message = message;
         this.details = details;
