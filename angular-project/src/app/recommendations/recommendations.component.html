@@ -1,0 +1,43 @@
+
+<h1>Recommendations</h1>
+<div class="container" *ngFor="let recommend of arrayUser">
+<ul class="list-group">
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    {{recommend.name}}
+    <a href=""><span class="badge badge-primary badge-pill" >Follow</span></a>
+  </li>
+</ul>
+</div>
+<hr>
+<h1>Recommended Programs</h1>
+<div class="container-fluid" >
+  <div class="row">
+      <div class="col-md-3" *ngFor="let programs of arraySessions">
+          <div class="card">
+              <img class="card-img-top" src="../../assets/images/a1.jpg" alt="Card image cap">
+              <div class="card-body">
+                  <div>
+                      <h5 class="card-title">{{programs.name}}</h5>
+                  </div>
+                  <p class="card-text">Boxing timings</p>
+              </div>
+              <div class="card-footer">
+                  <button routerLink="" type="button" class="btn btn-outline-primary">Details</button>&nbsp;
+              </div>
+          </div>
+      </div>
+
+  </div>
+</div>
+<hr>
+<h1>Recommended same age group</h1>
+<div class="container" *ngFor="let agegroup of arrayage" >
+<ul class="list-group">
+  <li class="list-group-item d-flex justify-content-between align-items-center" >
+    {{agegroup.name}}
+    <a href=""><span class="badge badge-primary badge-pill">Follow</span></a>
+  </li>
+</ul>
+</div>
+
+<router-outlet></router-outlet>

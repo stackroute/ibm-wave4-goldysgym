@@ -1,40 +1,15 @@
 <h1>Top Performers</h1>
+<div class="container" *ngFor="let userlogin of arrayUser" > 
 <ul class="list-group">
-  <li class="list-group-item d-flex justify-content-between align-items-center">
-    Yash Chaddha
-    <a href=""><span class="badge badge-primary badge-pill">Follow</span></a>
-  </li>
-  <li class="list-group-item d-flex justify-content-between align-items-center">
-    Saunak sen
-    <a href=""><span class="badge badge-primary badge-pill">Follow</span></a>
-  </li>
-  <li class="list-group-item d-flex justify-content-between align-items-center">
-    Farhaan Shaikh
-    <a href=""><span class="badge badge-primary badge-pill">Follow</span></a>
-  </li>
-  <li class="list-group-item d-flex justify-content-between align-items-center">
-    Yash Chaddha
-    <a href=""><span class="badge badge-primary badge-pill">Follow</span></a>
-  </li>
-  <li class="list-group-item d-flex justify-content-between align-items-center">
-    Saunak sen
-    <a href=""><span class="badge badge-primary badge-pill">Follow</span></a>
-  </li>
-  <li class="list-group-item d-flex justify-content-between align-items-center">
-    Farhaan Shaikh
-    <a href=""><span class="badge badge-primary badge-pill">Follow</span></a>
-  </li>
-  <li class="list-group-item d-flex justify-content-between align-items-center">
-    Yash Chaddha
-    <a href=""><span class="badge badge-primary badge-pill">Follow</span></a>
-  </li>
-  <li class="list-group-item d-flex justify-content-between align-items-center">
-    Saunak sen
-    <a href=""><span class="badge badge-primary badge-pill">Follow</span></a>
-  </li>
-  <li class="list-group-item d-flex justify-content-between align-items-center">
-    Farhaan Shaikh
-    <a href=""><span class="badge badge-primary badge-pill">Follow</span></a>
+  <li class="list-group-item d-flex justify-content-between align-items-center" *ngIf="userlogin.firstName.indexOf('jack') == -1">
+    {{userlogin.firstName}} {{userlogin.lastName}}
+    <div *ngIf="!userlogin.followed">
+    <button class="badge badge-primary badge-pill" (click) = "follow(userlogin.firstName)">Follow</button>
+    </div>
+    <div *ngIf="userlogin.followed">
+    <button class="badge badge-primary badge-pill" (click) = "unfollow(userlogin.firstName)">Unfollow</button>
+    </div>
   </li>
 </ul>
-<router-outlet></router-outlet>
+</div>
+

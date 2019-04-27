@@ -31,11 +31,13 @@
         <module>config-server</module>
         <module>eureka-server</module>
         <module>zuul-api</module>
-        <module>enrollment</module>
+        <module>enrollment-service</module>
         <module>program-service</module>
-        <module>jwtfirst</module>
+        <module>user-authentication-service</module>
         <module>subscription-service</module>
         <module>program-schedular</module>
+        <module>trainer-management-service</module>
+        <module>spring-boot-neo4j-CRUD</module>
     </modules>
 
     <dependencies>
