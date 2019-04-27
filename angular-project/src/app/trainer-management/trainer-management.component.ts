@@ -11,10 +11,10 @@ export class TrainerManagementComponent implements OnInit {
   constructor(private programService:ProgramService ) { }
 
   ngOnInit() {
-    this.getPrograms()
+    this.getTrainers()
   }
 
-  getPrograms() {
+  getTrainers() {
     this.programService.getTrainers().subscribe((data) => {
       this.trainers= data
       console.log(this.trainers)
