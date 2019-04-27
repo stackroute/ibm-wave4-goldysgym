@@ -1,8 +1,5 @@
 language: java
-jdk: openjdk11
-cache:
-  directories:
-    - "$HOME/.m2/repository"
+jdk: openjdk12
 after_success:
   - bash <(curl -s https://codecov.io/bash)
 
