@@ -1,0 +1,169 @@
+<div>
+  <div class="row d-flex justify-content-center" *ngIf="showMsg">
+    <div class="col-lg-6">
+            <p class="alert alert-success text-center">
+                    <strong>Registration Success!</strong>
+            </p>
+    </div>
+  </div>
+  
+  <div class="row d-flex justify-content-center" *ngIf="errorMsg">
+    <div class="col-lg-6">
+            <p class="alert alert-info text-center">
+                    <strong>Email already exists</strong>
+            </p>
+    </div>
+  </div>
+  <mat-horizontal-stepper [linear]="isLinear" #stepper>
+    <mat-step [stepControl]="firstFormGroup">
+      <div class="container col-md-3 border border-info rounded bg-light box">
+        <form [formGroup]="firstFormGroup"  #userFormOne="ngForm" >
+          <ng-template matStepLabel>Basic Details</ng-template>
+          <div class="example-container  align-items-center">
+            <mat-form-field hintLabel="Max 10 characters">
+              <input matInput  class="form-control" formControlName ="fname"  maxlength="10" placeholder="First Name" />
+            </mat-form-field>
+          </div>
+          <br /><br />
+          <div class="example-container">
+            <mat-form-field hintLabel="Max 10 characters">
+              <input matInput class="form-control"  formControlName="lname" maxlength="10" placeholder="Last Name" />
+            </mat-form-field>
+          </div>
+          <br /><br />
+          <div class="example-container">
+            <mat-form-field>
+              <input matInput  class="form-control" placeholder="Enter your email"  formControlName="email"  [formControl]="email" required />
+              <!-- <mat-error *ngIf="!email.valid">{{ getErrorMessage() }}</mat-error> -->
+            </mat-form-field>
+          </div>
+          <br /><br />
+          <!-- <ng-template matStepLabel>Fill out your name</ng-template> -->
+          <div class="example-container">
+            <mat-form-field>
+              <input matInput class="form-control" formControlName="pwd"  placeholder="password" name="password"
+                type="password" required />
+              <!-- <mat-error >{{getErrorMessage1()}}</mat-error> -->
+            </mat-form-field>
+          </div>
+          <br/><br/>
+          <button mat-button matStepperNext [disabled]="!firstFormGroup.valid">
+            NEXT
+          </button>
+          <button mat-button (click)="stepper.reset()">RESET</button>
+          <br /><br />
+        </form>
+      </div>
+    </mat-step>
+  
+    <mat-step [stepControl]="secondFormGroup" #stepper1>
+      <div class="container col-lg-3 border border-info rounded bg-light box">
+        <form [formGroup]="secondFormGroup"#userFormTwo="ngForm" >
+          <ng-template matStepLabel>Personal Details</ng-template>
+          <div class="example-container">
+            <mat-form-field>
+              <input matInput [matDatepicker]="picker" placeholder="Date of Birth" formControlName="date" />
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+          </div>
+          <br />
+  
+          <div class="example-container">
+            <mat-radio-group aria-label="Select an option" formControlName="gender">
+              <mat-radio-button  value="1">Male</mat-radio-button>&nbsp;
+              <mat-radio-button  value="2">Female</mat-radio-button>
+            </mat-radio-group>
+          </div>
+          <br />
+  
+          <div class="example-container">
+            <mat-form-field>
+              <input matInput class="form-control"  formControlName="ht" placeholder="Enter Height in cm" type="number" />
+            </mat-form-field>
+          </div>
+          <br />
+  
+          <div class="example-container">
+            <mat-form-field>
+              <input matInput class="form-control"  formControlName="wt" placeholder="Enter Weight in kg" type="number" />
+            </mat-form-field>
+          </div>
+          <br />
+          <button mat-button matStepperPrevious>BACK</button>
+          <button mat-button (click)="stepper1.reset()">RESET</button>
+          <button mat-button matStepperNext [disabled]="!secondFormGroup.valid">
+            NEXT
+          </button>
+          <br /><br />
+        </form>
+      </div>
+    </mat-step>
+  
+    <mat-step [stepControl]="thirdFormGroup" #stepper2>
+        <form [formGroup]="thirdFormGroup" #userFormThree="ngForm" >
+      <ng-template matStepLabel>Interests</ng-template>
+      <div class="container-fluid">
+      <div class="row">
+      <div class="col-lg-3 col-md-1" *ngFor="let ints of programs">
+        <mat-card class="example-card" >
+          <mat-card-header>
+            <div mat-card-avatar></div>
+          </mat-card-header>
+          <img mat-card-image src="{{ ints.imageUrl }}" alt="Card image" />
+          <mat-card-content>
+            <mat-card-title>{{ ints.programName }}</mat-card-title>
+            <mat-card-subtitle>{{ ints.programDescription }}</mat-card-subtitle>
+          </mat-card-content>
+          <mat-card-footer>
+            <mat-checkbox  class="ml-2" (click)="Interests(ints.programName)" >Check me!</mat-checkbox><br />
+          </mat-card-footer>
+        </mat-card>
+      </div>
+      </div>
+      </div>
+      <div>
+        <br />
+        <button mat-button matStepperPrevious>BACK</button>
+        <button mat-button matStepperNext>NEXT</button>
+      </div>
+      </form>
+    </mat-step>
+  
+    <mat-step [stepControl]="forthFormGroup">
+      <form [formGroup]="forthFormGroup" #userFormFour="ngForm">
+        <ng-template matStepLabel>subscriptions</ng-template>
+        <div class="container-fluid">
+          <div class="row">
+        <div class="col-lg-3 col-md-1" *ngFor="let sub of subscriptions">
+          <mat-card class="example-card" >
+            <mat-card-header>
+              <div mat-card-avatar></div>
+            </mat-card-header>
+            <img mat-card-image src="{{ sub.imageUrl }}" alt="Card image cap" />
+            <mat-card-content>
+              <mat-card-title>{{ sub.subscriptionName }}</mat-card-title>
+              <mat-card-subtitle>{{ sub.duration }}&nbsp;<span>Months</span></mat-card-subtitle>
+              <mat-card-subtitle><span>Rs</span>&nbsp;{{ sub.amount }}</mat-card-subtitle>
+            </mat-card-content>
+            <mat-card-footer>
+              <div style="display: inline-block">
+                <mat-radio-button (click)="method(sub)"  color="primary"  value="1" class="ml-2">Subscribe</mat-radio-button>
+              </div>
+            </mat-card-footer>
+          </mat-card>
+          </div>
+        </div>
+      </div>
+        <hr />
+    
+        <div> 
+          <button mat-button matStepperPrevious>BACK</button>
+          <button mat-button  (click)="saveUser(userFormOne.value,userFormTwo.value,userFormThree.value,userFormFour.value, userForm)" type="button">
+            SUBMIT
+          </button>
+        </div>
+      </form>
+    </mat-step>
+  </mat-horizontal-stepper>
+  </div>

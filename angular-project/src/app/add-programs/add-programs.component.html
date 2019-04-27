@@ -1,50 +1,22 @@
 <div class="container-fluid">
     <div class="row form-container">
         <div class="col-lg-7">
-            <form #form="ngForm" (submit)=putProgram(form.value)>
+            <form #form="ngForm" (submit)=putProgram(form.value,form)>
                 <div class="card-body" style=" background: white">
                     <div class="form-group row">
-                        <label for="pname" class="col-sm-6 col-form-label ">ProgramName</label>
+                        <label for="pname" class="col-sm-6 col-form-label ">Program Name</label>
                         <div class="col-sm-6">
-                            <input ngModel type="text" class="form-control" name="pname" id="pname" placeholder="ProgramName">
+                            <input ngModel type="text" class="form-control" name="pname" id="pname" placeholder="Program Name" required>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="description" class="col-sm-6 col-form-label">ProgramDescription</label>
+                        <label for="description" class="col-sm-6 col-form-label">Program Description</label>
                         <div class="col-sm-6">
-                            <textarea ngModel class="form-control" id="description" name="description" placeholder="ProgramDescription"></textarea>
+                            <textarea ngModel class="form-control" id="description" name="description" placeholder="Program Description" required></textarea>
                         </div>
                     </div>
-                    <div class="form-group row">
-                        <div class="col-sm-6">Day</div>
-                        <div class="col-sm-6">
-                            <select id="inputday" ngModel name="inputday" class="form-control">
-              <option selected>Select...</option>
-              <option>Monday</option>
-              <option>Tuesday</option>
-              <option>Wednesday</option>
-              <option>Thursday</option>
-              <option>Friday</option>
-              <option>Saturday</option>
-              <option>Sunday</option>
-            </select>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <div class="col-sm-6">SlotTiming</div>
-                        <div class="col-sm-6">
-                            <div class="form-check">
-                                <input class="form-check-input" ngModel name="exampleRadios" type="radio" id="radio1" value="Morning">
-                                <label class="form-check-label" for="radio1">Morning(6am-10am)</label></div>&nbsp;
-                            <div class="form-check">
-                                <input class="form-check-input" ngModel name="exampleRadios" type="radio" id="radio2" value="Afternoon">
-                                <label class="form-check-label" for="radio2">Afternoon(12pm-4pm)</label></div>&nbsp;
-                            <div class="form-check">
-                                <input class="form-check-input" ngModel name="exampleRadios" type="radio" id="radio3" value="Evening">
-                                <label class="form-check-label" for="radio3">Evening(5pm-9pm)</label>&nbsp;
-                            </div>
-                        </div>
-                    </div>
+
+                    
 
                     <div class="form-group row">
                         <label for="image" class="col-sm-6 col-form-label">Image</label>
@@ -53,30 +25,14 @@
 
 
 
-                            <input ngModel type="text" class="form-control" name="imageUrl" id="pname" placeholder="imageUrl">
+                            <input ngModel type="text" class="form-control" name="imageUrl" id="pname" placeholder="Image" required>
 
 
-                            <input type="text" class="form-control bg-primary" readonly>
+                            <!-- <input type="text" class="form-control bg-primary" readonly> -->
                         </div>
                     </div>
-                    <div class="form-group row">
-                        <label for="tname" class="col-sm-6 col-form-label">TrainerName</label>
-                        <div class="col-sm-6">
-                            <input type="text" ngModel class="form-control" name="tname" id="tname" placeholder="TrainerName">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="tdescription" class="col-sm-6 col-form-label">TrainerDescription</label>
-                        <div class="col-sm-6">
-                            <textarea class="form-control" ngModel id="tdescription" name="tdescription" placeholder="TrainerDescription"></textarea>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="seats" class="col-sm-6 col-form-label">NumberOfSeats</label>
-                        <div class="col-sm-6">
-                            <input placeholder="seats" ngModel required type="number" name="seats" value="" min="0" max="100" />
-                        </div>
-                    </div>
+                    
+                    
                     <div class="form-group row">
                         <label for="" class="col-sm-6 col-form-label"></label>
                         <div class="col-sm-6 d-flex">

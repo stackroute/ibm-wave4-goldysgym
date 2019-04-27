@@ -24,19 +24,24 @@ import { LoginComponent } from './login/login.component';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 import { UserDashboardSidebarComponent } from './user-dashboard-sidebar/user-dashboard-sidebar.component';
 import { FollowGymatesComponent } from './follow-gymates/follow-gymates.component';
-import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserSubscriptionsComponent } from './user-subscriptions/user-subscriptions.component';
 import { ProgramDetailsComponent } from './program-details/program-details.component';
 import { EditProgramformComponent } from './edit-programform/edit-programform.component';
 import { AdminProgramdetailsComponent } from './admin-programdetails/admin-programdetails.component';
 import { SubscriptionviewComponent } from './subscriptionview/subscriptionview.component';
-import { EnrolltestComponent } from './enrolltest/enrolltest.component';
+import { EnrolltestComponent } from './enrollmentPage/enrolltest.component';
 import { MatStepperModule, MatInputModule, MatButtonModule, MatAutocompleteModule } from '@angular/material';
 import { MatRadioModule} from '@angular/material';
 import { MatDatepickerModule,MatNativeDateModule,MatFormFieldModule,} from '@angular/material';
 import {MatCardModule} from '@angular/material/card';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import { EditSubscriptionformComponent } from './edit-subscriptionform/edit-subscriptionform.component';
+import { UserMyprogramsComponent } from './user-myprograms/user-myprograms.component';
+import { MatTableModule } from '@angular/material/table';
+import { AdminMyprogramsComponent } from './admin-myprograms/admin-myprograms.component';
+import { AdmineditpgmComponent } from './admineditpgm/admineditpgm.component';
+import { TrainerManagementComponent } from './trainer-management/trainer-management.component';
 
 
 
@@ -65,11 +70,16 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     UserDashboardComponent,
     UserDashboardSidebarComponent,
     FollowGymatesComponent,
-    LeaderboardComponent,
     UserProfileComponent,
     UserSubscriptionsComponent,
     ProgramDetailsComponent,
-    EnrolltestComponent
+    EnrolltestComponent,
+    EditSubscriptionformComponent,
+    UserMyprogramsComponent,
+    AdminMyprogramsComponent,
+    AdmineditpgmComponent,
+    TrainerManagementComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -87,7 +97,8 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     MatNativeDateModule,
     MatFormFieldModule,
     MatCardModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatTableModule
   ],
   providers: [ProgramService],
   bootstrap: [AppComponent]

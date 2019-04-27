@@ -25,6 +25,7 @@ export class SummaryPageComponent implements OnInit {
     this.programService.getSubscriptionDetails().subscribe(data=>{
      
       this.subscriptions=data
+      console.log(this.subscriptions)
     })
   }
 

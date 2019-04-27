@@ -24,8 +24,8 @@ export class EnrolltestComponent implements OnInit {
   errorMsg: boolean = false;
 
 
-  startDate = new Date(1990, 0, 1);
-  endDate = new Date(1990, 0, 1);
+  // startDate = new Date(1990, 0, 1);
+  // endDate = new Date(1990, 0, 1);
 
   isLinear = true;
   firstFormGroup: FormGroup = new FormGroup({});
@@ -57,12 +57,11 @@ export class EnrolltestComponent implements OnInit {
       "email": user.email,
       "password": user.pwd,
       "gender": user.gender,
-      "startDate": user.startdate.toISOString().substring(0, 10),
-      "endDate": user.enddate.toISOString().substring(0, 10),
       "dateOfBirth": user.date.toISOString().substring(0, 10),
       "height": user.ht,
       "weight": user.wt,
-      "subscription": this.subscription
+      "interest": this.interest,
+      "subscription": this.subscription,
     }
     console.log(data)
     this.userService.saveUser(data).subscribe((response) => {
@@ -109,8 +108,8 @@ export class EnrolltestComponent implements OnInit {
 
     this.forthFormGroup = this.formBuilder.group({
       radio: [null, Validators.required],
-      startdate: [null, Validators.required],
-      enddate: [null, Validators.required],
+      // startdate: [null, Validators.required],
+      // enddate: [null, Validators.required],
     });
   }
   passwordValidator(firstFormGroup: FormGroup) {
@@ -130,5 +129,14 @@ export class EnrolltestComponent implements OnInit {
   method(sub) {
     this.subscription = sub
 
+  }
+   interest= [];
+  counter:any=0
+  Interests(ints){
+    if(this.counter < 3){
+    this.interest[this.counter] = ints
+    this.counter++}
+    console.log(this.interest)
+    
   }
 }

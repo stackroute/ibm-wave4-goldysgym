@@ -22,19 +22,16 @@ export class EditProgramformComponent implements OnInit {
     })
   }
   pdetails:any;
-  editProgram(data) {
+  editProgram(data,form) {
     let newData = {
       "programId":this.id,
       "programName": data.pname,
-      "day": data.inputday,
-      "timing": data.exampleRadios,
       "imageUrl": data.imageUrl,
       "programDescription": data.description,
-      "trainerName": data.tname,
-      "trainerDescription": data.tdescription,
-      "totalSeats": data.seats
+     
     }
-    
+    console.log(newData)
+    form.reset();
   
     console.log(this.id)
     this.programService.editProgram(newData).subscribe(data =>{

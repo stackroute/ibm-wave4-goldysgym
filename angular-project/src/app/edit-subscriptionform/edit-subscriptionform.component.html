@@ -1,0 +1,55 @@
+<div class="container-fluid">
+  <div class="row form-container">
+      <div class="col-lg-7">
+          <form #form="ngForm" (submit)=editSubscription(form.value,form)>
+              <div class="card-body" style=" background: white">
+                  <div class="form-group row">
+                      <label for="image" class="col-sm-6 col-form-label">Image</label>
+                         <div class="input-group col-sm-6">
+                         <input ngModel type="text" class="form-control" name="imageUrl" id="imageUrl" placeholder="{{subscription.imageUrl}}">
+
+                          <!-- <input type="text" class="form-control bg-primary" readonly> -->
+                      </div>
+                  </div>
+                  <div class="form-group row">
+                      <label for="subscriptionName" class="col-sm-6 col-form-label">SubscriptionName</label>
+                      <div class="col-sm-6">
+                          <input type="text" ngModel class="form-control" name="subscriptionName" id="subscriptionName" placeholder="{{subscription.subscriptionName}}">
+                      </div>
+                  </div>
+
+                  <div class="form-group row">
+                      <label for="sdes" class="col-sm-6 col-form-label">Description</label>
+                      <div class="col-sm-6">
+                          <textarea ngModel class="form-control" name="sdes" id="sdes" placeholder="{{subscription.description}}"></textarea>
+                      </div>
+                  </div>
+                  <div class="form-group row">
+                      <label for="Duration" class="col-sm-6 col-form-label">Duration</label>
+                      <div class="col-sm-6">
+                          <input placeholder="Months" ngModel required type="number" name="Duration" value="" min="0" max="100" />
+                      </div>
+                  </div>
+                  <div class="form-group row">
+                      <label for="amount" class="col-sm-6 col-form-label ">Amount</label>
+                      <div class="col-sm-6">
+                          <input ngModel type="text" class="form-control" name="amount" id="amount" placeholder="Amount">
+                      </div>
+                  </div>
+                  <div class="form-group row">
+                      <label for="" class="col-sm-6 col-form-label"></label>
+                      <div class="col-sm-6 d-flex">
+                          <div>
+                              <button type="submit" class="btn btn-primary">Submit</button>&nbsp;
+                          </div>
+
+                          <div>
+                              <button type="reset" class="btn btn-danger">Clear</button>&nbsp;
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </form>
+      </div>
+  </div>
+</div>

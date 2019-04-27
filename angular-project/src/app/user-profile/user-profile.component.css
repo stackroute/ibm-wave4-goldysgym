@@ -1,0 +1,19 @@
+.conatainer {
+  height: 100%;
+  align-content: center;
+}
+
+.table {
+  font-size: larger;
+
+}
+.row{
+  justify-content: center
+}
+.card{
+  text-align: center
+}
+
+.card {
+  box-shadow: 5px 10px 18px #888888;
+}

@@ -32,7 +32,7 @@ export class EditProgramsComponent implements OnInit {
     // return this.http.delete('http://localhost:3000/programs/'+id).subscribe(console.log),
     // this.programs=this.programs.filter(x=>id!=x.id);
     
-    return this.programService.deleteProgram(id).subscribe(()=>{this.getPrograms})
+    return this.programService.deleteProgram(id).subscribe(()=>{this.getPrograms()})
    }
 
 }
