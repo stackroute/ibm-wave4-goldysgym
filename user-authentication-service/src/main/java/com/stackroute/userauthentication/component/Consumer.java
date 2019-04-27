@@ -1,6 +1,8 @@
-package com.stackroute.userauthentication.domain;
+package com.stackroute.userauthentication.component;
 
 import com.stackroute.userauthentication.config.RabbitConfig;
+import com.stackroute.userauthentication.domain.Enrollment;
+import com.stackroute.userauthentication.domain.User;
 import com.stackroute.userauthentication.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
