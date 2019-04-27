@@ -5,7 +5,7 @@ cache:
     - "$HOME/.m2/repository"
     
 script:
-  - mvn install -DskipTests=true
+  - mvn clean package -DskipTests=true
 after_success:
   - bash <(curl -s https://codecov.io/bash)
 
