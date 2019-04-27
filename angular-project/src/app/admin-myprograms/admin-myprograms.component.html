@@ -85,7 +85,7 @@
   </div> -->
 
 
-//admin-myprograms.component.html
+
 <div class="container" *ngFor="let user of arrayPrograms" id="calender">
     <!-- <h6><a href="#"> Previous</a></h6> -->
     <div class="page">
@@ -149,7 +149,7 @@
           <br>
           <label for="sel2">Select Program</label>
           <select class="form-control" id="sel2" #pgm>
-            <option value="program.programName" *ngFor="let program of programs">{{program.programName}}</option>
+            <option value="{{program.programName}}" *ngFor="let program of programs">{{program.programName}}</option>
             <!-- <option value="jumba" >JUMBA</option>
             <option value="yoga">YOGA</option>
             <option value="boxing">BOXING</option> -->
