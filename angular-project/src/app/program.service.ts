@@ -69,6 +69,9 @@ export class ProgramService {
     return this.http.put(environment.dbUrlOut4,data);
    
   }
+  getTrainers(){
+    return this.http.get(environment.dbUrlOut5)
+  }
 
 
   getProgramsOfUser()

@@ -2,13 +2,17 @@
   <thead class="thead-dark">
     <tr>
       <th scope="col">Program Name</th>
+      <th scope="col">Date</th>
+      <th scope="col">Slot</th>
       <th scope="col">Assigned Trainer</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let a of programs">
-      <td>{{a.programName}}</td>
-      <td>{{a.trainerName}}</td>
+    <tr *ngFor="let trainer of trainers">
+      <td>{{trainetimeogramDto.program}}</td>
+      <td>{{trainer.programDto.date}}</td>
+      <td>{{trainer.programDto.time}}</td>
+      <td>{{trainer.trainerName}}</td>
     </tr>
     
   </tbody>
