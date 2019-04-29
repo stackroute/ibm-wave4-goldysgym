@@ -141,6 +141,7 @@ services:
     depends_on:
       - enrollment
       - program-service
+      - zuul-apigateway
     ports:
       - 8081:8081
 

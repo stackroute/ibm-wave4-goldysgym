@@ -1,17 +1,15 @@
 <div class="container-fluid" *ngFor="let user of arrayPrograms">
   <p>Today is {{today | date:'EEEE, d,LLLL, h:mm'}} </p>
-  <h3>Month's Programs Schedeule</h3>
+  <h3>this Month's GYM Programs Schedeule</h3>
   <div class="alert alert-success " *ngIf="showMsg">
     <strong>Success!</strong>
   </div>
-  <div class="row" *ngFor="let month of user.month">
-    <div class="card-body col-md-3" *ngFor="let day1 of month.days">
-      <p class="card-title btn btn-outline-danger" data-toggle="tooltip" title="Date Expired!"
-        *ngIf="( day1.date | date:'dd/MM/yyyy' ) < (today | date:'dd/MM/yyyy')">Date: {{ day1.date | date }}</p>
+  <div class="row seven-cols mx-5" *ngFor="let month of user.month">
+    <div class="card-body col-md-1 px-5 mx-3" *ngFor="let day1 of month.days">
       <a class="card-title btn btn-outline-success" data-toggle="modal" data-target="#myModal"
         (click)="viewdata(day1.date, day1.slots)"
-        *ngIf="( day1.date | date:'dd/MM/yyyy' ) >= (today | date:'dd/MM/yyyy')">
-        Date: {{ day1.date | date:'EEE d LLLL' }}</a>
+       >
+    {{ day1.date | date:'EEE, d,LLL' }}</a>
     </div>
   </div>
 </div>
@@ -28,8 +26,7 @@
         </div>
         <div class="modal-body" *ngFor="let abc of y">
 
-          <div class="row">
-            <div class="col">
+            <div class="shadow p-1 mb-1 bg-white rounded">
               <p>Program Name : {{ abc.programName }}</p>
               <p>Time : {{ abc.time }}</p>
               <p>Capacity : {{ abc.capacity }}</p>
@@ -41,7 +38,7 @@
                 </button>
                 <p *ngIf="(abc.users.indexOf(this.userData.user.email)  !== -1)"> Already booked</p>
               </div>
-            </div>
+            
           </div>
         </div>
         <div class="modal-footer">

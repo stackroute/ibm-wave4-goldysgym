@@ -32,6 +32,9 @@ export class ProgramService {
     
     return this.http.get(environment.dbUrlOut2+id);
   }
+  getTrainers(){
+    return this.http.get(environment.dbUrlOut5)
+  }
 
  
   getSubscriptionDetails(){

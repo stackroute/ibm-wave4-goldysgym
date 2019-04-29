@@ -7,17 +7,17 @@ import { ProgramService } from '../program.service';
   styleUrls: ['./trainer-management.component.css']
 })
 export class TrainerManagementComponent implements OnInit {
-  programs:any
+  trainers:any
   constructor(private programService:ProgramService ) { }
 
   ngOnInit() {
-    this.getPrograms()
+    this.getTrainers()
   }
 
-  getPrograms() {
-    this.programService.getPrograms().subscribe((x) => {
-      this.programs= x
-      console.log(this.programs)
+  getTrainers() {
+    this.programService.getTrainers().subscribe((data) => {
+      this.trainers= data
+      console.log(this.trainers)
     });
   }
 
