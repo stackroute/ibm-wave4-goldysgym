@@ -38,6 +38,6 @@ public class RabbitProducer {
         UserDetails userDetails= new UserDetails();
         userDetails.setName(enrollment.getFirstName());
         userDetails.setAge(age);
-        rabbitTemplate.convertAndSend(RabbitConfig.EXCHANGE_NAME,RabbitConfig.ROUTING_KEY_1,userDetails);
+        rabbitTemplate.convertAndSend(RabbitConfig.EXCHANGE_NAME,RabbitConfig.ROUTING_KEY,userDetails);
     }
 }
