@@ -28,6 +28,6 @@ export class RecommendationsComponent implements OnInit {
       this.arrayage=data
       console.log(this.arrayage)
     });
-    
   }
+
 }
