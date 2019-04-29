@@ -35,40 +35,40 @@ export class UserService {
       //String lname=localStorage.getItem("")
       let lname="mrit";
       console.log(fname)
-      return this.http.post(`http://13.234.148.231/user/api/v1/relation/${lname}/${fname}`,{})
+      return this.http.post(`http://13.234.148.231:8080/recommendation/user/api/v1/relation/${lname}/${fname}`,{})
     }
     //recommends the users friend of friend suggestion
     getRecommendedUsers()
     {
       let user="mrit";
       console.log(user)
-      return this.http.get(`hhttp://13.234.148.231/user/api/v1/followedusers/${user}`,{})
+      return this.http.get(`hhttp://13.234.148.231:8080/recommendation/user/api/v1/followedusers/${user}`,{})
     }
     //recommends the programs which his friends will like
     getRecommendedSessions()
     {
       let user="mrit";
       console.log(user)
-      return this.http.get(`http://13.234.148.231/user/api/v1/recommend/programs/${user}`,{})
+      return this.http.get(`http://13.234.148.231:8080/recommendation/user/api/v1/recommend/programs/${user}`,{})
     }
     getAgeGroupUser()
     {
       let user="mrit";
       console.log(user)
-      return this.http.get(`http://13.234.148.231/user/api/v1/agegroup/${user}`,{})
+      return this.http.get(`http://13.234.148.231:8080/recommendation/user/api/v1/agegroup/${user}`,{})
     }
     unfollow(fname)
     {
       //String lname=localStorage.getItem("")
       let lname="mrit";
       console.log(fname)
-      return this.http.delete(`http://13.234.148.231/user/api/v1/unfollow/${lname}/${fname}`,{})
+      return this.http.delete(`http://13.234.148.231:8080/recommendation/user/api/v1/unfollow/${lname}/${fname}`,{})
     }
     //shows that a user follows which users
     userfollows()
     {
       let fname="mrit";
       console.log(fname)
-      return this.http.get(`http://13.234.148.231/user/api/v1/users/followed/${fname}`)
+      return this.http.get(`http://13.234.148.231:8080/recommendation/user/api/v1/users/followed/${fname}`)
     }
 }
