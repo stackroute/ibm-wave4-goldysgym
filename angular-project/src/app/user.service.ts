@@ -33,41 +33,62 @@ export class UserService {
   }
   getRec(fname){
       //String lname=localStorage.getItem("")
-      let lname="mrit";
+      let userData=JSON.parse(localStorage.getItem('currentUser'))
+
+      let lname=userData.user.firstName;
+      console.log(lname);
       console.log(fname)
       return this.http.post(`http://13.234.148.231:8080/recommendation/user/api/v1/relation/${lname}/${fname}`,{})
     }
     //recommends the users friend of friend suggestion
     getRecommendedUsers()
     {
-      let user="mrit";
+      let userData=JSON.parse(localStorage.getItem('currentUser'))
+
+      let lname=userData.user.firstName;
+      console.log(lname);
+      let user=lname;
       console.log(user)
       return this.http.get(`http://13.234.148.231:8080/recommendation/user/api/v1/followedusers/${user}`,{})
     }
     //recommends the programs which his friends will like
     getRecommendedSessions()
     {
-      let user="mrit";
+      let userData=JSON.parse(localStorage.getItem('currentUser'))
+
+      let lname=userData.user.firstName;
+      console.log(lname);
+      let user=lname;
       console.log(user)
       return this.http.get(`http://13.234.148.231:8080/recommendation/user/api/v1/recommend/programs/${user}`,{})
     }
     getAgeGroupUser()
     {
-      let user="mrit";
+      let userData=JSON.parse(localStorage.getItem('currentUser'))
+
+      let lname=userData.user.firstName;
+      console.log(lname);
+      let user=lname;
       console.log(user)
       return this.http.get(`http://13.234.148.231:8080/recommendation/user/api/v1/agegroup/${user}`,{})
     }
     unfollow(fname)
     {
       //String lname=localStorage.getItem("")
-      let lname="mrit";
+      let userData=JSON.parse(localStorage.getItem('currentUser'))
+
+      let lname=userData.user.firstName;
       console.log(fname)
       return this.http.delete(`http://13.234.148.231:8080/recommendation/user/api/v1/unfollow/${lname}/${fname}`,{})
     }
     //shows that a user follows which users
     userfollows()
     {
-      let fname="mrit";
+      let userData=JSON.parse(localStorage.getItem('currentUser'))
+
+      let lname=userData.user.firstName;
+      console.log(lname);
+      let fname=lname;
       console.log(fname)
       return this.http.get(`http://13.234.148.231:8080/recommendation/user/api/v1/users/followed/${fname}`)
     }

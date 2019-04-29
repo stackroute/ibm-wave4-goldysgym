@@ -130,7 +130,7 @@ const routes: Routes = [
       },
       {
         path: "",
-        redirectTo: "/user/profile",
+        redirectTo: "/user/recommendation",
         pathMatch: "full",
       }
     ]

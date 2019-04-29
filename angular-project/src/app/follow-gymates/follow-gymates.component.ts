@@ -8,8 +8,13 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./follow-gymates.component.css']
 })
 export class FollowGymatesComponent implements OnInit {
+  lname:any;
+  constructor(private user:UserService,private http: HttpClient) { 
+    let userData=JSON.parse(localStorage.getItem('currentUser'))
 
-  constructor(private user:UserService,private http: HttpClient) { }
+     this.lname=userData.user.firstName;
+    console.log(this.lname);
+  }
   arrayUser:any=[];
   followed:boolean=false;
   pfollow:boolean=false
