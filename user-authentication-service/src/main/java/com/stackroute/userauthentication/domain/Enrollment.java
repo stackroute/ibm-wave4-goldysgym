@@ -5,7 +5,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -22,7 +24,7 @@ public class Enrollment {
     String gender;
     Double height;
     Double weight;
-    int[] interest = new int[3];
+    List<String> interest = new ArrayList<String>();
     Date startDate;
     Date endDate;
     Subscription subscription;
@@ -99,11 +101,11 @@ public class Enrollment {
         this.weight = weight;
     }
 
-    public int[] getInterest() {
+    public List<String> getInterest() {
         return interest;
     }
 
-    public void setInterest(int[] interest) {
+    public void setInterest(List<String> interest) {
         this.interest = interest;
     }
 

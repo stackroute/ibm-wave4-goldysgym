@@ -13,7 +13,8 @@
         class="card-title btn btn-outline-primary"
         data-toggle="modal"
         data-target="#myModal"
-        (click)="viewdata(day1.date, day1.slots)">
+        (click)="viewdata(day1.date, day1.slots)"
+      >
         {{ day1.date | date }}</a
       >
     </div>
@@ -25,7 +26,7 @@
     <div class="modal-dialog modal-xl">
       <div class="modal-content">
         <div class="modal-header">
-          <h2 class="modal-title">{{ x | date}}</h2>
+          <h2 class="modal-title">{{ x | date }}</h2>
           <button
             type="button"
             class="btn btn-danger close"
@@ -34,60 +35,62 @@
             &times;
           </button>
         </div>
-       <div class="modal-body" >
-         <div class="row">
-          <div class="col-md-6">
-         <div class="card-body  " id="div12" *ngFor="let abc of y">
-          <div class="form-group row">
-              <div class="input-group mb-3">
-                  Program Name: {{abc.programName}}
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="card-body  " id="div12" *ngFor="let abc of y">
+                <div class="form-group row">
+                  <div class="input-group mb-3">
+                    Program Name: {{ abc.programName }}
+                  </div>
+                  <div class="input-group mt-3">Time: {{ abc.time }}</div>
+                  <div class="input-group mt-3">
+                    Capacity: {{ abc.capacity }}
+                  </div>
+                </div>
               </div>
-              <div class="input-group mt-3">
-                  Time: {{abc.time}}
-              </div>
-              <div class="input-group mt-3">
-                Capacity: {{abc.capacity}}
             </div>
-          </div>
-           </div>
-          </div>
-          <div class="col-md-6 " > 
-          <label for="sel1">Select Slot Timing</label>
-          <select class="form-control" id="sel1" #slt>
-              <option value="Morning" >Morning</option>
-            <option value="Afternoon">Afternoon</option>
-            <option value="Evening">Evening</option>
-          </select>
-          <br>
-          <br>
-          <label for="sel2">Select Program</label>
-          <select class="form-control" id="sel2" #pgm>
-            <option value="{{program.programName}}" *ngFor="let program of programs">{{program.programName}}</option>
-            <!-- <option value="jumba" >JUMBA</option>
+            <div class="col-md-6 ">
+              <label for="sel1">Select Slot Timing</label>
+              <select class="form-control" id="sel1" #slt>
+                <option value="Morning">Morning</option>
+                <option value="Afternoon">Afternoon</option>
+                <option value="Evening">Evening</option>
+              </select>
+              <br />
+              <br />
+              <label for="sel2">Select Program</label>
+              <select class="form-control" id="sel2" #pgm>
+                <option
+                  value="{{ program.programName }}"
+                  *ngFor="let program of programs"
+                  >{{ program.programName }}</option
+                >
+                <!-- <option value="jumba" >JUMBA</option>
             <option value="yoga">YOGA</option>
             <option value="boxing">BOXING</option> -->
-          </select>
-          <br>
-          <br>
-          <label >enter Capacity</label>
-          <input  class="form-control" type="text" #cap />
-          <br>
-          <button type="button" class="btn btn-success" (click)="add(cap.value,pgm.value,slt.value,x)">
-            Add 
-          </button>
-         
+              </select>
+              <br />
+              <br />
+              <label>enter Capacity</label>
+              <input class="form-control" type="text" #cap />
+              <br />
+              <button
+                type="button"
+                class="btn btn-success"
+                (click)="add(cap.value, pgm.value, slt.value, x)"
+              >
+                Add
+              </button>
+            </div>
+          </div>
         </div>
-       </div>
-       </div>
         <div class="modal-footer">
-    
           <button type="button" class="btn btn-danger" data-dismiss="modal">
             Close
           </button>
-      </div>
-       
-         
         </div>
       </div>
     </div>
   </div>
+</div>
