@@ -1,6 +1,6 @@
 <div class="container-fluid" *ngFor="let user of arrayPrograms">
   <p>Today is {{today | date:'EEEE, d,LLLL, h:mm'}} </p>
-  <h3>this Month's GYM Programs Schedeule</h3>
+  <h3>Monthly Schedule</h3>
   <div class="alert alert-success " *ngIf="showMsg">
     <strong>Success!</strong>
   </div>
@@ -30,11 +30,11 @@
               <p>Program Name : {{ abc.programName }}</p>
               <p>Time : {{ abc.time }}</p>
               <p>Capacity : {{ abc.capacity }}</p>
-              <p>available: {{ abc.capacity-abc.users.length }}</p>
+              <p>Available: {{ abc.capacity-abc.users.length }}</p>
               <div class="form-check">
                 <button type="button" class="btn btn-success" (click)="publish(x, abc.time)"
                   *ngIf="(abc.users.indexOf(this.userData.user.email) == -1)" data-dismiss="modal">
-                  book
+                  Book
                 </button>
                 <p *ngIf="(abc.users.indexOf(this.userData.user.email)  !== -1)"> Already booked</p>
               </div>
