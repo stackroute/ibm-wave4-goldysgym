@@ -42,7 +42,7 @@ export class UserService {
     {
       let user="mrit";
       console.log(user)
-      return this.http.get(`hhttp://13.234.148.231:8080/recommendation/user/api/v1/followedusers/${user}`,{})
+      return this.http.get(`http://13.234.148.231:8080/recommendation/user/api/v1/followedusers/${user}`,{})
     }
     //recommends the programs which his friends will like
     getRecommendedSessions()
