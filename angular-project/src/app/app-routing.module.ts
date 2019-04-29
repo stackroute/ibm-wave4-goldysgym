@@ -124,6 +124,10 @@ const routes: Routes = [
         component: UserMyprogramsComponent,
       },
       {
+              path: "recommendation",
+              component: RecommendationsComponent,
+      },
+      {
         path: "",
         redirectTo: "/user/profile",
         pathMatch: "full",
