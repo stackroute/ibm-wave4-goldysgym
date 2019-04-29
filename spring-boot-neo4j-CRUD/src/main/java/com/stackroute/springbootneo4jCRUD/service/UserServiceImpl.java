@@ -35,7 +35,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public Session saveSession(Session session) {
-        Session saveSession = (Session) sessionRepsository.saveSessionDetails(session.getName());
+        Session saveSession = (Session) sessionRepsository.saveSessionDetails(session.getName(),session.getImageUrl());
         return saveSession;
     }
 

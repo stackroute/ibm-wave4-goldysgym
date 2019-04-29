@@ -41,6 +41,10 @@ public class RabbitMqNeo4j {
         return BindingBuilder.bind(queue).to(topicExchange).with(ROUTING_KEY);
     }
 
+    @Bean
+    public MessageConverter jsonMessageConverter() {
+        return new Jackson2JsonMessageConverter();
+    }
 
     @Bean
     Queue queue1() {
@@ -52,10 +56,5 @@ public class RabbitMqNeo4j {
     @Bean
     Binding binding1(Queue queue1, TopicExchange topicExchange) {
         return BindingBuilder.bind(queue1).to(topicExchange).with(ROUTING_KEY1);
-    }
-
-    @Bean
-    public MessageConverter jsonMessageConverter() {
-        return new Jackson2JsonMessageConverter();
     }
 }

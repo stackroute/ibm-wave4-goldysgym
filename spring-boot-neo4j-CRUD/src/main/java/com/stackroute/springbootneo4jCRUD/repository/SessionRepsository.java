@@ -7,8 +7,8 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface SessionRepsository extends Neo4jRepository<Session, Long> {
-    @Query("match (n:Programs) CREATE (m:Session{name:({name})}) create (n)-[r:hasProgram]->(m) return n,r,m")
-    Session saveSessionDetails(String name);
+    @Query("match (n:Programs) CREATE (m:Session{name:({name}),imageUrl:({imageUrl})}) create (n)-[r:hasProgram]->(m) return n,r,m")
+    Session saveSessionDetails(String name,String imageUrl);
 
     @Query("MATCH (m:Session) RETURN m")
     Iterable<Session> getAllSessions();

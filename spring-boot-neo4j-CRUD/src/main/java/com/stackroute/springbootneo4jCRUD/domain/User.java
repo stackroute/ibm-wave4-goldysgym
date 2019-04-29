@@ -28,6 +28,7 @@ public class User {
     @Relationship(type = "likes")
     private List<Session> sessions;
 
+    @JsonIgnore
     @Relationship(type = "follows")
     private List<User> users;
     private UserDetails userDetails;

@@ -16,10 +16,13 @@ public class Session {
     @Id
     private Long id;
     private String name;
+    private String imageUrl;
 
-    public Session(Long id, String name) {
+
+    public Session(Long id, String name,String imageUrl) {
         this.id = id;
         this.name = name;
+        this.imageUrl=imageUrl;
     }
 
     public Session() {
@@ -39,5 +42,13 @@ public class Session {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 }
