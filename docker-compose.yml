@@ -112,7 +112,6 @@ services:
 
       - rabbitmq
       - zuul-apigateway
-      - rabbitmq
       - config-service
       - eureka-server
       - mongo
