@@ -84,8 +84,6 @@ services:
     environment:
       - NEO4J_AUTH=neo4j/12345
 
-    mem_reservation: 100m
-
 
 
   subscription-service:
