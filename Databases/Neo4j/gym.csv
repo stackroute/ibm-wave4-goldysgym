@@ -1,0 +1,15 @@
+nodeid,name,parentnodeid,nodetype
+1,Gym,0,domain
+2,Programs,1,programs
+3,Users,1,users
+4,Subscriptions,1,subscriptions
+5,Quaterly,4,subscription
+6,HalfYearly,4,subscription
+7,Yearly,4,subscription
+8,Yoga,2,session
+9,Zumba,2,session
+10,Hrx,2,session
+11,Boxing,2,session
+12,Yash,3,user
+13,Saunak,3,user
+14,Abhishek,3,user

@@ -1,0 +1,69 @@
+LOAD CSV WITH HEADERS FROM "file:///gym.csv" AS row with row where row.nodetype="users"
+CREATE (:Users {id: row.nodeid, name: row.name,  parentId: row.parentnodeid, type: row.nodetype, Class:row.nodeclass,relation: row.parentrelation,context: row.context})
+
+LOAD CSV WITH HEADERS FROM "file:///gym.csv" AS row with row where row.nodetype="programs"
+CREATE (:Programs {id: row.nodeid, name: row.name,  parentId: row.parentnodeid, type: row.nodetype, Class:row.nodeclass,relation: row.parentrelation,context: row.context})
+LOAD CSV WITH HEADERS FROM "file:///gym.csv" AS row with row where row.nodetype="subscriptions"
+CREATE (:Subscriptions {id: row.nodeid, name: row.name,  parentId: row.parentnodeid, type: row.nodetype, Class:row.nodeclass,relation: row.parentrelation,context: row.context})
+LOAD CSV WITH HEADERS FROM "file:///gym.csv" AS row with row where row.nodetype="subscription"
+CREATE (:Subscription {id: row.nodeid, name: row.name,  parentId: row.parentnodeid, type: row.nodetype, Class:row.nodeclass,relation: row.parentrelation,context: row.context})
+LOAD CSV WITH HEADERS FROM "file:///gym.csv" AS row with row where row.nodetype="user"
+CREATE (:User {id: row.nodeid, name: row.name,  parentId: row.parentnodeid, type: row.nodetype, Class:row.nodeclass,relation: row.parentrelation,context: row.context})
+LOAD CSV WITH HEADERS FROM "file:///gym.csv" AS row with row where row.nodetype="session"
+CREATE (:Session {id: row.nodeid, name: row.name,  parentId: row.parentnodeid, type: row.nodetype, Class:row.nodeclass,relation: row.parentrelation,context: row.context})
+match (g:Domain),(p:Users) where
+g.name="Gym" and p.name="Users"
+create (g)-[r:has]->(p)
+match (g:Domain),(p:Programs) where
+g.name="Gym" and p.name="Programs"
+create (g)-[r:has]->(p)
+match (g:Domain),(p:Subscriptions) where
+g.name="Gym" and p.name="Subscriptions"
+create (g)-[r:has]->(p)
+match (g:Users),(p:User) where
+g.name="Users" and p.name="Yash"
+create (g)-[r:hasUser]->(p)
+match (g:Users),(p:User) where
+g.name="Users" and p.name="Abhinav"
+create (g)-[r:hasUser]->(p)
+atch (g:Users),(p:User) where
+g.name="Users" and p.name="Saunak"
+create (g)-[r:hasUser]->(p)
+match (g:Programs),(p:Session) where
+g.name="Programs" and p.name="Yoga"
+create (g)-[r:hasProgram]->(p)
+match (g:Programs),(p:Session) where
+g.name="Programs" and p.name="Zumba"
+create (g)-[r:hasProgram]->(p)
+match (g:Programs),(p:Session) where
+g.name="Programs" and p.name="Boxing"
+create (g)-[r:hasProgram]->(p)
+match (g:Programs),(p:Session) where
+g.name="Programs" and p.name="Hrx"
+create (g)-[r:hasProgram]->(p)
+match (g:Subscriptions),(p:Subscription) where
+g.name="Subscriptions" and p.name="Yearly"
+create (g)-[r:hasSubscription]->(p)
+atch (g:Subscriptions),(p:Subscription) where
+g.name="Subscriptions" and p.name="HalfYearly"
+create (g)-[r:hasSubscription]->(p)
+match (g:Subscriptions),(p:Subscription) where
+g.name="Subscriptions" and p.name="Quaterly"
+create (g)-[r:hasSubscription]->(p)
+match (g:User),(p:Session) where
+g.name="Yash" and p.name="Yoga"
+create (g)-[r:likes]->(p)
+match (g:User),(p:Session) where
+g.name="Saunak" and p.name="Hrx"
+create (g)-[r:likes]->(p)
+match (g:User),(p:Session) where
+g.name="Saunak" and p.name="Zumba"
+create (g)-[r:likes]->(p)
+match (g:User),(p:Session) where
+g.name="Abhinav" and p.name="Hrx"
+create (g)-[r:likes]->(p)
+g.name="Abhinav" and p.name="Boxing"
+create (g)-[r:likes]->(p)
+match (g:User),(p:Session) where
+g.name="Abhinav" and p.name="Boxing"
+create (g)-[r:likes]->(p)
